@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TomLabs.Shadowgem")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Shadowgem")]
+[assembly: AssemblyDescription("Library that provides extension and helper methods of all kinds.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Tomáš Bouda")]
 [assembly: AssemblyProduct("TomLabs.Shadowgem")]
-[assembly: AssemblyCopyright("Copyright TomLabs ©  2017")]
+[assembly: AssemblyCopyright("Copyright ©  2017 TomLabs")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
