@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>TomLabs.Shadowgem</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>TomasBouda</owners>
+    <licenseUrl>https://github.com/TomasBouda/Shadowgem/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/TomasBouda/Shadowgem</projectUrl>
+    <iconUrl>https://github.com/TomasBouda/Shadowgem/blob/master/TomLabs.Shadowgem/shadowgem.jpg?raw=true</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>First release</releaseNotes>
+    <copyright>Copyright 2017 TomLabs</copyright>
+    <tags>extension helper methods utility</tags>
+  </metadata>
+</package>
