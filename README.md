@@ -1,6 +1,14 @@
 # Shadowgem [![NuGet](https://img.shields.io/nuget/v/TomLabs.Shadowgem.svg)](https://www.nuget.org/packages/TomLabs.Shadowgem/) [![Travis](https://travis-ci.org/TomasBouda/Shadowgem.svg?branch=master)](https://travis-ci.org/TomasBouda/Shadowgem)
 Library that provides extension and helper methods of all kinds.
 
+## Install via NuGet
+
+```
+Install-Package TomLabs.Shadowgem -Version 1.0.0
+```
+
+## Generated documentation
+
 ## Type Win.Firewall
 
  Class provides methods for manipulating with windows firewall 
