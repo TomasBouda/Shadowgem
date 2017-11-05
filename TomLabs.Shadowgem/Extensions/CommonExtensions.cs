@@ -30,12 +30,12 @@ namespace TomLabs.Shadowgem.Extensions
 		/// Returns random element from given params collection
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
-		/// <param name="rng"></param>
+		/// <param name="rnd"></param>
 		/// <param name="things"></param>
 		/// <returns></returns>
-		public static T OneOf<T>(this Random rng, params T[] things)
+		public static T OneOf<T>(this Random rnd, params T[] things)
 		{
-			return things[rng.Next(things.Length)];
+			return things[rnd.Next(things.Length)];
 		}
 
 		/// <summary>
@@ -51,10 +51,10 @@ namespace TomLabs.Shadowgem.Extensions
 			return regex.IsMatch(value);
 		}
 
-		/// <summary>Serializes an object of type T in to an xml string</summary>
+		/// <summary>Serializes an object of type T in to an XML string</summary>
 		/// <typeparam name="T">Any class type</typeparam>
 		/// <param name="obj">Object to serialize</param>
-		/// <returns>A string that represents Xml, empty otherwise</returns>
+		/// <returns>A string that represents XML, empty otherwise</returns>
 		public static string XmlSerialize<T>(this T obj) where T : class, new()
 		{
 			if (obj == null) throw new ArgumentNullException("obj");
@@ -67,10 +67,10 @@ namespace TomLabs.Shadowgem.Extensions
 			}
 		}
 
-		/// <summary>Deserializes an xml string in to an object of Type T</summary>
+		/// <summary>Deserializes an xml string into an object of Type T</summary>
 		/// <typeparam name="T">Any class type</typeparam>
-		/// <param name="xml">Xml as string to deserialize from</param>
-		/// <returns>A new object of type T is successful, null if failed</returns>
+		/// <param name="xml">XML as string to deserialize from</param>
+		/// <returns>A new object of type T if successful, null if failed</returns>
 		public static T XmlDeserialize<T>(this string xml) where T : class, new()
 		{
 			if (xml == null) throw new ArgumentNullException("xml");

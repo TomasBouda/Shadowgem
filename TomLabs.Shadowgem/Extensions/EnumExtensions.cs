@@ -12,7 +12,7 @@ namespace TomLabs.Shadowgem.Extensions
 	public static class EnumExtensions
 	{
 		/// <summary>
-		/// Returns <paramref name="descriptionAttribute"/> for enum
+		/// Returns <see cref="DescriptionAttribute"/> value for enum
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <typeparam name="U"></typeparam>
@@ -48,7 +48,7 @@ namespace TomLabs.Shadowgem.Extensions
 		}
 
 		/// <summary>
-		/// Returns <see cref="DescriptionAttribute"/> for enum
+		/// Returns <see cref="DescriptionAttribute"/> value for enum
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="enumerationValue"></param>

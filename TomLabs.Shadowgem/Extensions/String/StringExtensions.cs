@@ -265,7 +265,7 @@ namespace TomLabs.Shadowgem.Extensions.String
 		{
 			if (string.IsNullOrEmpty(s)) return s;
 
-			var words = s.Trim().Split2(wordSeperator);
+			var words = s.Trim().SplitRgx(wordSeperator);
 			for (int i = 0; i < words.Length; i++)
 			{
 				words[i] = words[i].CapitalizeWord();
@@ -299,7 +299,7 @@ namespace TomLabs.Shadowgem.Extensions.String
 		/// <param name="pattern"></param>
 		/// <param name="regexOptions"></param>
 		/// <returns></returns>
-		public static string[] Split2(this string s, string pattern, RegexOptions regexOptions = RegexOptions.None)
+		public static string[] SplitRgx(this string s, string pattern, RegexOptions regexOptions = RegexOptions.None)
 		{
 			return Regex.Split(s, pattern, regexOptions);
 		}
@@ -312,7 +312,7 @@ namespace TomLabs.Shadowgem.Extensions.String
 		/// <param name="replacement"></param>
 		/// <param name="regexOptions"></param>
 		/// <returns></returns>
-		public static string Replace2(this string s, string pattern, string replacement, RegexOptions regexOptions = RegexOptions.None)
+		public static string ReplaceRgx(this string s, string pattern, string replacement, RegexOptions regexOptions = RegexOptions.None)
 		{
 			return Regex.Replace(s, pattern, replacement, regexOptions);
 		}

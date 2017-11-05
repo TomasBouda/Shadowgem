@@ -4,7 +4,7 @@ using System.Security.Permissions;
 namespace TomLabs.Shadowgem.Win
 {
 	/// <summary>
-	/// Class provides methods for manipulating windows firewall
+	/// Class provides methods for manipulating with windows firewall
 	/// </summary>
 	public class Firewall
 	{
@@ -13,7 +13,7 @@ namespace TomLabs.Shadowgem.Win
 		/// </summary>
 		/// <param name="port"></param>
 		[PrincipalPermission(SecurityAction.Demand, Role = @"BUILTIN\Administrators")]
-		public static void AllowAllInbounOnPort(int port)
+		public static void AllowAllInboundOnPort(int port)
 		{
 			string arguments = $"netsh advfirewall firewall add rule name=\"Allow inbound on {port}\" dir=in action=allow protocol=TCP localport={port} profile=domain";
 			ProcessStartInfo procStartInfo = new ProcessStartInfo("cmd", "/c " + arguments)
