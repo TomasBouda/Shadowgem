@@ -5,8 +5,8 @@ language: csharp
 solution: $PROJ_NAME.sln
 branches:
   only:
-  - master
- install:
+    - master
+install:
   - curl -L -o nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
   - mono nuget.exe restore $PROJ_NAME.sln
 script:
@@ -15,6 +15,6 @@ script:
   - mono nuget.exe setApiKey $NUGET_API_KEY -Source https://www.nuget.org -Verbosity quiet
   - mono nuget.exe push $PROJ_NAME.$PACKAGE_VERSION.nupkg -Source https://www.nuget.org/api/v2/package  
 notifications:
-    on_success: never
-    on_failure: always
-    slack: $SLACK_CHANEL
+  on_success: never
+  on_failure: always
+  slack: $SLACK_CHANEL
