@@ -1,5 +1,5 @@
 ﻿env:
-  - PACKAGE_VERSION="1.1.*" PROJ_NAME="TomLabs.Shadowgem"
+  - MAJOR_VERSION_NUMBER="1" MINOR_VERSION_NUMBER="0" PROJ_NAME="TomLabs.Shadowgem"
 language: csharp
 solution: $PROJ_NAME.sln
 branches:
@@ -10,9 +10,10 @@ install:
   - mono nuget.exe restore $PROJ_NAME.sln
 script:
   - xbuild /p:Configuration=Release $PROJ_NAME.sln
-  - mono nuget.exe pack ./$PROJ_NAME/$PROJ_NAME.nuspec -Version $PACKAGE_VERSION
+  - mono ./testrunner/NUnit.ConsoleRunner.3.6.1/tools/nunit3-console.exe ./<Project Name>.Tests/bin/Release/<Project Name>.Tests.dll
+  - mono nuget.exe pack ./$PROJ_NAME/$PROJ_NAME.nuspec -Version $MAJOR_VERSION_NUMBER.$MINOR_VERSION_NUMBER.$TRAVIS_BUILD_NUMBER
   - mono nuget.exe setApiKey $NUGET_API_KEY -Source https://www.nuget.org -Verbosity quiet
-  - mono nuget.exe push $PROJ_NAME.$PACKAGE_VERSION.nupkg -Source https://www.nuget.org/api/v2/package  
+  - mono nuget.exe push $PROJ_NAME.$MAJOR_VERSION_NUMBER.$MINOR_VERSION_NUMBER.$TRAVIS_BUILD_NUMBER.nupkg -Source https://www.nuget.org/api/v2/package  
 notifications:
   on_success: never
   on_failure: always
