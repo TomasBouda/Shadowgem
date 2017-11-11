@@ -16,6 +16,6 @@
     <tags>extension helper methods utility</tags>
   </metadata>
 	<files>
-		<file src="bin\Release\$id$" target="lib\{framework name}[{version}]" />
+		<file src="bin\Release\$id$" target="lib\net452" /> <!--{framework name}[{version}] doesn't work with mono-->
 	</files>
 </package>
