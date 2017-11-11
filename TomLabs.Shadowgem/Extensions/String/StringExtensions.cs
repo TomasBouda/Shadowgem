@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
+using TomLabs.Shadowgem.Extensions.Char;
+using TomLabs.Shadowgem.Extensions.Linq;
 
 namespace TomLabs.Shadowgem.Extensions.String
 {
@@ -42,8 +44,7 @@ namespace TomLabs.Shadowgem.Extensions.String
 		/// <returns></returns>
 		public static int ToInt(this string s, int defaultValue = -1)
 		{
-			int res;
-			if (int.TryParse(s, out res))
+			if (int.TryParse(s, out int res))
 				return res;
 			else
 				return defaultValue;
@@ -57,8 +58,7 @@ namespace TomLabs.Shadowgem.Extensions.String
 		/// <returns></returns>
 		public static int? ToIntN(this string s, int? defaultValue = null)
 		{
-			int res;
-			if (int.TryParse(s, out res))
+			if (int.TryParse(s, out int res))
 				return res;
 			else
 				return defaultValue;
@@ -72,8 +72,7 @@ namespace TomLabs.Shadowgem.Extensions.String
 		/// <returns></returns>
 		public static double ToDouble(this string s, double defaultValue = -1)
 		{
-			double res;
-			if (double.TryParse(s, out res))
+			if (double.TryParse(s, out double res))
 				return res;
 			else
 				return defaultValue;
@@ -87,8 +86,7 @@ namespace TomLabs.Shadowgem.Extensions.String
 		/// <returns></returns>
 		public static float ToFloat(this string s, float defaultValue = -1)
 		{
-			float res;
-			if (float.TryParse(s, out res))
+			if (float.TryParse(s, out float res))
 				return res;
 			else
 				return defaultValue;
@@ -102,8 +100,7 @@ namespace TomLabs.Shadowgem.Extensions.String
 		/// <returns></returns>
 		public static DateTime ToDate(this string s, DateTime defaultValue = default(DateTime))
 		{
-			DateTime res;
-			if (DateTime.TryParse(s, out res))
+			if (DateTime.TryParse(s, out DateTime res))
 				return res;
 			else
 				return defaultValue;
@@ -182,7 +179,7 @@ namespace TomLabs.Shadowgem.Extensions.String
 		}
 
 		/// <summary>
-		/// Converts string into enumerator of type <see cref="{T}"/>
+		/// Converts string into enumerator of type T
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="value"></param>
@@ -220,7 +217,7 @@ namespace TomLabs.Shadowgem.Extensions.String
 		/// </returns>
 		public static bool IsValidEmailAddress(this string email)
 		{
-			System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
+			Regex regex = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
 			return regex.IsMatch(email);
 		}
 
@@ -251,8 +248,7 @@ namespace TomLabs.Shadowgem.Extensions.String
 		/// <returns></returns>
 		public static bool IsNumber(this string s)
 		{
-			int x;
-			return int.TryParse(s, out x);
+			return int.TryParse(s, out int _);
 		}
 
 		/// <summary>
@@ -283,7 +279,7 @@ namespace TomLabs.Shadowgem.Extensions.String
 		{
 			if (string.IsNullOrEmpty(s)) return s;
 
-			StringBuilder sb = new StringBuilder();
+			var sb = new StringBuilder();
 			for (int i = 0; i < s.Length; i++)
 			{
 				sb.Append(i == 0 ? s[i].ToUpper() : s[i]);
@@ -359,14 +355,29 @@ namespace TomLabs.Shadowgem.Extensions.String
 			return s;
 		}
 
-		public static string RemoveRange(this string s, string startSequence, string endSequence)
+		/// <summary>
+		/// Removes string range between two given strings
+		/// </summary>
+		/// <param name="s"></param>
+		/// <param name="startSequence"></param>
+		/// <param name="endSequence"></param>
+		/// <param name="comparsion"></param>
+		/// <returns></returns>
+		public static string RemoveRange(this string s, string startSequence, string endSequence, StringComparison comparsion = StringComparison.Ordinal)
 		{
-			int start = s.IndexOf(startSequence);
-			int end = s.IndexOf(endSequence);
+			int start = s.IndexOf(startSequence, comparsion);
+			int end = s.IndexOf(endSequence, comparsion);
 
 			return start >= 0 && end > start ? s.Remove(start, (end + endSequence.Length) - start) : s;
 		}
 
+		/// <summary>
+		/// Replaces all occurrences of strings defined by <paramref name="sequencesToReplace"/> with given <paramref name="replaceWith"/>
+		/// </summary>
+		/// <param name="s"></param>
+		/// <param name="sequencesToReplace">Collection of strings to replace</param>
+		/// <param name="replaceWith">String to replace with</param>
+		/// <returns></returns>
 		public static string ReplaceAll(this string s, ICollection<string> sequencesToReplace, string replaceWith)
 		{
 			var sb = new StringBuilder(s);
@@ -377,6 +388,13 @@ namespace TomLabs.Shadowgem.Extensions.String
 			return sb.ToString();
 		}
 
+		/// <summary>
+		/// Replaces <see cref="char"/> at given position with given char
+		/// </summary>
+		/// <param name="s"></param>
+		/// <param name="pos"></param>
+		/// <param name="replaceWith"></param>
+		/// <returns></returns>
 		public static string ReplaceAt(this string s, int pos, char replaceWith)
 		{
 			char[] chars = s.ToCharArray();

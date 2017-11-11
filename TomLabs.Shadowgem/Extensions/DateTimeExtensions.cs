@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace TomLabs.Shadowgem.Extensions
+namespace TomLabs.Shadowgem.Extensions.DateAndTime
 {
 	/// <summary>
 	/// <see cref="DateTime"/> related extension methods
@@ -11,7 +11,7 @@ namespace TomLabs.Shadowgem.Extensions
 	{
 		#region Elapsed extension
 		/// <summary>
-		/// Elapseds the time.
+		/// Elapsed the time.
 		/// </summary>
 		/// <param name="datetime">The datetime.</param>
 		/// <returns>TimeSpan</returns>

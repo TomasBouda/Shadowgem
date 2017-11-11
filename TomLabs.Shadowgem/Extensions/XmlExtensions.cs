@@ -4,7 +4,7 @@ using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace TomLabs.Shadowgem.Extensions
+namespace TomLabs.Shadowgem.Extensions.Xml
 {
 	/// <summary>
 	/// XML related extensions
@@ -18,8 +18,8 @@ namespace TomLabs.Shadowgem.Extensions
 		/// <returns></returns>
 		public static string Beautify(this XDocument doc)
 		{
-			StringBuilder sb = new StringBuilder();
-			XmlWriterSettings settings = new XmlWriterSettings
+			var sb = new StringBuilder();
+			var settings = new XmlWriterSettings
 			{
 				Indent = true,
 				IndentChars = "\t",
@@ -28,7 +28,7 @@ namespace TomLabs.Shadowgem.Extensions
 				NewLineOnAttributes = true,
 			};
 
-			using (XmlWriter writer = XmlWriter.Create(sb, settings))
+			using (var writer = XmlWriter.Create(sb, settings))
 			{
 				doc.Save(writer);
 			}
@@ -36,6 +36,11 @@ namespace TomLabs.Shadowgem.Extensions
 			return sb.ToString();
 		}
 
+		/// <summary>
+		/// Converts <see cref="XDocument"/> to <see cref="XmlDocument"/>
+		/// </summary>
+		/// <param name="xDocument"></param>
+		/// <returns></returns>
 		public static XmlDocument ToXmlDocument(this XDocument xDocument)
 		{
 			var xmlDocument = new XmlDocument();
@@ -45,6 +50,12 @@ namespace TomLabs.Shadowgem.Extensions
 			}
 			return xmlDocument;
 		}
+
+		/// <summary>
+		/// Converts <see cref="XmlDocument"/> to <see cref="XDocument"/>
+		/// </summary>
+		/// <param name="xmlDocument"></param>
+		/// <returns></returns>
 		public static XDocument ToXDocument(this XmlDocument xmlDocument)
 		{
 			using (var nodeReader = new XmlNodeReader(xmlDocument))
@@ -53,6 +64,12 @@ namespace TomLabs.Shadowgem.Extensions
 				return XDocument.Load(nodeReader);
 			}
 		}
+
+		/// <summary>
+		/// Converts <see cref="XElement"/> to <see cref="XmlDocument"/>
+		/// </summary>
+		/// <param name="xElement"></param>
+		/// <returns></returns>
 		public static XmlDocument ToXmlDocument(this XElement xElement)
 		{
 			var sb = new StringBuilder();
@@ -65,11 +82,17 @@ namespace TomLabs.Shadowgem.Extensions
 			doc.LoadXml(sb.ToString());
 			return doc;
 		}
+
+		/// <summary>
+		/// Converts <see cref="XmlDocument"/> to <see cref="Stream"/>
+		/// </summary>
+		/// <param name="doc"></param>
+		/// <returns></returns>
 		public static Stream ToMemoryStream(this XmlDocument doc)
 		{
 			var xmlStream = new MemoryStream();
 			doc.Save(xmlStream);
-			xmlStream.Flush();//Adjust this if you want read your data 
+			xmlStream.Flush();  //	Adjust this if you want read your data 
 			xmlStream.Position = 0;
 			return xmlStream;
 		}

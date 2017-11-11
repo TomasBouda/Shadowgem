@@ -1,6 +1,19 @@
-﻿language: csharp
-solution: TomLabs.Shadowgem.sln
+﻿env:
+  - MAJOR_VERSION_NUMBER="1" MINOR_VERSION_NUMBER="0" PROJ_NAME="TomLabs.Shadowgem"
+language: csharp
+solution: $PROJ_NAME.sln
+branches:
+  only:
+    - master
+install:
+  - curl -L -o nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+  - mono nuget.exe restore $PROJ_NAME.sln
+script:
+  - msbuild /p:Configuration=Release $PROJ_NAME.sln
+  - mono nuget.exe pack ./$PROJ_NAME/$PROJ_NAME.nuspec -Version $MAJOR_VERSION_NUMBER.$MINOR_VERSION_NUMBER.$TRAVIS_BUILD_NUMBER
+  - mono nuget.exe setApiKey $NUGET_API_KEY -Source https://www.nuget.org -Verbosity quiet
+  - mono nuget.exe push $PROJ_NAME.$MAJOR_VERSION_NUMBER.$MINOR_VERSION_NUMBER.$TRAVIS_BUILD_NUMBER.nupkg -Source https://www.nuget.org/api/v2/package  
 notifications:
-    on_success: never
-    on_failure: always
-    slack: tomlabsgroup:tGQoa8A2XO6qCWoI33g5R3Z9
+  on_success: never
+  on_failure: always
+  slack: $SLACK_CHANEL

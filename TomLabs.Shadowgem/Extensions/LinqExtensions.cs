@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace TomLabs.Shadowgem.Extensions
+namespace TomLabs.Shadowgem.Extensions.Linq
 {
 	/// <summary>
 	/// <see cref="System.Linq"/> related extension methods

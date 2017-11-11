@@ -4,15 +4,18 @@
     <id>TomLabs.Shadowgem</id>
     <version>$version$</version>
     <title>$title$</title>
-    <authors>$author$</authors>
+    <authors>Tomáš Bouda</authors>
     <owners>TomasBouda</owners>
     <licenseUrl>https://github.com/TomasBouda/Shadowgem/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/TomasBouda/Shadowgem</projectUrl>
     <iconUrl>https://github.com/TomasBouda/Shadowgem/blob/master/TomLabs.Shadowgem/shadowgem.jpg?raw=true</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
-    <releaseNotes>First release</releaseNotes>
+    <description>Library that provides extension and helper methods of all kinds.</description>
+    <releaseNotes>Type extensions, refactorings</releaseNotes>
     <copyright>Copyright 2017 TomLabs</copyright>
     <tags>extension helper methods utility</tags>
   </metadata>
+	<files>
+		<file src="bin\Release\TomLabs.Shadowgem.dll" target="lib/net452" />
+	</files>
 </package>

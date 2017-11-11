@@ -1,30 +1,39 @@
 ﻿using System.Data;
 using System.Text;
 
-namespace TomLabs.Shadowgem.Extensions
+namespace TomLabs.Shadowgem.Extensions.Data
 {
 	/// <summary>
 	/// <see cref="DataTable"/> related extension methods
 	/// </summary>
 	public static class DataTableExtensions
 	{
+		/// <summary>
+		/// Converts <see cref="DataTable"/> to string
+		/// </summary>
+		/// <param name="dataTable"></param>
+		/// <returns></returns>
 		public static string ToStringSingle(this DataTable dataTable)
 		{
-			StringBuilder output = new StringBuilder();
+			var output = new StringBuilder();
 			foreach (DataRow row in dataTable.Rows)
 			{
 				for (int i = 0; i < dataTable.Columns.Count; i++)
 				{
-					var text = row[i].ToString();
-					output.AppendLine(text);
+					output.AppendLine(row[i].ToString());
 				}
 			}
 			return output.ToString();
 		}
 
+		/// <summary>
+		/// Converts <see cref="DataTable"/> to formated string 
+		/// </summary>
+		/// <param name="dataTable"></param>
+		/// <returns></returns>
 		public static string ToFormatedString(this DataTable dataTable)
 		{
-			StringBuilder output = new StringBuilder();
+			var output = new StringBuilder();
 
 			var columnsWidths = new int[dataTable.Columns.Count];
 

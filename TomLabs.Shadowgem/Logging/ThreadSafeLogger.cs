@@ -8,7 +8,7 @@ namespace TomLabs.Shadowgem.Logging
 	/// <summary>
 	/// Thread safe logger
 	/// </summary>
-	public class ThreadSafeLogger
+	public class ThreadSafeLogger : IDisposable
 	{
 		private static ThreadSafeLogger instance;
 		private static string _logFilePath;
@@ -89,6 +89,14 @@ namespace TomLabs.Shadowgem.Logging
 					Logger.Error(ex);
 				}
 			}
+		}
+
+		/// <summary>
+		/// Disposes queue
+		/// </summary>
+		public void Dispose()
+		{
+			_logMessages.Dispose();
 		}
 	}
 }
