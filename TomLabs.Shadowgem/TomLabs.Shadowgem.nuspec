@@ -11,11 +11,11 @@
     <iconUrl>https://github.com/TomasBouda/Shadowgem/blob/master/TomLabs.Shadowgem/shadowgem.jpg?raw=true</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Library that provides extension and helper methods of all kinds.</description>
-    <releaseNotes>Refactorings, testing Travis CI</releaseNotes>
+    <releaseNotes>Type extensions, refactorings</releaseNotes>
     <copyright>Copyright 2017 TomLabs</copyright>
     <tags>extension helper methods utility</tags>
   </metadata>
 	<files>
-		<file src="bin\Release\$id$" target="lib\net452" /> <!--{framework name}[{version}] doesn't work with mono-->
+		<file src="bin\Release\TomLabs.Shadowgem.dll" target="lib/net452" />
 	</files>
 </package>
