@@ -15,4 +15,7 @@
     <copyright>Copyright 2017 TomLabs</copyright>
     <tags>extension helper methods utility</tags>
   </metadata>
+	<files>
+		<file src="bin\Release\$id$" target="lib\{framework name}[{version}]" />
+	</files>
 </package>
