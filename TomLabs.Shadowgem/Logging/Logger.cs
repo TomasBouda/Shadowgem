@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Runtime.CompilerServices;
-using TomLabs.Shadowgem.Extensions;
+using TomLabs.Shadowgem.Extensions.DateAndTime;
 
 namespace TomLabs.Shadowgem.Logging
 {

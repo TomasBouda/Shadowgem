@@ -7,20 +7,31 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
-namespace TomLabs.Shadowgem.Extensions
+namespace TomLabs.Shadowgem.Extensions.Common
 {
 	/// <summary>
-	/// CommonExtensions
+	/// Common Extension methods
 	/// </summary>
 	public static class CommonExtensions
 	{
+		/// <summary>
+		/// Determines if an instance is contained in a sequence
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="source"></param>
+		/// <param name="list"></param>
+		/// <returns></returns>
 		public static bool IsIn<T>(this T source, params T[] list)
 		{
 			if (null == source) throw new ArgumentNullException(nameof(source));
 			return list.Contains(source);
 		}
 
-
+		/// <summary>
+		/// Simulates coin toss. Returns randomly <c>true</c> or <c>false</c>
+		/// </summary>
+		/// <param name="rng"></param>
+		/// <returns>Returns randomly <c>true</c> or <c>false</c></returns>
 		public static bool CoinToss(this Random rng)
 		{
 			return rng.Next(2) == 0;
@@ -127,7 +138,6 @@ namespace TomLabs.Shadowgem.Extensions
 		/// Doesn't copy the reference memory, only data.
 		/// </summary>
 		/// <typeparam name="T">Type of the return object.</typeparam>
-		/// <param name="item">Object to be copied.</param>
 		/// <returns>Returns the copied object.</returns>
 		public static T DeepClone<T>(this T input) where T : ISerializable
 		{

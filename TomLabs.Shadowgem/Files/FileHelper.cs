@@ -5,7 +5,7 @@ namespace TomLabs.Shadowgem.Files
 	/// <summary>
 	/// Provides methods for working with files
 	/// </summary>
-	public class FileHelper
+	public static class FileHelper
 	{
 		/// <summary>
 		/// Removes ReadOnly attribute on given file
