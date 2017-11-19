@@ -1,6 +1,4 @@
-# Shadowgem [![NuGet](https://img.shields.io/nuget/v/TomLabs.Shadowgem.svg)](https://www.nuget.org/packages/TomLabs.Shadowgem/) [![Travis](https://travis-ci.org/TomasBouda/Shadowgem.svg?branch=master)](https://travis-ci.org/TomasBouda/Shadowgem)
-
-[![Join the chat at https://gitter.im/TomLabs_Shadowgem/Lobby](https://badges.gitter.im/TomLabs_Shadowgem/Lobby.svg)](https://gitter.im/TomLabs_Shadowgem/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# Shadowgem [![NuGet](https://img.shields.io/nuget/v/TomLabs.Shadowgem.svg)](https://www.nuget.org/packages/TomLabs.Shadowgem/) [![Travis](https://travis-ci.org/TomasBouda/Shadowgem.svg?branch=master)](https://travis-ci.org/TomasBouda/Shadowgem) [![Join the chat at https://gitter.im/TomLabs_Shadowgem/Lobby](https://badges.gitter.im/TomLabs_Shadowgem/Lobby.svg)](https://gitter.im/TomLabs_Shadowgem/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Library that provides extension and helper methods of all kinds.
 
 ## Install via NuGet
