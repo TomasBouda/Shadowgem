@@ -4,7 +4,7 @@ language: csharp
 solution: $PROJ_NAME.sln
 branches:
   only:
-    - master
+    - release
 install:
   - curl -L -o nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
   - mono nuget.exe restore $PROJ_NAME.sln
