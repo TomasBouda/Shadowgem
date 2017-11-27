@@ -25,6 +25,15 @@ namespace TomLabs.Shadowgem.Logging
 		/// <summary>
 		/// Writes Error into console and file <seealso cref="LogFile"/> with additional information about caller method, class and line
 		/// </summary>
+		/// <example>
+		/// <code>
+		/// ...
+		/// catch(Exception ex)
+		/// {
+		///		Logger.Log(ex);
+		///	}
+		/// </code>
+		/// </example>
 		/// <param name="ex"></param>
 		/// <param name="callerName"></param>
 		/// <param name="callerFilePath"></param>

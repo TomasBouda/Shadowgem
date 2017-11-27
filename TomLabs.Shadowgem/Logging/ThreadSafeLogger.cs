@@ -6,7 +6,17 @@ using System.Threading;
 namespace TomLabs.Shadowgem.Logging
 {
 	/// <summary>
-	/// Thread safe logger
+	/// Thread safe logger provides way how to log from multiple threads
+	/// <example>
+	///	<code>
+	///	// Thread #1
+	///	ThreadSafeLogger.Instance.AddMessage("Hi from thread #1");
+	///	// Thread #2
+	/// ThreadSafeLogger.Instance.AddMessage("Hi from thread #2");
+	/// // Thread #3
+	/// ThreadSafeLogger.Instance.DispatchMesages();
+	/// </code>
+	/// </example>
 	/// </summary>
 	public class ThreadSafeLogger : IDisposable
 	{
