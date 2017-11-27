@@ -1,12 +1,12 @@
 ﻿using System.Diagnostics;
 using System.Text;
 
-namespace TomLabs.Shadowgem.Win
+namespace TomLabs.Shadowgem.Helpers
 {
 	/// <summary>
 	/// Windows command line helper class
 	/// </summary>
-	public class CMD
+	public class Cmd
 	{
 		/// <summary>
 		/// Executes given command in windows command line
