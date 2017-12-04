@@ -1,4 +1,4 @@
-# Shadowgem [![NuGet](https://img.shields.io/nuget/v/TomLabs.Shadowgem.svg)](https://www.nuget.org/packages/TomLabs.Shadowgem/) [![Travis](https://travis-ci.org/TomasBouda/Shadowgem.svg?branch=master)](https://travis-ci.org/TomasBouda/Shadowgem) [![Join the chat at https://gitter.im/TomLabsX/Shadowgem](https://badges.gitter.im/TomLabsX/Shadowgem.svg)](https://gitter.im/TomLabsX/Shadowgem?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Beerpay](https://beerpay.io/TomasBouda/Shadowgem/badge.svg?style=beer-square)](https://beerpay.io/TomasBouda/Shadowgem) 
+# Shadowgem [![NuGet](https://img.shields.io/nuget/v/TomLabs.Shadowgem.svg)](https://www.nuget.org/packages/TomLabs.Shadowgem/) [![Travis](https://travis-ci.org/TomasBouda/Shadowgem.svg?branch=master)](https://travis-ci.org/TomasBouda/Shadowgem) [![Discord](https://img.shields.io/badge/chat-on%20discord-orange.svg)](https://discord.gg/jqWADRg) [![Beerpay](https://beerpay.io/TomasBouda/Shadowgem/badge.svg?style=beer-square)](https://beerpay.io/TomasBouda/Shadowgem) 
 Library that provides extension and helper methods of all kinds.
 
 ## Install via NuGet
