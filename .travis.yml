@@ -1,5 +1,5 @@
 ﻿env:
-  - MAJOR_VERSION_NUMBER="1" MINOR_VERSION_NUMBER="0" PROJ_NAME="TomLabs.Shadowgem"
+  - MAJOR_VERSION_NUMBER="1" MINOR_VERSION_NUMBER="1" PROJ_NAME="TomLabs.Shadowgem"
 language: csharp
 solution: $PROJ_NAME.sln
 branches:
