@@ -4,7 +4,7 @@ Library that provides extension and helper methods of all kinds.
 ## Install via NuGet
 
 ```
-Install-Package TomLabs.Shadowgem -Version 1.0.24
+Install-Package TomLabs.Shadowgem -Version 1.1.0
 ```
 
 ## :scroll: Documentation
