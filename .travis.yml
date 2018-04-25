@@ -14,6 +14,13 @@ script:
   - mono nuget.exe setApiKey $NUGET_API_KEY -Source https://www.nuget.org -Verbosity quiet
   - mono nuget.exe push $PROJ_NAME.$MAJOR_VERSION_NUMBER.$MINOR_VERSION_NUMBER.$TRAVIS_BUILD_NUMBER.nupkg -Source https://www.nuget.org/api/v2/package  
 notifications:
-  on_success: never
-  on_failure: always
   slack: $SLACK_CHANEL
+  on_success: change
+  on_failure: always
+  on_start: never
+  webhooks:
+    urls:
+      - $GITTER_WH_URL
+    on_success: change
+    on_failure: always
+    on_start: never

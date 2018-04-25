@@ -31,11 +31,13 @@ namespace TomLabs.Shadowgem.Extensions.String.Encription
 			/// </summary>
 			[Obsolete("Has cryptographic weaknesses", false)]
 			MD5,
-			/// <summary>
-			/// Should not be used. 
-			/// https://www.howtogeek.com/238705/what-is-sha-1-and-why-will-retiring-it-kick-thousands-off-the-internet/
-			/// </summary>
-			[Obsolete("Has cryptographic weaknesses", false)]
+            /// <summary>
+            /// Should not be used. 
+            /// <para>
+            /// https://www.howtogeek.com/238705/what-is-sha-1-and-why-will-retiring-it-kick-thousands-off-the-internet/
+            /// </para>
+            /// </summary>
+            [Obsolete("Has cryptographic weaknesses", false)]
 			SHA1,
 		}
 
@@ -63,14 +65,8 @@ namespace TomLabs.Shadowgem.Extensions.String.Encription
 				case EHashType.HMACSHA512:
 					return HMACSHA512.Create().ComputeHash(inputBytes);
 
-				case EHashType.MACTripleDES:
-					return MACTripleDES.Create().ComputeHash(inputBytes);
-
 				case EHashType.MD5:
 					return MD5.Create().ComputeHash(inputBytes);
-
-				case EHashType.RIPEMD160:
-					return RIPEMD160.Create().ComputeHash(inputBytes);
 
 				case EHashType.SHA1:
 					return SHA1.Create().ComputeHash(inputBytes);

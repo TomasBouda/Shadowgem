@@ -4,13 +4,13 @@ using System.Collections.Generic;
 namespace TomLabs.Shadowgem.Comparers
 {
 	/// <summary>
-	/// Allows you to compare inline with linq query
+	/// Allows you to compare inline in linq query
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	public class InlineComparer<T> : IEqualityComparer<T>
 	{
-		private readonly Func<T, T, bool> getEquals;
-		private readonly Func<T, int> getHashCode;
+		private readonly Func<T, T, bool> _getEquals;
+		private readonly Func<T, int> _getHashCode;
 
 		/// <summary>
 		/// Creates instance of <see cref="InlineComparer{T}"/>
@@ -19,8 +19,8 @@ namespace TomLabs.Shadowgem.Comparers
 		/// <param name="hashCode">Pass lambda expression for GetHashCode function. <code>i => i.Id.GetHashCode()</code></param>
 		public InlineComparer(Func<T, T, bool> equals, Func<T, int> hashCode)
 		{
-			getEquals = equals;
-			getHashCode = hashCode;
+			_getEquals = equals;
+			_getHashCode = hashCode;
 		}
 
 		/// <summary>
@@ -31,7 +31,7 @@ namespace TomLabs.Shadowgem.Comparers
 		/// <returns></returns>
 		public bool Equals(T x, T y)
 		{
-			return getEquals(x, y);
+			return _getEquals(x, y);
 		}
 
 		/// <summary>
@@ -41,7 +41,7 @@ namespace TomLabs.Shadowgem.Comparers
 		/// <returns></returns>
 		public int GetHashCode(T obj)
 		{
-			return getHashCode(obj);
+			return _getHashCode(obj);
 		}
 	}
 }

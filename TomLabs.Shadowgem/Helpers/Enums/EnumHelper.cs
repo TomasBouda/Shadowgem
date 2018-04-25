@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
-namespace TomLabs.Shadowgem.Enums
+namespace TomLabs.Shadowgem.Helpers.Enums
 {
 	/// <summary>
 	/// Provides helper methods for <see cref="Enum"/>
