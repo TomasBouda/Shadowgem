@@ -42,7 +42,7 @@ namespace TomLabs.Shadowgem.Extensions.String
 		/// <param name="s"></param>
 		/// <param name="defaultValue"></param>
 		/// <returns></returns>
-		public static int ToInt(this string s, int defaultValue = -1)
+		public static int ToInt(this string s, int defaultValue = default(int))
 		{
 			if (int.TryParse(s, out int res))
 				return res;
@@ -56,7 +56,7 @@ namespace TomLabs.Shadowgem.Extensions.String
 		/// <param name="s"></param>
 		/// <param name="defaultValue"></param>
 		/// <returns></returns>
-		public static int? ToIntN(this string s, int? defaultValue = null)
+		public static int? ToIntN(this string s, int? defaultValue = default(int?))
 		{
 			if (int.TryParse(s, out int res))
 				return res;
@@ -70,7 +70,7 @@ namespace TomLabs.Shadowgem.Extensions.String
 		/// <param name="s"></param>
 		/// <param name="defaultValue"></param>
 		/// <returns></returns>
-		public static double ToDouble(this string s, double defaultValue = -1)
+		public static double ToDouble(this string s, double defaultValue = default(double))
 		{
 			if (double.TryParse(s, out double res))
 				return res;
@@ -84,7 +84,7 @@ namespace TomLabs.Shadowgem.Extensions.String
 		/// <param name="s"></param>
 		/// <param name="defaultValue"></param>
 		/// <returns></returns>
-		public static float ToFloat(this string s, float defaultValue = -1)
+		public static float ToFloat(this string s, float defaultValue = default(float))
 		{
 			if (float.TryParse(s, out float res))
 				return res;
@@ -386,6 +386,18 @@ namespace TomLabs.Shadowgem.Extensions.String
 				sb.Replace(sequence, replaceWith);
 			}
 			return sb.ToString();
+		}
+
+		/// <summary>
+		/// Replaces all occurrences of strings defined by <paramref name="toReplace"/> with given <paramref name="replaceWith"/>
+		/// </summary>
+		/// <param name="s"></param>
+		/// <param name="replaceWith">String to replace with</param>
+		/// <param name="toReplace">Collection of strings to replace</param>
+		/// <returns></returns>
+		public static string ReplaceAll(this string s, string replaceWith, params string[] toReplace)
+		{
+			return ReplaceAll(s, toReplace, replaceWith);
 		}
 
 		/// <summary>

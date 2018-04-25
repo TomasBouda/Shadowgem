@@ -24,7 +24,7 @@ namespace TomLabs.Shadowgem.Tests
 			Assert.AreEqual(removed, " the lazy dog");
 
 			// ReplaceAll
-			Assert.AreEqual(CustomString.ReplaceAll(new[] { "fox", "dog" }, "chicken"), "the swift brown chicken jumped over the lazy chicken");
+			Assert.AreEqual(CustomString.ReplaceAll("chicken", "fox", "dog"), "the swift brown chicken jumped over the lazy chicken");
 
 			// ReplaceAt
 			Assert.AreEqual(CustomString.ReplaceAt(16, 'b'), "the swift brown box jumped over the lazy dog");

@@ -297,5 +297,19 @@ namespace TomLabs.Shadowgem.Extensions.Linq
 		{
 			return string.Join(separator, collection);
 		}
+
+		/// <summary>
+		/// Calls <see cref="List{T}.AddRange(IEnumerable{T})"/> only if source range is not empty
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list"></param>
+		/// <param name="range"></param>
+		public static void AddRangeSafe<T>(this List<T> list, List<T> range)
+		{
+			if (range != null && range.Count > 0)
+			{
+				list.AddRange(range);
+			}
+		}
 	}
 }

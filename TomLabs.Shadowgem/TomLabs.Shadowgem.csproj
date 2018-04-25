@@ -4,4 +4,10 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="TomLabs.Shadowgem.1.0.0.nupkg" />
+    <None Remove="TomLabs.Shadowgem.1.0.18.nupkg" />
+    <None Remove="TomLabs.Shadowgem.nuspec" />
+  </ItemGroup>
+
 </Project>
