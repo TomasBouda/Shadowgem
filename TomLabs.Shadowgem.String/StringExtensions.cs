@@ -14,7 +14,7 @@ namespace TomLabs.Shadowgem.String
 	public static class StringExtensions
 	{
 		/// <summary>
-		/// "SQL" Like function with that works with wildcards
+		/// "SQL" Like function that works with wildcards
 		/// </summary>
 		/// <param name="toSearch"></param>
 		/// <param name="toFind"></param>

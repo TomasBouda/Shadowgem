@@ -61,7 +61,6 @@ namespace TomLabs.Shadowgem.Common
 		/// Weeks the of year.
 		/// </summary>
 		/// <param name="datetime">The datetime.</param>
-		/// <param name="weekrule">The weekrule.</param>
 		/// <returns></returns>
 		public static int WeekOfYear(this DateTime datetime)
 		{
@@ -87,7 +86,12 @@ namespace TomLabs.Shadowgem.Common
 			return datetime.AddDays(resultday - current);
 		}
 
-
+		/// <summary>
+		/// Gets the date time for day of week.
+		/// </summary>
+		/// <param name="datetime"></param>
+		/// <param name="day"></param>
+		/// <returns></returns>
 		public static DateTime GetDateTimeForDayOfWeek(this DateTime datetime, DayOfWeek day)
 		{
 			DateTimeFormatInfo dateinf = new DateTimeFormatInfo();

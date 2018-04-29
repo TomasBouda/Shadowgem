@@ -12,4 +12,10 @@
     <Copyright>Copyright 2018 TomLabs</Copyright>
     <PackageLicenseUrl>https://github.com/TomasBouda/Shadowgem/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\TomLabs.Shadowgem.Helpers.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\TomLabs.Shadowgem.Helpers.xml</DocumentationFile>
+  </PropertyGroup>
 </Project>
