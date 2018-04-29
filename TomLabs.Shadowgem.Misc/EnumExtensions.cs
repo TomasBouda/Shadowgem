@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 
-namespace TomLabs.Shadowgem.Extensions.Enumeration
+namespace TomLabs.Shadowgem.Misc
 {
 	/// <summary>
 	/// Enum related extension methods

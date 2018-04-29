@@ -1,19 +1,28 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-
     <IsPackable>false</IsPackable>
+    <PackageProjectUrl>https://github.com/TomasBouda/Shadowgem</PackageProjectUrl>
+    <Authors>Tomáš Bouda</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0</Version>
+    <PackageIconUrl>https://cdn.rawgit.com/TomasBouda/Shadowgem/0bc7f080/TomLabs.Shadowgem/shadowgem.jpg?raw=true</PackageIconUrl>
+    <RepositoryUrl>https://github.com/TomasBouda/Shadowgem</RepositoryUrl>
+    <PackageTags>extension helper methods utility library</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <Copyright>Copyright 2018 TomLabs</Copyright>
+    <PackageLicenseUrl>https://github.com/TomasBouda/Shadowgem/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.1.18" />
     <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
   </ItemGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\TomLabs.Shadowgem\TomLabs.Shadowgem.csproj" />
+    <ProjectReference Include="..\TomLabs.Shadowgem.Common\TomLabs.Shadowgem.Common.csproj" />
+    <ProjectReference Include="..\TomLabs.Shadowgem.Helpers\TomLabs.Shadowgem.Helpers.csproj" />
+    <ProjectReference Include="..\TomLabs.Shadowgem.Misc\TomLabs.Shadowgem.Misc.csproj" />
+    <ProjectReference Include="..\TomLabs.Shadowgem.String\TomLabs.Shadowgem.String.csproj" />
+    <ProjectReference Include="..\TomLabs.Shadowgem.Types\TomLabs.Shadowgem.Types.csproj" />
   </ItemGroup>
-
 </Project>

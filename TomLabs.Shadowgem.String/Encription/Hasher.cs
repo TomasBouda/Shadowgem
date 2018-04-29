@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace TomLabs.Shadowgem.Extensions.String.Encription
+namespace TomLabs.Shadowgem.String.Encription
 {
 	/// <summary>
 	/// Provides methods for string hashing
@@ -31,13 +31,13 @@ namespace TomLabs.Shadowgem.Extensions.String.Encription
 			/// </summary>
 			[Obsolete("Has cryptographic weaknesses", false)]
 			MD5,
-            /// <summary>
-            /// Should not be used. 
-            /// <para>
-            /// https://www.howtogeek.com/238705/what-is-sha-1-and-why-will-retiring-it-kick-thousands-off-the-internet/
-            /// </para>
-            /// </summary>
-            [Obsolete("Has cryptographic weaknesses", false)]
+			/// <summary>
+			/// Should not be used. 
+			/// <para>
+			/// https://www.howtogeek.com/238705/what-is-sha-1-and-why-will-retiring-it-kick-thousands-off-the-internet/
+			/// </para>
+			/// </summary>
+			[Obsolete("Has cryptographic weaknesses", false)]
 			SHA1,
 		}
 

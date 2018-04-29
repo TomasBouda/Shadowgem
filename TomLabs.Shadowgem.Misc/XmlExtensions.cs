@@ -4,7 +4,7 @@ using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace TomLabs.Shadowgem.Extensions.Xml
+namespace TomLabs.Shadowgem.Misc
 {
 	/// <summary>
 	/// XML related extensions

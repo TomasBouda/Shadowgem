@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Globalization;
 
-namespace TomLabs.Shadowgem.Extensions.DateAndTime
+namespace TomLabs.Shadowgem.Common
 {
 	/// <summary>
 	/// <see cref="DateTime"/> related extension methods
-	/// http://extensionoverflow.codeplex.com/SourceControl/latest#ExtensionMethods
 	/// </summary>
 	public static class DateTimeExtensions
 	{

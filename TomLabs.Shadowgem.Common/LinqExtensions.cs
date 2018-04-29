@@ -5,12 +5,11 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace TomLabs.Shadowgem.Extensions.Linq
+namespace TomLabs.Shadowgem.Common
 {
 	/// <summary>
 	/// <see cref="System.Linq"/> related extension methods
 	/// <para></para>
-	/// http://extensionoverflow.codeplex.com/SourceControl/latest#ExtensionMethods
 	/// </summary>
 	public static class LinqExtensions
 	{

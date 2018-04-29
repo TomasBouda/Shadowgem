@@ -7,7 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
-namespace TomLabs.Shadowgem.Extensions.Common
+namespace TomLabs.Shadowgem.Common
 {
 	/// <summary>
 	/// Common Extension methods

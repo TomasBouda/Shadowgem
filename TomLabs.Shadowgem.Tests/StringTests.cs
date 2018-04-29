@@ -1,10 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TomLabs.Shadowgem.Extensions.String;
+using TomLabs.Shadowgem.String;
 
 namespace TomLabs.Shadowgem.Tests
 {
 	[TestClass]
-	public class StringExtTests
+	public class StringTests
 	{
 		private const string CustomString = "the swift brown fox jumped over the lazy dog";
 

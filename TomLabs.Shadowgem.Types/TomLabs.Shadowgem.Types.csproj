@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Tomáš Bouda</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Library that provides extension methods for System.Type</Description>
+    <Version>1.0.0</Version>
+    <PackageProjectUrl>https://github.com/TomasBouda/Shadowgem</PackageProjectUrl>
+    <PackageIconUrl>https://cdn.rawgit.com/TomasBouda/Shadowgem/0bc7f080/TomLabs.Shadowgem/shadowgem.jpg?raw=true</PackageIconUrl>
+    <RepositoryUrl>https://github.com/TomasBouda/Shadowgem</RepositoryUrl>
+    <PackageTags>extension helper methods utility library</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <Copyright>Copyright 2018 TomLabs</Copyright>
+    <PackageLicenseUrl>https://github.com/TomasBouda/Shadowgem/blob/master/LICENSE</PackageLicenseUrl>
+  </PropertyGroup>
+</Project>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable CheckNamespace
 
-namespace TomLabs.Shadowgem.Extensions.TypeRelated
+namespace TomLabs.Shadowgem.Types
 {
 	/// <summary>
 	/// Class for storing property tree that is constructed by <see cref="TypeExtensions.CreatePropertyTree"/> for given <see cref="Type"/>

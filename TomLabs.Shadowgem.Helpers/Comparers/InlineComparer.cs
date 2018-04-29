@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TomLabs.Shadowgem.Comparers
+namespace TomLabs.Shadowgem.Helpers.Comparers
 {
 	/// <summary>
 	/// Allows you to compare inline in linq query

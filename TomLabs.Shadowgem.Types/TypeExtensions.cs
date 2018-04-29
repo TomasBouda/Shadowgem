@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 // ReSharper disable CheckNamespace
 
-namespace TomLabs.Shadowgem.Extensions.TypeRelated
+namespace TomLabs.Shadowgem.Types
 {
 	/// <summary>
 	/// <see cref="Type"/> related extension methods

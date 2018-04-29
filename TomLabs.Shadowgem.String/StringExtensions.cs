@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
-using TomLabs.Shadowgem.Extensions.Char;
-using TomLabs.Shadowgem.Extensions.Linq;
 
-namespace TomLabs.Shadowgem.Extensions.String
+namespace TomLabs.Shadowgem.String
 {
 	/// <summary>
 	/// Provides extension methods applied to <see cref="string"/>
@@ -267,7 +266,7 @@ namespace TomLabs.Shadowgem.Extensions.String
 				words[i] = words[i].CapitalizeWord();
 			}
 
-			return words.JoinItems(wordSeperator);
+			return string.Join(wordSeperator, words);
 		}
 
 		/// <summary>
@@ -282,7 +281,7 @@ namespace TomLabs.Shadowgem.Extensions.String
 			var sb = new StringBuilder();
 			for (int i = 0; i < s.Length; i++)
 			{
-				sb.Append(i == 0 ? s[i].ToUpper() : s[i]);
+				sb.Append(i == 0 ? char.ToUpper(s[i]) : s[i]);
 			}
 
 			return sb.ToString();
@@ -412,6 +411,38 @@ namespace TomLabs.Shadowgem.Extensions.String
 			char[] chars = s.ToCharArray();
 			chars[pos] = replaceWith;
 			return new string(chars);
+		}
+
+		/// <summary>
+		/// Returns <c>true</c> if given string is path to a directory
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns></returns>
+		public static bool IsDirectory(this string path)
+		{
+			if (Directory.Exists(path))
+			{
+				FileAttributes attr = File.GetAttributes(path);
+				return (attr.HasFlag(FileAttributes.Directory));
+			}
+			else
+				return false;
+		}
+
+		/// <summary>
+		/// Returns <c>true</c> if given string is path to a file
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns></returns>
+		public static bool IsFile(this string path)
+		{
+			if (File.Exists(path))
+			{
+				FileAttributes attr = File.GetAttributes(path);
+				return !(attr.HasFlag(FileAttributes.Directory));
+			}
+			else
+				return false;
 		}
 
 		#region HTMLHelper
