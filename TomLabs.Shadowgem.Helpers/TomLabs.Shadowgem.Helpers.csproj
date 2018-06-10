@@ -18,4 +18,17 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>bin\Debug\netstandard2.0\TomLabs.Shadowgem.Helpers.xml</DocumentationFile>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\TomLabs.Shadowgem\Helpers\Cmd.cs" Link="Cmd.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Helpers\Comparers\InlineComparer.cs" Link="Comparers\InlineComparer.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Helpers\Enums\EnumHelper.cs" Link="Enums\EnumHelper.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Helpers\Files\FileHelper.cs" Link="Files\FileHelper.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Helpers\Files\PathEx.cs" Link="Files\PathEx.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Helpers\ResourceHelper.cs" Link="ResourceHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Comparers\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Files\" />
+  </ItemGroup>
 </Project>

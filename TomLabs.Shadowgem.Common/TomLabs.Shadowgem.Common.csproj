@@ -18,4 +18,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>bin\Debug\netstandard2.0\TomLabs.Shadowgem.Common.xml</DocumentationFile>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\TomLabs.Shadowgem\Common\CharExtensions.cs" Link="CharExtensions.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Common\CommonExtensions.cs" Link="CommonExtensions.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Common\DateTimeExtensions.cs" Link="DateTimeExtensions.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Common\LinqExtensions.cs" Link="LinqExtensions.cs" />
+  </ItemGroup>
 </Project>

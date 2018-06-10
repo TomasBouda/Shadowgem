@@ -18,4 +18,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>bin\Debug\netstandard2.0\TomLabs.Shadowgem.Misc.xml</DocumentationFile>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\TomLabs.Shadowgem\Misc\DataTableExtensions.cs" Link="DataTableExtensions.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Misc\EnumExtensions.cs" Link="EnumExtensions.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Misc\XmlExtensions.cs" Link="XmlExtensions.cs" />
+  </ItemGroup>
 </Project>

@@ -3,7 +3,6 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Tomáš Bouda</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>Library that provides extension methods for System.Type</Description>
     <Version>1.0.0</Version>
     <PackageProjectUrl>https://github.com/TomasBouda/Shadowgem</PackageProjectUrl>
     <PackageIconUrl>https://cdn.rawgit.com/TomasBouda/Shadowgem/0bc7f080/TomLabs.Shadowgem/shadowgem.jpg?raw=true</PackageIconUrl>
@@ -13,14 +12,4 @@
     <Copyright>Copyright 2018 TomLabs</Copyright>
     <PackageLicenseUrl>https://github.com/TomasBouda/Shadowgem/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard2.0\TomLabs.Shadowgem.Types.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.0\TomLabs.Shadowgem.Types.xml</DocumentationFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="..\TomLabs.Shadowgem\Types\PropertyMap.cs" Link="PropertyMap.cs" />
-    <Compile Include="..\TomLabs.Shadowgem\Types\TypeExtensions.cs" Link="TypeExtensions.cs" />
-  </ItemGroup>
 </Project>
