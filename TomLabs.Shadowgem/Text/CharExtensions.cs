@@ -1,4 +1,4 @@
-﻿namespace TomLabs.Shadowgem.Common
+﻿namespace TomLabs.Shadowgem.Text
 {
 	/// <summary>
 	/// <see cref="char"/> related extension methods

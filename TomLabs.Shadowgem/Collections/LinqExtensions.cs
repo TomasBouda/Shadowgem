@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace TomLabs.Shadowgem.Common
+namespace TomLabs.Shadowgem.Collections
 {
 	/// <summary>
 	/// <see cref="System.Linq"/> related extension methods
@@ -13,7 +13,6 @@ namespace TomLabs.Shadowgem.Common
 	/// </summary>
 	public static class LinqExtensions
 	{
-
 		/// <summary>
 		/// Converts the Linq data to a comma separated string including header.
 		/// </summary>
@@ -53,12 +52,15 @@ namespace TomLabs.Shadowgem.Common
 				case ";":
 					replaceDelimiter = ":";
 					break;
+
 				case ",":
 					replaceDelimiter = "¸";
 					break;
+
 				case "\t":
 					replaceDelimiter = "    ";
 					break;
+
 				default:
 					break;
 			}
@@ -100,11 +102,11 @@ namespace TomLabs.Shadowgem.Common
 		/// Shortcut for foreach statement
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
-		/// <param name="enum"></param>
+		/// <param name="list"></param>
 		/// <param name="mapFunction"></param>
-		public static void ForEach<T>(this IEnumerable<T> @enum, Action<T> mapFunction)
+		public static void ForEach<T>(this IEnumerable<T> list, Action<T> mapFunction)
 		{
-			foreach (var item in @enum) mapFunction(item);
+			foreach (var item in list) mapFunction(item);
 		}
 
 		/// <summary>
@@ -271,7 +273,7 @@ namespace TomLabs.Shadowgem.Common
 		}
 
 		/// <summary>
-		/// Adds an element to an <see cref="IEnumerable{T}"/> 
+		/// Adds an element to an <see cref="IEnumerable{T}"/>
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="target"></param>
@@ -298,7 +300,7 @@ namespace TomLabs.Shadowgem.Common
 		}
 
 		/// <summary>
-		/// Calls <see cref="List{T}.AddRange(IEnumerable{T})"/> only if source range is not empty
+		/// Calls <see cref="List{T}.AddRange(IEnumerable{T})"/> only if source <see cref="List{T}"/> is not <c>null</c> and not empty
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list"></param>
@@ -309,6 +311,28 @@ namespace TomLabs.Shadowgem.Common
 			{
 				list.AddRange(range);
 			}
+		}
+
+		/// <summary>
+		/// Converts <see cref="IEnumerable{T}"/> into <see cref="ObservableCollection{T}"/>
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list"></param>
+		/// <returns></returns>
+		public static ObservableCollection<T> ToObservable<T>(this IEnumerable<T> list)
+		{
+			return new ObservableCollection<T>(list);
+		}
+
+		/// <summary>
+		/// Removes <see cref="IEnumerable{T}"/> collection from given <see cref="ICollection{T}"/>
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list"></param>
+		/// <param name="toRremove"></param>
+		public static void Remove<T>(this ICollection<T> list, IEnumerable<T> toRremove)
+		{
+			toRremove?.ToList().ForEach((r) => { list.Remove(r); });
 		}
 	}
 }

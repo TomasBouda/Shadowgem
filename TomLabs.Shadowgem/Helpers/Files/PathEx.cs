@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace TomLabs.Shadowgem.Helpers.Files
+namespace TomLabs.Shadowgem.Helpers.IO
 {
 	/// <summary>
 	/// Provides extension methods for Path

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TomLabs.Shadowgem.String.Encription
+namespace TomLabs.Shadowgem.Text.Encription
 {
 	/// <summary>
 	/// Provides methods for string encryption/decryption
@@ -16,15 +16,10 @@ namespace TomLabs.Shadowgem.String.Encription
 		/// <exception cref="ArgumentException">Occurs when stringToEncrypt or key is null or empty.</exception>
 		public static string Encrypt(this string stringToEncrypt, string key)
 		{
-			if (string.IsNullOrEmpty(stringToEncrypt))
-			{
-				throw new ArgumentException("An empty string value cannot be encrypted.");
-			}
-
-			if (string.IsNullOrEmpty(key))
-			{
-				throw new ArgumentException("Cannot encrypt using an empty key. Please supply an encryption key.");
-			}
+			if (stringToEncrypt.IsNullOrEmpty())
+				throw new ArgumentException("An empty string value cannot be encrypted.", nameof(stringToEncrypt));
+			if (key.IsNullOrEmpty())
+				throw new ArgumentException("Cannot encrypt using an empty key. Please supply an encryption key.", nameof(key));
 
 			System.Security.Cryptography.CspParameters cspp = new System.Security.Cryptography.CspParameters();
 			cspp.KeyContainerName = key;
@@ -46,18 +41,12 @@ namespace TomLabs.Shadowgem.String.Encription
 		/// <exception cref="ArgumentException">Occurs when stringToDecrypt or key is null or empty.</exception>
 		public static string Decrypt(this string stringToDecrypt, string key)
 		{
+			if (stringToDecrypt.IsNullOrEmpty())
+				throw new ArgumentException("An empty string value cannot be encrypted.", nameof(stringToDecrypt));
+			if (key.IsNullOrEmpty())
+				throw new ArgumentException("Cannot decrypt using an empty key. Please supply a decryption key.", nameof(key));
+
 			string result = null;
-
-			if (string.IsNullOrEmpty(stringToDecrypt))
-			{
-				throw new ArgumentException("An empty string value cannot be encrypted.");
-			}
-
-			if (string.IsNullOrEmpty(key))
-			{
-				throw new ArgumentException("Cannot decrypt using an empty key. Please supply a decryption key.");
-			}
-
 			try
 			{
 				System.Security.Cryptography.CspParameters cspp = new System.Security.Cryptography.CspParameters();
@@ -69,11 +58,9 @@ namespace TomLabs.Shadowgem.String.Encription
 				string[] decryptArray = stringToDecrypt.Split(new string[] { "-" }, StringSplitOptions.None);
 				byte[] decryptByteArray = Array.ConvertAll<string, byte>(decryptArray, (s => Convert.ToByte(byte.Parse(s, System.Globalization.NumberStyles.HexNumber))));
 
-
 				byte[] bytes = rsa.Decrypt(decryptByteArray, true);
 
 				result = System.Text.UTF8Encoding.UTF8.GetString(bytes);
-
 			}
 			catch (Exception ex)
 			{

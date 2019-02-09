@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-// ReSharper disable MemberCanBePrivate.Global
-// ReSharper disable CheckNamespace
 
 namespace TomLabs.Shadowgem.Types
 {

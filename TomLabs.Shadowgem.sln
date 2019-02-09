@@ -7,26 +7,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
-		.travis.yml = .travis.yml
 		LICENSE = LICENSE
 		PackageMetadata.xml = PackageMetadata.xml
 		README.md = README.md
 		updatePackageInfo.ps1 = updatePackageInfo.ps1
+		updateSingletons.ps1 = updateSingletons.ps1
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.Tests", "TomLabs.Shadowgem.Tests\TomLabs.Shadowgem.Tests.csproj", "{A01C9B91-B6B4-4D99-8B44-8C30C37396C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.Types", "TomLabs.Shadowgem.Types\TomLabs.Shadowgem.Types.csproj", "{DE02827A-E18C-4577-973E-059799ADD922}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem", "TomLabs.Shadowgem\TomLabs.Shadowgem.csproj", "{BD4D36E4-EC3C-478E-9836-72B82919DBA3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.Helpers", "TomLabs.Shadowgem.Helpers\TomLabs.Shadowgem.Helpers.csproj", "{66D90E77-288C-4694-B255-04FE36F286EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.Collections", "TomLabs.Shadowgem.Collections\TomLabs.Shadowgem.Collections.csproj", "{391BC03E-B867-4529-91A9-17B3F2AC3848}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.String", "TomLabs.Shadowgem.String\TomLabs.Shadowgem.String.csproj", "{27FCEB2E-2D8F-4083-8CA8-901F2E790DF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.Common", "TomLabs.Shadowgem.Common\TomLabs.Shadowgem.Common.csproj", "{CDEEA8A0-C72D-4C72-A641-CBF06B4F0A09}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.Misc", "TomLabs.Shadowgem.Misc\TomLabs.Shadowgem.Misc.csproj", "{48227305-6B0C-4790-AABA-2877D033FFCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.Data", "TomLabs.Shadowgem.Data\TomLabs.Shadowgem.Data.csproj", "{9141CB49-DA79-40BE-A66F-360F238ACB20}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.Common", "TomLabs.Shadowgem.Common\TomLabs.Shadowgem.Common.csproj", "{8D4A0267-6B34-43DA-AE41-91CA53BE417D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.Helpers", "TomLabs.Shadowgem.Helpers\TomLabs.Shadowgem.Helpers.csproj", "{2E90ACFB-1F99-44A3-9DA7-207E9EC71A01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TomLabs.Shadowgem", "TomLabs.Shadowgem\TomLabs.Shadowgem.csproj", "{BD4D36E4-EC3C-478E-9836-72B82919DBA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.Text", "TomLabs.Shadowgem.Text\TomLabs.Shadowgem.Text.csproj", "{C6522B40-05AA-4FB1-9AF0-2FAA19922E02}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.Types", "TomLabs.Shadowgem.Types\TomLabs.Shadowgem.Types.csproj", "{F0A530DC-541E-41A0-B258-01312E4E5804}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,30 +40,34 @@ Global
 		{A01C9B91-B6B4-4D99-8B44-8C30C37396C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A01C9B91-B6B4-4D99-8B44-8C30C37396C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A01C9B91-B6B4-4D99-8B44-8C30C37396C7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DE02827A-E18C-4577-973E-059799ADD922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE02827A-E18C-4577-973E-059799ADD922}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE02827A-E18C-4577-973E-059799ADD922}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE02827A-E18C-4577-973E-059799ADD922}.Release|Any CPU.Build.0 = Release|Any CPU
-		{66D90E77-288C-4694-B255-04FE36F286EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{66D90E77-288C-4694-B255-04FE36F286EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{66D90E77-288C-4694-B255-04FE36F286EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{66D90E77-288C-4694-B255-04FE36F286EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{27FCEB2E-2D8F-4083-8CA8-901F2E790DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{27FCEB2E-2D8F-4083-8CA8-901F2E790DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{27FCEB2E-2D8F-4083-8CA8-901F2E790DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{27FCEB2E-2D8F-4083-8CA8-901F2E790DF6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{48227305-6B0C-4790-AABA-2877D033FFCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{48227305-6B0C-4790-AABA-2877D033FFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{48227305-6B0C-4790-AABA-2877D033FFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{48227305-6B0C-4790-AABA-2877D033FFCF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8D4A0267-6B34-43DA-AE41-91CA53BE417D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D4A0267-6B34-43DA-AE41-91CA53BE417D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D4A0267-6B34-43DA-AE41-91CA53BE417D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D4A0267-6B34-43DA-AE41-91CA53BE417D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BD4D36E4-EC3C-478E-9836-72B82919DBA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BD4D36E4-EC3C-478E-9836-72B82919DBA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD4D36E4-EC3C-478E-9836-72B82919DBA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD4D36E4-EC3C-478E-9836-72B82919DBA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{391BC03E-B867-4529-91A9-17B3F2AC3848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{391BC03E-B867-4529-91A9-17B3F2AC3848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{391BC03E-B867-4529-91A9-17B3F2AC3848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{391BC03E-B867-4529-91A9-17B3F2AC3848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDEEA8A0-C72D-4C72-A641-CBF06B4F0A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDEEA8A0-C72D-4C72-A641-CBF06B4F0A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDEEA8A0-C72D-4C72-A641-CBF06B4F0A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDEEA8A0-C72D-4C72-A641-CBF06B4F0A09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9141CB49-DA79-40BE-A66F-360F238ACB20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9141CB49-DA79-40BE-A66F-360F238ACB20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9141CB49-DA79-40BE-A66F-360F238ACB20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9141CB49-DA79-40BE-A66F-360F238ACB20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E90ACFB-1F99-44A3-9DA7-207E9EC71A01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E90ACFB-1F99-44A3-9DA7-207E9EC71A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E90ACFB-1F99-44A3-9DA7-207E9EC71A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E90ACFB-1F99-44A3-9DA7-207E9EC71A01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6522B40-05AA-4FB1-9AF0-2FAA19922E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6522B40-05AA-4FB1-9AF0-2FAA19922E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6522B40-05AA-4FB1-9AF0-2FAA19922E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6522B40-05AA-4FB1-9AF0-2FAA19922E02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0A530DC-541E-41A0-B258-01312E4E5804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0A530DC-541E-41A0-B258-01312E4E5804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0A530DC-541E-41A0-B258-01312E4E5804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0A530DC-541E-41A0-B258-01312E4E5804}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

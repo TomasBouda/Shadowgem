@@ -68,7 +68,7 @@ namespace TomLabs.Shadowgem.Common
 		/// <returns>A string that represents XML, empty otherwise</returns>
 		public static string XmlSerialize<T>(this T obj) where T : class, new()
 		{
-			if (obj == null) throw new ArgumentNullException("obj");
+			if (obj == null) throw new ArgumentNullException(nameof(obj));
 
 			var serializer = new XmlSerializer(typeof(T));
 			using (var writer = new StringWriter())
@@ -84,7 +84,7 @@ namespace TomLabs.Shadowgem.Common
 		/// <returns>A new object of type T if successful, null if failed</returns>
 		public static T XmlDeserialize<T>(this string xml) where T : class, new()
 		{
-			if (xml == null) throw new ArgumentNullException("xml");
+			if (xml == null) throw new ArgumentNullException(nameof(xml));
 
 			var serializer = new XmlSerializer(typeof(T));
 			using (var reader = new StringReader(xml))

@@ -10,18 +10,22 @@
     <PackageTags>extension helper methods utility library</PackageTags>
     <RepositoryType>git</RepositoryType>
     <Copyright>Copyright 2018 TomLabs</Copyright>
-    <PackageLicenseUrl>https://github.com/TomasBouda/Shadowgem/blob/master/LICENSE</PackageLicenseUrl>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard2.0\TomLabs.Shadowgem.Misc.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.0\TomLabs.Shadowgem.Misc.xml</DocumentationFile>
     <Title>Shadowgem</Title>
     <PackageDescription>Library that provides extension and helper methods of all kinds.</PackageDescription>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\TomLabs.Shadowgem.Data.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\TomLabs.Shadowgem.Data.xml</DocumentationFile>
+  </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\TomLabs.Shadowgem\Misc\EnumExtensions.cs" Link="EnumExtensions.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Data\DataTableExtensions.cs" Link="DataTableExtensions.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Data\JsonExtensions.cs" Link="JsonExtensions.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Data\XmlExtensions.cs" Link="XmlExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   </ItemGroup>
 </Project>

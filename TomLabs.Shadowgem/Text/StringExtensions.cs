@@ -6,7 +6,7 @@ using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace TomLabs.Shadowgem.String
+namespace TomLabs.Shadowgem.Text
 {
 	/// <summary>
 	/// Provides extension methods applied to <see cref="string"/>
@@ -221,13 +221,29 @@ namespace TomLabs.Shadowgem.String
 		}
 
 		/// <summary>
-		/// Inverse function of IsNullOrEmpty
+		/// Indicates whether the specified string is NOT null or an System.String.Empty string.
+		/// <para>
+		/// Inverse function of <see cref="string.IsNullOrEmpty(string)"/>
+		/// </para>
 		/// </summary>
 		/// <param name="s"></param>
-		/// <returns></returns>
+		/// <returns>false if the value parameter is null or an empty string (""); otherwise, true.</returns>
 		public static bool IsFilled(this string s)
 		{
 			return !string.IsNullOrEmpty(s);
+		}
+
+		/// <summary>
+		/// Indicates whether the specified string is null or an System.String.Empty string.
+		/// <para>
+		/// Shortcut for <see cref="string.IsNullOrEmpty(string)"/>
+		/// </para>
+		/// </summary>
+		/// <param name="s"></param>
+		/// <returns>true if the value parameter is null or an empty string (""); otherwise, false.</returns>
+		public static bool IsNullOrEmpty(this string s)
+		{
+			return string.IsNullOrEmpty(s);
 		}
 
 		/// <summary>
@@ -311,7 +327,6 @@ namespace TomLabs.Shadowgem.String
 		{
 			return Regex.Replace(s, pattern, replacement, regexOptions);
 		}
-
 
 		/// <summary>
 		/// Removes all whitespace char from given string using <see cref="Regex.Replace(string, string, string)"/>
@@ -445,6 +460,64 @@ namespace TomLabs.Shadowgem.String
 				return false;
 		}
 
+		/// <summary>
+		/// Converts text with spaces to PascalCaseText
+		/// </summary>
+		/// <param name="text"></param>
+		/// <returns></returns>
+		public static string ToPascalCase(this string text)
+		{
+			TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+
+			return $"{(text.Contains(" ") ? textInfo.ToTitleCase(text) : text)}".Replace(" ", "");
+		}
+
+		/// <summary>
+		///
+		/// </summary>
+		/// <param name="text"></param>
+		/// <returns></returns>
+		public static string ToUpperUnderscored(this string text)
+		{
+			return text.ReplaceRgx(@"([A-Z])([A-Z][a-z])|([a-z0-9])([A-Z])", "$1$3_$2$4").ToUpper();
+		}
+
+		/// <summary>
+		///
+		/// </summary>
+		/// <param name="str"></param>
+		/// <returns></returns>
+		public static string RemoveSpecialCharacters(this string str)
+		{
+			var sb = new StringBuilder();
+			foreach (char c in str)
+			{
+				if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '.' || c == '_')
+				{
+					sb.Append(c);
+				}
+			}
+			return sb.ToString();
+		}
+
+		public static string ToBase64(this string plainText)
+		{
+			var plainTextBytes = Encoding.UTF8.GetBytes(plainText);
+			return System.Convert.ToBase64String(plainTextBytes);
+		}
+
+		public static string FromBase64(this string base64EncodedData)
+		{
+			var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
+			return Encoding.UTF8.GetString(base64EncodedBytes);
+		}
+
+		public static bool ToBool(this string s)
+		{
+			bool.TryParse(s, out var res);
+			return res;
+		}
+
 		#region HTMLHelper
 
 		/// <summary>
@@ -481,6 +554,7 @@ namespace TomLabs.Shadowgem.String
 		{
 			return System.Net.WebUtility.UrlDecode(url);
 		}
-		#endregion
+
+		#endregion HTMLHelper
 	}
 }

@@ -3,25 +3,24 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Tomáš Bouda</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.0</Version>
+    <Version>1.0.0</Version>
     <PackageProjectUrl>https://github.com/TomasBouda/Shadowgem</PackageProjectUrl>
     <PackageIconUrl>https://cdn.rawgit.com/TomasBouda/Shadowgem/0bc7f080/TomLabs.Shadowgem/shadowgem.jpg?raw=true</PackageIconUrl>
     <RepositoryUrl>https://github.com/TomasBouda/Shadowgem</RepositoryUrl>
     <PackageTags>extension helper methods utility library</PackageTags>
     <RepositoryType>git</RepositoryType>
     <Copyright>Copyright 2018 TomLabs</Copyright>
-    <PackageLicenseUrl>https://github.com/TomasBouda/Shadowgem/blob/master/LICENSE</PackageLicenseUrl>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard2.0\TomLabs.Shadowgem.Misc.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.0\TomLabs.Shadowgem.Misc.xml</DocumentationFile>
-    <Title>Shadowgem</Title>
+    <Title>{0}</Title>
     <PackageDescription>Library that provides extension and helper methods of all kinds.</PackageDescription>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\{0}.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\{0}.xml</DocumentationFile>
+  </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\TomLabs.Shadowgem\Misc\EnumExtensions.cs" Link="EnumExtensions.cs" />
+    {1}
   </ItemGroup>
 </Project>

@@ -19,10 +19,6 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TomLabs.Shadowgem.Common\TomLabs.Shadowgem.Common.csproj" />
-    <ProjectReference Include="..\TomLabs.Shadowgem.Helpers\TomLabs.Shadowgem.Helpers.csproj" />
-    <ProjectReference Include="..\TomLabs.Shadowgem.Misc\TomLabs.Shadowgem.Misc.csproj" />
-    <ProjectReference Include="..\TomLabs.Shadowgem.String\TomLabs.Shadowgem.String.csproj" />
-    <ProjectReference Include="..\TomLabs.Shadowgem.Types\TomLabs.Shadowgem.Types.csproj" />
+    <ProjectReference Include="..\TomLabs.Shadowgem\TomLabs.Shadowgem.csproj" />
   </ItemGroup>
 </Project>
