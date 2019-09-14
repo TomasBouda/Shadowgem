@@ -27,7 +27,7 @@ namespace TomLabs.Shadowgem.Misc
 		}
 
 		/// <summary>
-		/// Converts <see cref="DataTable"/> to formated string 
+		/// Converts <see cref="DataTable"/> to formated string
 		/// </summary>
 		/// <param name="dataTable"></param>
 		/// <returns></returns>
@@ -81,7 +81,6 @@ namespace TomLabs.Shadowgem.Misc
 		{
 			int diff = maxLength - text.Length;
 			return new string(' ', diff / 2) + text + new string(' ', (int)(diff / 2.0 + 0.5));
-
 		}
 	}
 }

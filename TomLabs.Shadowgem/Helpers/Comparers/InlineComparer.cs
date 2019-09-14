@@ -24,7 +24,7 @@ namespace TomLabs.Shadowgem.Helpers.Comparers
 		}
 
 		/// <summary>
-		/// 
+		///
 		/// </summary>
 		/// <param name="x"></param>
 		/// <param name="y"></param>
@@ -35,7 +35,7 @@ namespace TomLabs.Shadowgem.Helpers.Comparers
 		}
 
 		/// <summary>
-		/// 
+		///
 		/// </summary>
 		/// <param name="obj"></param>
 		/// <returns></returns>

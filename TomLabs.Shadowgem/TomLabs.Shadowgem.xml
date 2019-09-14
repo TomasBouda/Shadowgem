@@ -6,12 +6,12 @@
     <members>
         <member name="T:TomLabs.Shadowgem.Collections.LinkedListExtensions">
             <summary>
-            <see cref="T:System.Collections.Generic.LinkedList`1"/> related extensions
+            <see cref="T:System.Collections.Generic.LinkedList`1" /> related extensions
             </summary>
         </member>
         <member name="M:TomLabs.Shadowgem.Collections.LinkedListExtensions.NextOrFirst``1(System.Collections.Generic.LinkedListNode{``0},System.Func{``0,System.Boolean})">
             <summary>
-            Returns next or first element from given <see cref="T:System.Collections.Generic.LinkedList`1"/> that satisfies a specified condition
+            Returns next or first element from given <see cref="T:System.Collections.Generic.LinkedList`1" /> that satisfies a specified condition
             </summary>
             <typeparam name="T"></typeparam>
             <param name="current"></param>
@@ -20,7 +20,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Collections.LinkedListExtensions.NextOrFirst``1(System.Collections.Generic.LinkedListNode{``0})">
             <summary>
-            Returns next or first element from given <see cref="T:System.Collections.Generic.LinkedList`1"/>
+            Returns next or first element from given <see cref="T:System.Collections.Generic.LinkedList`1" />
             </summary>
             <typeparam name="T"></typeparam>
             <param name="current"></param>
@@ -28,7 +28,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Collections.LinkedListExtensions.PreviousOrLast``1(System.Collections.Generic.LinkedListNode{``0})">
             <summary>
-            Returns previous or last element from given <see cref="T:System.Collections.Generic.LinkedList`1"/>
+            Returns previous or last element from given <see cref="T:System.Collections.Generic.LinkedList`1" />
             </summary>
             <typeparam name="T"></typeparam>
             <param name="current"></param>
@@ -36,7 +36,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Collections.LinkedListExtensions.PreviousOrLast``1(System.Collections.Generic.LinkedListNode{``0},System.Func{``0,System.Boolean})">
             <summary>
-            Returns previous or last element from given <see cref="T:System.Collections.Generic.LinkedList`1"/> that satisfies a specified condition
+            Returns previous or last element from given <see cref="T:System.Collections.Generic.LinkedList`1" /> that satisfies a specified condition
             </summary>
             <typeparam name="T"></typeparam>
             <param name="current"></param>
@@ -63,7 +63,7 @@
         </member>
         <member name="T:TomLabs.Shadowgem.Collections.LinqExtensions">
             <summary>
-            <see cref="N:System.Linq"/> related extension methods
+            <see cref="N:System.Linq" /> related extension methods
             <para></para>
             </summary>
         </member>
@@ -109,7 +109,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.ToCollection``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
-            Convert a <see cref="T:System.Collections.Generic.IEnumerable`1"/>to a <see cref="T:System.Collections.ObjectModel.Collection`1"/>
+            Convert a <see cref="T:System.Collections.Generic.IEnumerable`1" />to a <see cref="T:System.Collections.ObjectModel.Collection`1" />
             </summary>
             <typeparam name="T"></typeparam>
             <param name="enumerable"></param>
@@ -117,7 +117,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.OrderBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Boolean)">
             <summary>
-            <see cref="M:System.Linq.Enumerable.OrderBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})"/> and <see cref="M:System.Linq.Enumerable.OrderByDescending``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})"/> shortcut
+            <see cref="M:System.Linq.Enumerable.OrderBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})" /> and <see cref="M:System.Linq.Enumerable.OrderByDescending``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})" /> shortcut
             </summary>
             <typeparam name="TSource"></typeparam>
             <typeparam name="TKey"></typeparam>
@@ -152,7 +152,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.Filter``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
             <summary>
-            Allows you to filter an <see cref="T:System.Collections.Generic.IEnumerable`1"/>
+            Allows you to filter an <see cref="T:System.Collections.Generic.IEnumerable`1" />
             http://www.extensionmethod.net/csharp/ienumerable-t/filter
             </summary>
             <typeparam name="T"></typeparam>
@@ -162,7 +162,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.Concat``1(System.Collections.Generic.IEnumerable{``0},``0)">
             <summary>
-            Adds an element to an <see cref="T:System.Collections.Generic.IEnumerable`1"/>
+            Adds an element to an <see cref="T:System.Collections.Generic.IEnumerable`1" />
             </summary>
             <typeparam name="T"></typeparam>
             <param name="target"></param>
@@ -171,8 +171,8 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.JoinItems``1(``0,System.String)">
             <summary>
-            Concatenates the members of a constructed <see cref="T:System.Collections.Generic.IEnumerable`1"/>
-                collection of type <see cref="T:System.String"/>, using the specified separator between each
+            Concatenates the members of a constructed <see cref="T:System.Collections.Generic.IEnumerable`1" />
+                collection of type <see cref="T:System.String" />, using the specified separator between each
                 member.
             </summary>
             <typeparam name="T"></typeparam>
@@ -182,7 +182,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.AddRangeSafe``1(System.Collections.Generic.List{``0},System.Collections.Generic.List{``0})">
             <summary>
-            Calls <see cref="M:System.Collections.Generic.List`1.AddRange(System.Collections.Generic.IEnumerable{`0})"/> only if source <see cref="T:System.Collections.Generic.List`1"/> is not <c>null</c> and not empty
+            Calls <see cref="M:System.Collections.Generic.List`1.AddRange(System.Collections.Generic.IEnumerable{`0})" /> only if source <see cref="T:System.Collections.Generic.List`1" /> is not <c>null</c> and not empty
             </summary>
             <typeparam name="T"></typeparam>
             <param name="list"></param>
@@ -190,7 +190,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.ToObservable``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
-            Converts <see cref="T:System.Collections.Generic.IEnumerable`1"/> into <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>
+            Converts <see cref="T:System.Collections.Generic.IEnumerable`1" /> into <see cref="T:System.Collections.ObjectModel.ObservableCollection`1" />
             </summary>
             <typeparam name="T"></typeparam>
             <param name="list"></param>
@@ -198,7 +198,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.Remove``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
             <summary>
-            Removes <see cref="T:System.Collections.Generic.IEnumerable`1"/> collection from given <see cref="T:System.Collections.Generic.ICollection`1"/>
+            Removes <see cref="T:System.Collections.Generic.IEnumerable`1" /> collection from given <see cref="T:System.Collections.Generic.ICollection`1" />
             </summary>
             <typeparam name="T"></typeparam>
             <param name="list"></param>
@@ -236,8 +236,8 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.Match(System.String,System.String)">
             <summary>
-            Indicates whether the regular expression specified by <paramref name="pattern"/>
-                finds a match in a specified input <see cref="T:System.String"/>.
+            Indicates whether the regular expression specified by <paramref name="pattern" />
+                finds a match in a specified input <see cref="T:System.String" />.
             </summary>
             <param name="value"></param>
             <param name="pattern"></param>
@@ -265,7 +265,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.ToCurrency(System.Double,System.String)">
             <summary>
-            Returns given <see cref="T:System.Decimal"/> value formated as currency
+            Returns given <see cref="T:System.Decimal" /> value formated as currency
             </summary>
             <param name="value"></param>
             <param name="cultureName"></param>
@@ -273,7 +273,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.IsNullOrEmpty``1(``0)">
             <summary>
-            Shortcut for <see cref="M:System.String.IsNullOrWhiteSpace(System.String)"/>
+            Shortcut for <see cref="M:System.String.IsNullOrWhiteSpace(System.String)" />
             </summary>
             <typeparam name="T"></typeparam>
             <param name="obj"></param>
@@ -298,7 +298,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.IsNull(System.Object)">
             <summary>
-            <paramref name="object"/> == null
+            <paramref name="object" /> == null
             </summary>
             <param name="object"></param>
             <returns></returns>
@@ -319,7 +319,7 @@
         </member>
         <member name="T:TomLabs.Shadowgem.Common.DateTimeExtensions">
             <summary>
-            <see cref="T:System.DateTime"/> related extension methods
+            <see cref="T:System.DateTime" /> related extension methods
             </summary>
         </member>
         <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.Elapsed(System.DateTime)">
@@ -424,7 +424,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.UnixTimeStampToDateTime(System.Double)">
             <summary>
-            Returns given unix timestamp as <see cref="T:System.DateTime"/>
+            Returns given unix timestamp as <see cref="T:System.DateTime" />
             </summary>
             <param name="unixTimeStamp"></param>
             <returns></returns>
@@ -436,7 +436,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Common.EnumExtensions.GetDescription``2(``0,System.Type)">
             <summary>
-            Returns <see cref="T:System.ComponentModel.DescriptionAttribute"/> value for enum
+            Returns <see cref="T:System.ComponentModel.DescriptionAttribute" /> value for enum
             </summary>
             <typeparam name="T"></typeparam>
             <typeparam name="U"></typeparam>
@@ -446,7 +446,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Common.EnumExtensions.GetDescription``1(``0)">
             <summary>
-            Returns <see cref="T:System.ComponentModel.DescriptionAttribute"/> value for enum
+            Returns <see cref="T:System.ComponentModel.DescriptionAttribute" /> value for enum
             </summary>
             <typeparam name="T"></typeparam>
             <param name="enumerationValue"></param>
@@ -454,19 +454,19 @@
         </member>
         <member name="T:TomLabs.Shadowgem.Misc.DataTableExtensions">
             <summary>
-            <see cref="T:System.Data.DataTable"/> related extension methods
+            <see cref="T:System.Data.DataTable" /> related extension methods
             </summary>
         </member>
         <member name="M:TomLabs.Shadowgem.Misc.DataTableExtensions.ToStringSingle(System.Data.DataTable)">
             <summary>
-            Converts <see cref="T:System.Data.DataTable"/> to string
+            Converts <see cref="T:System.Data.DataTable" /> to string
             </summary>
             <param name="dataTable"></param>
             <returns></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Misc.DataTableExtensions.ToFormatedString(System.Data.DataTable)">
             <summary>
-            Converts <see cref="T:System.Data.DataTable"/> to formated string 
+            Converts <see cref="T:System.Data.DataTable" /> to formated string
             </summary>
             <param name="dataTable"></param>
             <returns></returns>
@@ -485,28 +485,28 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Misc.XmlExtensions.ToXmlDocument(System.Xml.Linq.XDocument)">
             <summary>
-            Converts <see cref="T:System.Xml.Linq.XDocument"/> to <see cref="T:System.Xml.XmlDocument"/>
+            Converts <see cref="T:System.Xml.Linq.XDocument" /> to <see cref="T:System.Xml.XmlDocument" />
             </summary>
             <param name="xDocument"></param>
             <returns></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Misc.XmlExtensions.ToXDocument(System.Xml.XmlDocument)">
             <summary>
-            Converts <see cref="T:System.Xml.XmlDocument"/> to <see cref="T:System.Xml.Linq.XDocument"/>
+            Converts <see cref="T:System.Xml.XmlDocument" /> to <see cref="T:System.Xml.Linq.XDocument" />
             </summary>
             <param name="xmlDocument"></param>
             <returns></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Misc.XmlExtensions.ToXmlDocument(System.Xml.Linq.XElement)">
             <summary>
-            Converts <see cref="T:System.Xml.Linq.XElement"/> to <see cref="T:System.Xml.XmlDocument"/>
+            Converts <see cref="T:System.Xml.Linq.XElement" /> to <see cref="T:System.Xml.XmlDocument" />
             </summary>
             <param name="xElement"></param>
             <returns></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Misc.XmlExtensions.ToMemoryStream(System.Xml.XmlDocument)">
             <summary>
-            Converts <see cref="T:System.Xml.XmlDocument"/> to <see cref="T:System.IO.Stream"/>
+            Converts <see cref="T:System.Xml.XmlDocument" /> to <see cref="T:System.IO.Stream" />
             </summary>
             <param name="doc"></param>
             <returns></returns>
@@ -526,7 +526,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Data.JsonExtensions.ToJson``1(``0)">
             <summary>
-            Serializes the specified object to a JSON string using <see cref="M:Newtonsoft.Json.JsonConvert.SerializeObject(System.Object)"/>
+            Serializes the specified object to a JSON string using <see cref="M:Newtonsoft.Json.JsonConvert.SerializeObject(System.Object)" />
             </summary>
             <typeparam name="T"></typeparam>
             <param name="obj"></param>
@@ -534,7 +534,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Data.JsonExtensions.FromJson``1(System.String)">
             <summary>
-            Deserializes the specified object to a JSON string using <see cref="M:Newtonsoft.Json.JsonConvert.DeserializeObject``1(System.String)"/>
+            Deserializes the specified object to a JSON string using <see cref="M:Newtonsoft.Json.JsonConvert.DeserializeObject``1(System.String)" />
             </summary>
             <typeparam name="T"></typeparam>
             <param name="objStr"></param>
@@ -569,14 +569,13 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Helpers.Comparers.InlineComparer`1.#ctor(System.Func{`0,`0,System.Boolean},System.Func{`0,System.Int32})">
             <summary>
-            Creates instance of <see cref="T:TomLabs.Shadowgem.Helpers.Comparers.InlineComparer`1"/>
+            Creates instance of <see cref="T:TomLabs.Shadowgem.Helpers.Comparers.InlineComparer`1" />
             </summary>
             <param name="equals">Pass lambda expression for comparison <code>(t1, t2) => t1.Id == t2.Id</code></param>
             <param name="hashCode">Pass lambda expression for GetHashCode function. <code>i => i.Id.GetHashCode()</code></param>
         </member>
         <member name="M:TomLabs.Shadowgem.Helpers.Comparers.InlineComparer`1.Equals(`0,`0)">
             <summary>
-            
             </summary>
             <param name="x"></param>
             <param name="y"></param>
@@ -584,14 +583,13 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Helpers.Comparers.InlineComparer`1.GetHashCode(`0)">
             <summary>
-            
             </summary>
             <param name="obj"></param>
             <returns></returns>
         </member>
         <member name="T:TomLabs.Shadowgem.Helpers.Enums.EnumHelper`1">
             <summary>
-            Provides helper methods for <see cref="T:System.Enum"/>
+            Provides helper methods for <see cref="T:System.Enum" />
             </summary>
             <typeparam name="T"></typeparam>
         </member>
@@ -626,7 +624,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Helpers.IO.PathEx.GoUp(System.String,System.Int32)">
             <summary>
-            Goes up in given <paramref name="path"/>/directory tree by number of specified times(<paramref name="count"/>)
+            Goes up in given <paramref name="path" />/directory tree by number of specified times(<paramref name="count" />)
             </summary>
             <param name="path"></param>
             <param name="count"></param>
@@ -648,19 +646,19 @@
         </member>
         <member name="T:TomLabs.Shadowgem.Text.CharExtensions">
             <summary>
-            <see cref="T:System.Char"/> related extension methods
+            <see cref="T:System.Char" /> related extension methods
             </summary>
         </member>
         <member name="M:TomLabs.Shadowgem.Text.CharExtensions.ToUpper(System.Char)">
             <summary>
-            Shortcut for <see cref="M:System.Char.ToUpper(System.Char)"/>
+            Shortcut for <see cref="M:System.Char.ToUpper(System.Char)" />
             </summary>
             <param name="ch"></param>
             <returns></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Text.CharExtensions.ToLower(System.Char)">
             <summary>
-            Shortcut for <see cref="M:System.Char.ToLower(System.Char)"/>
+            Shortcut for <see cref="M:System.Char.ToLower(System.Char)" />
             </summary>
             <param name="ch"></param>
             <returns></returns>
@@ -776,7 +774,7 @@
         </member>
         <member name="T:TomLabs.Shadowgem.Text.StringExtensions">
             <summary>
-            Provides extension methods applied to <see cref="T:System.String"/>
+            Provides extension methods applied to <see cref="T:System.String" />
             </summary>
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.Like(System.String,System.String)">
@@ -807,7 +805,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.SplitRgx(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
             <summary>
-            Shortcut for <see cref="M:System.Text.RegularExpressions.Regex.Split(System.String)"/>
+            Shortcut for <see cref="M:System.Text.RegularExpressions.Regex.Split(System.String)" />
             </summary>
             <param name="s"></param>
             <param name="pattern"></param>
@@ -816,7 +814,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ReplaceRgx(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
             <summary>
-            Shortcut for <see cref="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)"/>
+            Shortcut for <see cref="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)" />
             </summary>
             <param name="s"></param>
             <param name="pattern"></param>
@@ -834,7 +832,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToInt(System.String,System.Int32)">
             <summary>
-            Converts given string to <see cref="T:System.Int32"/> or returns <paramref name="defaultValue"/>
+            Converts given string to <see cref="T:System.Int32" /> or returns <paramref name="defaultValue" />
             </summary>
             <param name="s"></param>
             <param name="defaultValue"></param>
@@ -842,7 +840,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToInt(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Int32)">
             <summary>
-            Converts given string to <see cref="T:System.Int32"/> or returns <paramref name="defaultValue"/>
+            Converts given string to <see cref="T:System.Int32" /> or returns <paramref name="defaultValue" />
             </summary>
             <param name="s"></param>
             <param name="style"></param>
@@ -852,7 +850,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToIntN(System.String,System.Nullable{System.Int32})">
             <summary>
-            Converts given string to <see cref="T:System.Nullable"/> <see cref="T:System.Int32"/> or returns <paramref name="defaultValue"/>
+            Converts given string to <see cref="T:System.Nullable" /> <see cref="T:System.Int32" /> or returns <paramref name="defaultValue" />
             </summary>
             <param name="s"></param>
             <param name="defaultValue"></param>
@@ -860,7 +858,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToIntN(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Nullable{System.Int32})">
             <summary>
-            Converts given string to <see cref="T:System.Nullable"/> <see cref="T:System.Int32"/> or returns <paramref name="defaultValue"/>
+            Converts given string to <see cref="T:System.Nullable" /> <see cref="T:System.Int32" /> or returns <paramref name="defaultValue" />
             </summary>
             <param name="s"></param>
             <param name="style"></param>
@@ -870,7 +868,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToDouble(System.String,System.Double)">
             <summary>
-            Converts given string to <see cref="T:System.Double"/> or returns <paramref name="defaultValue"/>
+            Converts given string to <see cref="T:System.Double" /> or returns <paramref name="defaultValue" />
             </summary>
             <param name="s"></param>
             <param name="defaultValue"></param>
@@ -878,7 +876,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToDouble(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Double)">
             <summary>
-            Converts given string to <see cref="T:System.Double"/> or returns <paramref name="defaultValue"/>
+            Converts given string to <see cref="T:System.Double" /> or returns <paramref name="defaultValue" />
             </summary>
             <param name="s"></param>
             <param name="style"></param>
@@ -888,7 +886,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToFloat(System.String,System.Single)">
             <summary>
-            Converts given string to <see cref="T:System.Single"/> or returns <paramref name="defaultValue"/>
+            Converts given string to <see cref="T:System.Single" /> or returns <paramref name="defaultValue" />
             </summary>
             <param name="s"></param>
             <param name="defaultValue"></param>
@@ -896,7 +894,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToFloat(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Single)">
             <summary>
-            Converts given string to <see cref="T:System.Single"/> or returns <paramref name="defaultValue"/>
+            Converts given string to <see cref="T:System.Single" /> or returns <paramref name="defaultValue" />
             </summary>
             <param name="s"></param>
             <param name="style"></param>
@@ -906,7 +904,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToDecimal(System.String,System.Decimal)">
             <summary>
-            Converts given string to <see cref="T:System.Decimal"/> or returns <paramref name="defaultValue"/>
+            Converts given string to <see cref="T:System.Decimal" /> or returns <paramref name="defaultValue" />
             </summary>
             <param name="text"></param>
             <param name="defaultValue"></param>
@@ -914,7 +912,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToDecimal(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Decimal)">
             <summary>
-            Converts given string to <see cref="T:System.Decimal"/> or returns <paramref name="defaultValue"/>
+            Converts given string to <see cref="T:System.Decimal" /> or returns <paramref name="defaultValue" />
             </summary>
             <param name="text"></param>
             <param name="style"></param>
@@ -924,7 +922,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToDate(System.String,System.DateTime)">
             <summary>
-            Converts given string to <see cref="T:System.DateTime"/> or returns <paramref name="defaultValue"/>
+            Converts given string to <see cref="T:System.DateTime" /> or returns <paramref name="defaultValue" />
             </summary>
             <param name="s"></param>
             <param name="defaultValue"></param>
@@ -932,7 +930,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToDate(System.String,System.Globalization.DateTimeStyles,System.IFormatProvider,System.DateTime)">
             <summary>
-            Converts given string to <see cref="T:System.DateTime"/> or returns <paramref name="defaultValue"/>
+            Converts given string to <see cref="T:System.DateTime" /> or returns <paramref name="defaultValue" />
             </summary>
             <param name="s"></param>
             <param name="style"></param>
@@ -942,14 +940,14 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToUri(System.String)">
             <summary>
-            Returns given string as <see cref="T:System.Uri"/>
+            Returns given string as <see cref="T:System.Uri" />
             </summary>
             <param name="s"></param>
             <returns></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToBool(System.String,System.Boolean)">
             <summary>
-            Converts given string to <see cref="T:System.Boolean"/> or returns <paramref name="defaultValue"/>
+            Converts given string to <see cref="T:System.Boolean" /> or returns <paramref name="defaultValue" />
             </summary>
             <param name="s"></param>
             <param name="defaultValue"></param>
@@ -980,7 +978,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.Parse``1(System.String)">
             <summary>
-            Parse a string to any other type including nullable types using <see cref="T:System.ComponentModel.TypeConverter"/>
+            Parse a string to any other type including nullable types using <see cref="T:System.ComponentModel.TypeConverter" />
             </summary>
             <typeparam name="T"></typeparam>
             <param name="value"></param>
@@ -1006,7 +1004,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsValidUrl(System.String)">
             <summary>
-            Determines whether given string is a valid URL using <see cref="T:System.Text.RegularExpressions.Regex"/>
+            Determines whether given string is a valid URL using <see cref="T:System.Text.RegularExpressions.Regex" />
             </summary>
             <returns>
             <c>true</c> if is valid URL otherwise returns <c>false</c>.
@@ -1014,7 +1012,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsValidEmailAddress(System.String)">
             <summary>
-            Determines whether given string is a valid email address  using <see cref="T:System.Text.RegularExpressions.Regex"/>
+            Determines whether given string is a valid email address  using <see cref="T:System.Text.RegularExpressions.Regex" />
             </summary>
             <returns>
             <c>true</c> if is valid email address otherwise returns <c>false</c>.
@@ -1024,7 +1022,7 @@
             <summary>
             Indicates whether the specified string is NOT null or an System.String.Empty string.
             <para>
-            Inverse function of <see cref="M:System.String.IsNullOrEmpty(System.String)"/>
+            Inverse function of <see cref="M:System.String.IsNullOrEmpty(System.String)" />
             </para>
             </summary>
             <param name="s"></param>
@@ -1034,7 +1032,7 @@
             <summary>
             Indicates whether the specified string is null or an System.String.Empty string.
             <para>
-            Shortcut for <see cref="M:System.String.IsNullOrEmpty(System.String)"/>
+            Shortcut for <see cref="M:System.String.IsNullOrEmpty(System.String)" />
             </para>
             </summary>
             <param name="s"></param>
@@ -1059,7 +1057,7 @@
             Capitalizes all words in a given sentence
             </summary>
             <param name="s"></param>
-            <param name="wordSeperator"><see cref="T:System.Text.RegularExpressions.Regex"/> pattern to split words</param>
+            <param name="wordSeperator"><see cref="T:System.Text.RegularExpressions.Regex" /> pattern to split words</param>
             <returns></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.CapitalizeWord(System.String)">
@@ -1071,7 +1069,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.RemoveWhitespaces(System.String)">
             <summary>
-            Removes all whitespace char from given string using <see cref="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.String)"/>
+            Removes all whitespace char from given string using <see cref="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.String)" />
             </summary>
             <param name="s"></param>
             <returns></returns>
@@ -1095,7 +1093,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ReplaceAll(System.String,System.Collections.Generic.ICollection{System.String},System.String)">
             <summary>
-            Replaces all occurrences of strings defined by <paramref name="sequencesToReplace"/> with given <paramref name="replaceWith"/>
+            Replaces all occurrences of strings defined by <paramref name="sequencesToReplace" /> with given <paramref name="replaceWith" />
             </summary>
             <param name="s"></param>
             <param name="sequencesToReplace">Collection of strings to replace</param>
@@ -1104,7 +1102,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ReplaceAll(System.String,System.String,System.String[])">
             <summary>
-            Replaces all occurrences of strings defined by <paramref name="toReplace"/> with given <paramref name="replaceWith"/>
+            Replaces all occurrences of strings defined by <paramref name="toReplace" /> with given <paramref name="replaceWith" />
             </summary>
             <param name="s"></param>
             <param name="replaceWith">String to replace with</param>
@@ -1113,7 +1111,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ReplaceAt(System.String,System.Int32,System.Char)">
             <summary>
-            Replaces <see cref="T:System.Char"/> at given position with given char
+            Replaces <see cref="T:System.Char" /> at given position with given char
             </summary>
             <param name="s"></param>
             <param name="pos"></param>
@@ -1167,17 +1165,17 @@
         </member>
         <member name="T:TomLabs.Shadowgem.Types.Attributes.CopyFromIgnoreAttribute">
             <summary>
-             Attribute for marking properties to exclude them from copy from - <see cref="M:TomLabs.Shadowgem.Types.ReflectionExtensions.CopyFrom``1(``0,``0)"/>
+             Attribute for marking properties to exclude them from copy from - <see cref="M:TomLabs.Shadowgem.Types.ReflectionExtensions.CopyFrom``1(``0,``0)" />
             </summary>
         </member>
         <member name="T:TomLabs.Shadowgem.Types.Attributes.DeepCloneIgnoreAttribute">
             <summary>
-            Attribute for marking properties to exclude them from deep clone - <see cref="M:TomLabs.Shadowgem.Types.ReflectionExtensions.DeepClone``1(``0,System.Nullable{System.Reflection.BindingFlags},System.Func{System.Reflection.PropertyInfo,System.Boolean},System.String[])"/>
+            Attribute for marking properties to exclude them from deep clone - <see cref="M:TomLabs.Shadowgem.Types.ReflectionExtensions.DeepClone``1(``0,System.Nullable{System.Reflection.BindingFlags},System.Func{System.Reflection.PropertyInfo,System.Boolean},System.String[])" />
             </summary>
         </member>
         <member name="T:TomLabs.Shadowgem.Types.PropertyTree">
             <summary>
-            Class for storing property tree that is constructed by <see cref="M:TomLabs.Shadowgem.Types.TypeExtensions.CreatePropertyTree(System.Type,System.Object,System.Type[])"/> for given <see cref="P:TomLabs.Shadowgem.Types.PropertyTree.Type"/>
+            Class for storing property tree that is constructed by <see cref="M:TomLabs.Shadowgem.Types.TypeExtensions.CreatePropertyTree(System.Type,System.Object,System.Type[])" /> for given <see cref="P:TomLabs.Shadowgem.Types.PropertyTree.Type" />
             </summary>
         </member>
         <member name="P:TomLabs.Shadowgem.Types.PropertyTree.Name">
@@ -1202,12 +1200,12 @@
         </member>
         <member name="P:TomLabs.Shadowgem.Types.PropertyTree.ChildProperties">
             <summary>
-            Child properties if property is not simple type <seealso cref="M:TomLabs.Shadowgem.Types.TypeExtensions.IsSimple(System.Type)"/>
+            Child properties if property is not simple type <seealso cref="M:TomLabs.Shadowgem.Types.TypeExtensions.IsSimple(System.Type)" />
             </summary>
         </member>
         <member name="M:TomLabs.Shadowgem.Types.PropertyTree.#ctor(System.String,System.Type,System.Object,System.Collections.Generic.List{TomLabs.Shadowgem.Types.PropertyTree})">
             <summary>
-            Constructs <see cref="T:TomLabs.Shadowgem.Types.PropertyTree"/>
+            Constructs <see cref="T:TomLabs.Shadowgem.Types.PropertyTree" />
             </summary>
             <param name="name"></param>
             <param name="type"></param>
@@ -1221,7 +1219,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Types.ReflectionExtensions.CopyFrom``1(``0,``0)">
             <summary>
-            Copies properties not marked with <see cref="T:TomLabs.Shadowgem.Types.Attributes.CopyFromIgnoreAttribute"/> from one object to another
+            Copies properties not marked with <see cref="T:TomLabs.Shadowgem.Types.Attributes.CopyFromIgnoreAttribute" /> from one object to another
             </summary>
             <typeparam name="T"></typeparam>
             <param name="to"></param>
@@ -1239,19 +1237,19 @@
         </member>
         <member name="T:TomLabs.Shadowgem.Types.TypeExtensions">
             <summary>
-            <see cref="T:System.Type"/> related extension methods
+            <see cref="T:System.Type" /> related extension methods
             </summary>
         </member>
         <member name="M:TomLabs.Shadowgem.Types.TypeExtensions.IsSimple(System.Type)">
             <summary>
-            Returns <c>true</c> if given <see cref="T:System.Type"/> is primitive or Enum or <see cref="T:System.String"/> or <see cref="T:System.Decimal"/> or <see cref="T:System.DateTime"/>
+            Returns <c>true</c> if given <see cref="T:System.Type" /> is primitive or Enum or <see cref="T:System.String" /> or <see cref="T:System.Decimal" /> or <see cref="T:System.DateTime" />
             </summary>
             <param name="type"></param>
             <returns></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Types.TypeExtensions.CreatePropertyTree(System.Type,System.Object,System.Type[])">
             <summary>
-            Creates property tree from given <see cref="T:System.Type"/>
+            Creates property tree from given <see cref="T:System.Type" />
             </summary>
             <param name="type"></param>
             <param name="refObject"></param>

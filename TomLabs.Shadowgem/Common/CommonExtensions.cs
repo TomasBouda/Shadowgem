@@ -194,7 +194,9 @@ namespace TomLabs.Shadowgem.Common
 				return (attr.HasFlag(FileAttributes.Directory));
 			}
 			else
+			{
 				return false;
+			}
 		}
 
 		/// <summary>
@@ -210,7 +212,9 @@ namespace TomLabs.Shadowgem.Common
 				return !(attr.HasFlag(FileAttributes.Directory));
 			}
 			else
+			{
 				return false;
+			}
 		}
 	}
 }

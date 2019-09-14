@@ -92,7 +92,7 @@ namespace TomLabs.Shadowgem.Misc
 		{
 			var xmlStream = new MemoryStream();
 			doc.Save(xmlStream);
-			xmlStream.Flush();  //	Adjust this if you want read your data 
+			xmlStream.Flush();  //	Adjust this if you want read your data
 			xmlStream.Position = 0;
 			return xmlStream;
 		}

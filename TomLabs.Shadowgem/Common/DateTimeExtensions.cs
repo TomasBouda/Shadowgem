@@ -9,6 +9,7 @@ namespace TomLabs.Shadowgem.Common
 	public static class DateTimeExtensions
 	{
 		#region Elapsed extension
+
 		/// <summary>
 		/// Elapsed the time.
 		/// </summary>
@@ -18,9 +19,11 @@ namespace TomLabs.Shadowgem.Common
 		{
 			return DateTime.Now - datetime;
 		}
-		#endregion
+
+		#endregion Elapsed extension
 
 		#region Week of year
+
 		/// <summary>
 		/// Weeks the of year.
 		/// </summary>
@@ -33,6 +36,7 @@ namespace TomLabs.Shadowgem.Common
 			CultureInfo ciCurr = CultureInfo.CurrentCulture;
 			return ciCurr.Calendar.GetWeekOfYear(datetime, weekrule, firstDayOfWeek);
 		}
+
 		/// <summary>
 		/// Weeks the of year.
 		/// </summary>
@@ -45,6 +49,7 @@ namespace TomLabs.Shadowgem.Common
 			CalendarWeekRule weekrule = dateinf.CalendarWeekRule;
 			return WeekOfYear(datetime, weekrule, firstDayOfWeek);
 		}
+
 		/// <summary>
 		/// Weeks the of year.
 		/// </summary>
@@ -57,6 +62,7 @@ namespace TomLabs.Shadowgem.Common
 			DayOfWeek firstDayOfWeek = dateinf.FirstDayOfWeek;
 			return WeekOfYear(datetime, weekrule, firstDayOfWeek);
 		}
+
 		/// <summary>
 		/// Weeks the of year.
 		/// </summary>
@@ -69,9 +75,11 @@ namespace TomLabs.Shadowgem.Common
 			DayOfWeek firstDayOfWeek = dateinf.FirstDayOfWeek;
 			return WeekOfYear(datetime, weekrule, firstDayOfWeek);
 		}
-		#endregion
+
+		#endregion Week of year
 
 		#region Get Datetime for Day of Week
+
 		/// <summary>
 		/// Gets the date time for day of week.
 		/// </summary>
@@ -135,7 +143,8 @@ namespace TomLabs.Shadowgem.Common
 			if (daysbetween < 0) daysbetween = 7 + daysbetween;
 			return daysbetween;
 		}
-		#endregion
+
+		#endregion Get Datetime for Day of Week
 
 		/// <summary>
 		/// Figure out if DateTime holds a date value that is a weekend
