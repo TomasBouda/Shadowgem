@@ -14,16 +14,59 @@ namespace TomLabs.Shadowgem.Text.Encription
 		/// </summary>
 		public enum EHashType
 		{
+			/// <summary>
+			/// Keyed-hash Message Authentication Code
+			/// </summary>
 			HMAC,
+
+			/// <summary>
+			/// Hash-based Message Authentication Code (HMAC) by using the MD5 hash function
+			/// </summary>
 			HMACMD5,
+
+			/// <summary>
+			/// Hash-based Message Authentication Code (HMAC) using the SHA1 hash function
+			/// </summary>
 			HMACSHA1,
+
+			/// <summary>
+			/// Hash-based Message Authentication Code (HMAC) by using the SHA256 hash function
+			/// </summary>
 			HMACSHA256,
+
+			/// <summary>
+			/// Hash-based Message Authentication Code (HMAC) by using the SHA384 hash function
+			/// </summary>
 			HMACSHA384,
+
+			/// <summary>
+			/// Hash-based Message Authentication Code (HMAC) by using the SHA512 hash function
+			/// </summary>
 			HMACSHA512,
+
+			/// <summary>
+			/// Message Authentication Code (MAC) using TripleDES
+			/// </summary>
 			MACTripleDES,
+
+			/// <summary>
+			/// MD160 hash algorithm
+			/// </summary>
 			RIPEMD160,
+
+			/// <summary>
+			/// Secure Hash Algorithm 256
+			/// </summary>
 			SHA256,
+
+			/// <summary>
+			/// Secure Hash Algorithm 384
+			/// </summary>
 			SHA384,
+
+			/// <summary>
+			/// Secure Hash Algorithm 512
+			/// </summary>
 			SHA512,
 
 			/// <summary>
@@ -66,10 +109,14 @@ namespace TomLabs.Shadowgem.Text.Encription
 				case EHashType.HMACSHA512:
 					return HMACSHA512.Create().ComputeHash(inputBytes);
 
+#pragma warning disable CS0618 // Type or member is obsolete
 				case EHashType.MD5:
+#pragma warning restore CS0618 // Type or member is obsolete
 					return MD5.Create().ComputeHash(inputBytes);
 
+#pragma warning disable CS0618 // Type or member is obsolete
 				case EHashType.SHA1:
+#pragma warning restore CS0618 // Type or member is obsolete
 					return SHA1.Create().ComputeHash(inputBytes);
 
 				case EHashType.SHA256:

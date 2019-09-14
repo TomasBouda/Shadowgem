@@ -106,47 +106,10 @@ namespace TomLabs.Shadowgem.Collections
 		/// <param name="mapFunction"></param>
 		public static void ForEach<T>(this IEnumerable<T> list, Action<T> mapFunction)
 		{
-			foreach (var item in list) mapFunction(item);
-		}
-
-		/// <summary>
-		/// Orders Enumerable using given sort expression
-		/// Example: users.OrderBy("Name desc")
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="list"></param>
-		/// <param name="sortExpression">Property and sort direction</param>
-		/// <returns></returns>
-		public static IEnumerable<T> OrderBy<T>(this IEnumerable<T> list, string sortExpression)
-		{
-			sortExpression += "";
-			string[] parts = sortExpression.Split(' ');
-			bool descending = false;
-			string property = "";
-
-			if (parts.Length > 0 && parts[0] != "")
+			foreach (var item in list)
 			{
-				property = parts[0];
-
-				if (parts.Length > 1)
-				{
-					descending = parts[1].ToLower().Contains("esc");
-				}
-
-				PropertyInfo prop = typeof(T).GetProperty(property);
-
-				if (prop == null)
-				{
-					throw new Exception("No property '" + property + "' in + " + typeof(T).Name + "'");
-				}
-
-				if (descending)
-					return list.OrderByDescending(x => prop.GetValue(x, null));
-				else
-					return list.OrderBy(x => prop.GetValue(x, null));
+				mapFunction(item);
 			}
-
-			return list;
 		}
 
 		/// <summary>
@@ -159,7 +122,7 @@ namespace TomLabs.Shadowgem.Collections
 		{
 			Random r = new Random();
 
-			return target.OrderBy(x => (r.Next()));
+			return target.OrderBy(t => r.Next());
 		}
 
 		/// <summary>
@@ -172,7 +135,10 @@ namespace TomLabs.Shadowgem.Collections
 		{
 			var collection = new Collection<T>();
 			foreach (T i in enumerable)
+			{
 				collection.Add(i);
+			}
+
 			return collection;
 		}
 
@@ -281,7 +247,11 @@ namespace TomLabs.Shadowgem.Collections
 		/// <returns></returns>
 		public static IEnumerable<T> Concat<T>(this IEnumerable<T> target, T element)
 		{
-			foreach (T e in target) yield return e;
+			foreach (T e in target)
+			{
+				yield return e;
+			}
+
 			yield return element;
 		}
 

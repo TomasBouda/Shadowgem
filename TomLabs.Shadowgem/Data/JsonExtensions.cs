@@ -3,6 +3,9 @@ using System;
 
 namespace TomLabs.Shadowgem.Data
 {
+	/// <summary>
+	/// Json related extensions
+	/// </summary>
 	public static class JsonExtensions
 	{
 		/// <summary>
@@ -26,7 +29,11 @@ namespace TomLabs.Shadowgem.Data
 		/// <returns></returns>
 		public static string ToJson<T>(this T obj) where T : class, new()
 		{
-			if (obj == null) return null;
+			if (obj == null)
+			{
+				return null;
+			}
+
 			try
 			{
 				return JsonConvert.SerializeObject(obj);
@@ -45,7 +52,11 @@ namespace TomLabs.Shadowgem.Data
 		/// <returns></returns>
 		public static T FromJson<T>(this string objStr) where T : class, new()
 		{
-			if (string.IsNullOrEmpty(objStr)) return null;
+			if (string.IsNullOrEmpty(objStr))
+			{
+				return null;
+			}
+
 			try
 			{
 				return JsonConvert.DeserializeObject<T>(objStr);

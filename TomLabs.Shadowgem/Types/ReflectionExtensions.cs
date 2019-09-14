@@ -6,8 +6,17 @@ using TomLabs.Shadowgem.Types.Attributes;
 
 namespace TomLabs.Shadowgem.Types
 {
+	/// <summary>
+	/// Reflection related extensions
+	/// </summary>
 	public static class ReflectionExtensions
 	{
+		/// <summary>
+		/// Copies properties not marked with <see cref="CopyFromIgnoreAttribute"/> from one object to another
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="to"></param>
+		/// <param name="from"></param>
 		public static void CopyFrom<T>(this T to, T from)
 		{
 			foreach (var prop in from.GetType().GetProperties().Where(p => p.GetCustomAttribute<CopyFromIgnoreAttribute>() == null))
@@ -36,7 +45,7 @@ namespace TomLabs.Shadowgem.Types
 				.Where(p =>
 					p.GetCustomAttribute<DeepCloneIgnoreAttribute>() == null
 					&& (customPredicate?.Invoke(p) ?? true)
-					&& (excludedPropertyNames == null || (excludedPropertyNames != null && !excludedPropertyNames.Contains(p.Name)))
+					&& (excludedPropertyNames == null || (!excludedPropertyNames.Contains(p.Name)))
 					)
 				.ToArray();
 

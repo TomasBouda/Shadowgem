@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -14,7 +15,7 @@ namespace TomLabs.Shadowgem.Text
 	public static class StringExtensions
 	{
 		/// <summary>
-		/// "SQL" Like function that works with wildcards
+		/// "SQL Like" function
 		/// </summary>
 		/// <param name="toSearch"></param>
 		/// <param name="toFind"></param>
@@ -22,6 +23,55 @@ namespace TomLabs.Shadowgem.Text
 		public static bool Like(this string toSearch, string toFind)
 		{
 			return new Regex(@"\A" + new Regex(@"\.|\$|\^|\{|\[|\(|\||\)|\*|\+|\?|\\").Replace(toFind, ch => @"\" + ch).Replace('_', '.').Replace("%", ".*") + @"\z", RegexOptions.Singleline).IsMatch(toSearch);
+		}
+
+		/// <summary>
+		/// Searches the input string for the first occurrence of the specified regular expression, using the specified matching options.
+		/// </summary>
+		/// <param name="text"></param>
+		/// <param name="pattern"></param>
+		/// <param name="regexOptions"></param>
+		/// <returns></returns>
+		public static Match Match(this string text, string pattern, RegexOptions regexOptions = RegexOptions.None)
+		{
+			return Regex.Match(text, pattern, regexOptions);
+		}
+
+		/// <summary>
+		///	Checks wether the input string matches the first occurrence of the specified regular expression, using the specified matching options.
+		/// </summary>
+		/// <param name="text"></param>
+		/// <param name="pattern"></param>
+		/// <param name="regexOptions"></param>
+		/// <returns></returns>
+		public static bool IsMatch(this string text, string pattern, RegexOptions regexOptions = RegexOptions.None)
+		{
+			return text.Match(pattern, regexOptions).Success;
+		}
+
+		/// <summary>
+		/// Shortcut for <see cref="Regex.Split(string)"/>
+		/// </summary>
+		/// <param name="s"></param>
+		/// <param name="pattern"></param>
+		/// <param name="regexOptions"></param>
+		/// <returns></returns>
+		public static string[] SplitRgx(this string s, string pattern, RegexOptions regexOptions = RegexOptions.None)
+		{
+			return Regex.Split(s, pattern, regexOptions);
+		}
+
+		/// <summary>
+		/// Shortcut for <see cref="Regex.Replace(string, string, string, RegexOptions)"/>
+		/// </summary>
+		/// <param name="s"></param>
+		/// <param name="pattern"></param>
+		/// <param name="replacement"></param>
+		/// <param name="regexOptions"></param>
+		/// <returns></returns>
+		public static string ReplaceRgx(this string s, string pattern, string replacement, RegexOptions regexOptions = RegexOptions.None)
+		{
+			return Regex.Replace(s, pattern, replacement, regexOptions);
 		}
 
 		/// <summary>
@@ -43,10 +93,20 @@ namespace TomLabs.Shadowgem.Text
 		/// <returns></returns>
 		public static int ToInt(this string s, int defaultValue = default(int))
 		{
-			if (int.TryParse(s, out int res))
-				return res;
-			else
-				return defaultValue;
+			return int.TryParse(s, out int res) ? res : defaultValue;
+		}
+
+		/// <summary>
+		/// Converts given string to <see cref="int"/> or returns <paramref name="defaultValue"/>
+		/// </summary>
+		/// <param name="s"></param>
+		/// <param name="style"></param>
+		/// <param name="provider"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static int ToInt(this string s, NumberStyles style, IFormatProvider provider, int defaultValue = default(int))
+		{
+			return int.TryParse(s, style, provider, out int res) ? res : defaultValue;
 		}
 
 		/// <summary>
@@ -57,10 +117,20 @@ namespace TomLabs.Shadowgem.Text
 		/// <returns></returns>
 		public static int? ToIntN(this string s, int? defaultValue = default(int?))
 		{
-			if (int.TryParse(s, out int res))
-				return res;
-			else
-				return defaultValue;
+			return int.TryParse(s, out int res) ? res : defaultValue;
+		}
+
+		/// <summary>
+		/// Converts given string to <see cref="Nullable"/> <see cref="int"/> or returns <paramref name="defaultValue"/>
+		/// </summary>
+		/// <param name="s"></param>
+		/// <param name="style"></param>
+		/// <param name="provider"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static int? ToIntN(this string s, NumberStyles style, IFormatProvider provider, int? defaultValue = default(int?))
+		{
+			return int.TryParse(s, style, provider, out int res) ? res : defaultValue;
 		}
 
 		/// <summary>
@@ -71,10 +141,20 @@ namespace TomLabs.Shadowgem.Text
 		/// <returns></returns>
 		public static double ToDouble(this string s, double defaultValue = default(double))
 		{
-			if (double.TryParse(s, out double res))
-				return res;
-			else
-				return defaultValue;
+			return double.TryParse(s, out double res) ? res : defaultValue;
+		}
+
+		/// <summary>
+		/// Converts given string to <see cref="double"/> or returns <paramref name="defaultValue"/>
+		/// </summary>
+		/// <param name="s"></param>
+		/// <param name="style"></param>
+		/// <param name="provider"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static double ToDouble(this string s, NumberStyles style, IFormatProvider provider, double defaultValue = default(double))
+		{
+			return double.TryParse(s, style, provider, out double res) ? res : defaultValue;
 		}
 
 		/// <summary>
@@ -85,10 +165,44 @@ namespace TomLabs.Shadowgem.Text
 		/// <returns></returns>
 		public static float ToFloat(this string s, float defaultValue = default(float))
 		{
-			if (float.TryParse(s, out float res))
-				return res;
-			else
-				return defaultValue;
+			return float.TryParse(s, out float res) ? res : defaultValue;
+		}
+
+		/// <summary>
+		/// Converts given string to <see cref="float"/> or returns <paramref name="defaultValue"/>
+		/// </summary>
+		/// <param name="s"></param>
+		/// <param name="style"></param>
+		/// <param name="provider"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static float ToFloat(this string s, NumberStyles style, IFormatProvider provider, float defaultValue = default(float))
+		{
+			return float.TryParse(s, style, provider, out float res) ? res : defaultValue;
+		}
+
+		/// <summary>
+		/// Converts given string to <see cref="decimal"/> or returns <paramref name="defaultValue"/>
+		/// </summary>
+		/// <param name="text"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static decimal ToDecimal(this string text, decimal defaultValue = 0)
+		{
+			return decimal.TryParse(text.Trim(), out var value) ? value : defaultValue;
+		}
+
+		/// <summary>
+		/// Converts given string to <see cref="decimal"/> or returns <paramref name="defaultValue"/>
+		/// </summary>
+		/// <param name="text"></param>
+		/// <param name="style"></param>
+		/// <param name="provider"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static decimal ToDecimal(this string text, NumberStyles style, IFormatProvider provider, decimal defaultValue = 0)
+		{
+			return decimal.TryParse(text.Trim(), style, provider, out var value) ? value : defaultValue;
 		}
 
 		/// <summary>
@@ -99,10 +213,80 @@ namespace TomLabs.Shadowgem.Text
 		/// <returns></returns>
 		public static DateTime ToDate(this string s, DateTime defaultValue = default(DateTime))
 		{
-			if (DateTime.TryParse(s, out DateTime res))
-				return res;
-			else
-				return defaultValue;
+			return DateTime.TryParse(s, out DateTime res) ? res : defaultValue;
+		}
+
+		/// <summary>
+		/// Converts given string to <see cref="DateTime"/> or returns <paramref name="defaultValue"/>
+		/// </summary>
+		/// <param name="s"></param>
+		/// <param name="style"></param>
+		/// <param name="provider"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static DateTime ToDate(this string s, DateTimeStyles style, IFormatProvider provider, DateTime defaultValue = default)
+		{
+			return DateTime.TryParse(s, provider, style, out DateTime res) ? res : defaultValue;
+		}
+
+		/// <summary>
+		/// Returns given string as <see cref="Uri"/>
+		/// </summary>
+		/// <param name="s"></param>
+		/// <returns></returns>
+		public static Uri ToUri(this string s)
+		{
+			return new Uri(s);
+		}
+
+		/// <summary>
+		/// Converts given string to <see cref="bool"/> or returns <paramref name="defaultValue"/>
+		/// </summary>
+		/// <param name="s"></param>
+		/// <param name="defaultValue"></param>
+		/// <returns></returns>
+		public static bool ToBool(this string s, bool defaultValue = default(bool))
+		{
+			return bool.TryParse(s, out var res) ? res : defaultValue;
+		}
+
+		/// <summary>
+		/// Converts given string to Base64 encoded string
+		/// </summary>
+		/// <param name="plainText"></param>
+		/// <returns></returns>
+		public static string ToBase64(this string plainText)
+		{
+			return Convert.ToBase64String(Encoding.UTF8.GetBytes(plainText));
+		}
+
+		/// <summary>
+		/// Decodes given Base64 encoded string
+		/// </summary>
+		/// <param name="base64EncodedData"></param>
+		/// <returns></returns>
+		public static string FromBase64(this string base64EncodedData)
+		{
+			return Encoding.UTF8.GetString(Convert.FromBase64String(base64EncodedData));
+		}
+
+		/// <summary>
+		/// Converts string into enumerator of type T
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="value"></param>
+		/// <param name="ignoreCase"></param>
+		/// <returns></returns>
+		public static T ToEnum<T>(this string value, bool ignoreCase = true)
+		{
+			try
+			{
+				return (T)Enum.Parse(typeof(T), value, ignoreCase);
+			}
+			catch
+			{
+				return default(T);
+			}
 		}
 
 		/// <summary>
@@ -131,10 +315,7 @@ namespace TomLabs.Shadowgem.Text
 		/// <returns></returns>
 		public static string MaxLength(this string str, int maxLenght, string suffix = "...")
 		{
-			if (str.Length <= maxLenght)
-				return str;
-			else
-				return str.Substring(0, maxLenght) + suffix;
+			return str.Length <= maxLenght ? str : str.Substring(0, maxLenght) + suffix;
 		}
 
 		/// <summary>
@@ -155,49 +336,13 @@ namespace TomLabs.Shadowgem.Text
 				return str.Substring(startIndex, lastIndex - startIndex);
 			}
 			else
-				return "";
-		}
-
-		/// <summary>
-		/// Checks whether string ends with given sequence
-		/// </summary>
-		/// <param name="toSearch"></param>
-		/// <param name="extension"></param>
-		/// <param name="ignoreString"></param>
-		/// <param name="ignoreCase"></param>
-		/// <returns></returns>
-		public static bool EndsWith(this string toSearch, string[] extension, string ignoreString = "", bool ignoreCase = true)
-		{
-			foreach (string s in extension)
 			{
-				if (toSearch.EndsWith(ignoreString != "" ? s.Replace(ignoreString, "") : s, ignoreCase, CultureInfo.CurrentCulture))
-					return true;
-			}
-
-			return false;
-		}
-
-		/// <summary>
-		/// Converts string into enumerator of type T
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="value"></param>
-		/// <param name="ignoreCase"></param>
-		/// <returns></returns>
-		public static T ToEnum<T>(this string value, bool ignoreCase = true)
-		{
-			try
-			{
-				return (T)Enum.Parse(typeof(T), value, ignoreCase);
-			}
-			catch (Exception)
-			{
-				return default(T);
+				return string.Empty;
 			}
 		}
 
 		/// <summary>
-		/// Determines whether given string is a valid URL.
+		/// Determines whether given string is a valid URL using <see cref="Regex"/>
 		/// </summary>
 		/// <returns>
 		/// <c>true</c> if is valid URL otherwise returns <c>false</c>.
@@ -209,7 +354,7 @@ namespace TomLabs.Shadowgem.Text
 		}
 
 		/// <summary>
-		/// Determines whether given string is a valid email address
+		/// Determines whether given string is a valid email address  using <see cref="Regex"/>
 		/// </summary>
 		/// <returns>
 		/// <c>true</c> if is valid email address otherwise returns <c>false</c>.
@@ -247,34 +392,53 @@ namespace TomLabs.Shadowgem.Text
 		}
 
 		/// <summary>
-		/// Returns given string as <see cref="Uri"/>
+		/// Returns <c>true</c> if given string is path to a directory
 		/// </summary>
-		/// <param name="s"></param>
+		/// <param name="path"></param>
 		/// <returns></returns>
-		public static Uri ToUri(this string s)
+		public static bool IsDirectory(this string path)
 		{
-			return new Uri(s);
+			if (Directory.Exists(path))
+			{
+				FileAttributes attr = File.GetAttributes(path);
+				return (attr.HasFlag(FileAttributes.Directory));
+			}
+			else
+			{
+				return false;
+			}
 		}
 
 		/// <summary>
-		/// Returns true if given string is an <see cref="int"/>
+		/// Returns <c>true</c> if given string is path to a file
 		/// </summary>
-		/// <param name="s"></param>
+		/// <param name="path"></param>
 		/// <returns></returns>
-		public static bool IsNumber(this string s)
+		public static bool IsFile(this string path)
 		{
-			return int.TryParse(s, out int _);
+			if (File.Exists(path))
+			{
+				FileAttributes attr = File.GetAttributes(path);
+				return !(attr.HasFlag(FileAttributes.Directory));
+			}
+			else
+			{
+				return false;
+			}
 		}
 
 		/// <summary>
 		/// Capitalizes all words in a given sentence
 		/// </summary>
 		/// <param name="s"></param>
-		/// <param name="wordSeperator"></param>
+		/// <param name="wordSeperator"><see cref="Regex"/> pattern to split words</param>
 		/// <returns></returns>
 		public static string CapitalizeSentence(this string s, string wordSeperator = " ")
 		{
-			if (string.IsNullOrEmpty(s)) return s;
+			if (string.IsNullOrEmpty(s))
+			{
+				return s;
+			}
 
 			var words = s.Trim().SplitRgx(wordSeperator);
 			for (int i = 0; i < words.Length; i++)
@@ -292,7 +456,10 @@ namespace TomLabs.Shadowgem.Text
 		/// <returns></returns>
 		public static string CapitalizeWord(this string s)
 		{
-			if (string.IsNullOrEmpty(s)) return s;
+			if (string.IsNullOrEmpty(s))
+			{
+				return s;
+			}
 
 			var sb = new StringBuilder();
 			for (int i = 0; i < s.Length; i++)
@@ -301,31 +468,6 @@ namespace TomLabs.Shadowgem.Text
 			}
 
 			return sb.ToString();
-		}
-
-		/// <summary>
-		/// Shortcut for <see cref="Regex.Split(string)"/>
-		/// </summary>
-		/// <param name="s"></param>
-		/// <param name="pattern"></param>
-		/// <param name="regexOptions"></param>
-		/// <returns></returns>
-		public static string[] SplitRgx(this string s, string pattern, RegexOptions regexOptions = RegexOptions.None)
-		{
-			return Regex.Split(s, pattern, regexOptions);
-		}
-
-		/// <summary>
-		/// Shortcut for <see cref="Regex.Replace(string, string, string, RegexOptions)"/>
-		/// </summary>
-		/// <param name="s"></param>
-		/// <param name="pattern"></param>
-		/// <param name="replacement"></param>
-		/// <param name="regexOptions"></param>
-		/// <returns></returns>
-		public static string ReplaceRgx(this string s, string pattern, string replacement, RegexOptions regexOptions = RegexOptions.None)
-		{
-			return Regex.Replace(s, pattern, replacement, regexOptions);
 		}
 
 		/// <summary>
@@ -339,34 +481,25 @@ namespace TomLabs.Shadowgem.Text
 		}
 
 		/// <summary>
-		/// Replaces Czech accents characters in given string with neutral characters
+		/// Removes diacritics from given string
 		/// </summary>
-		/// <param name="s"></param>
-		/// <returns></returns>
-		public static string RemoveCZAccents(this string s)
+		/// <param name="text"></param>
+		/// <returns>string without diacritics</returns>
+		public static string RemoveDiacritics(this string text)
 		{
-			var pairs = new Dictionary<char, char>
-			{
-				{ 'ě', 'e' },
-				{ 'š', 's' },
-				{ 'č', 'c' },
-				{ 'ř', 'r' },
-				{ 'ž', 'z' },
-				{ 'ý', 'y' },
-				{ 'á', 'a' },
-				{ 'é', 'e' },
-				{ 'ú', 'u' },
-				{ 'ů', 'u' },
-				{ 'ť', 't' },
-				{ 'ď', 'd' },
-				{ 'í', 'i' },
-			};
+			var normalizedString = text.Normalize(NormalizationForm.FormD);
+			var stringBuilder = new StringBuilder();
 
-			foreach (var p in pairs)
+			foreach (var c in normalizedString)
 			{
-				s = s.Replace(p.Key, p.Value);
+				var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
+				if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+				{
+					stringBuilder.Append(c);
+				}
 			}
-			return s;
+
+			return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
 		}
 
 		/// <summary>
@@ -429,38 +562,6 @@ namespace TomLabs.Shadowgem.Text
 		}
 
 		/// <summary>
-		/// Returns <c>true</c> if given string is path to a directory
-		/// </summary>
-		/// <param name="path"></param>
-		/// <returns></returns>
-		public static bool IsDirectory(this string path)
-		{
-			if (Directory.Exists(path))
-			{
-				FileAttributes attr = File.GetAttributes(path);
-				return (attr.HasFlag(FileAttributes.Directory));
-			}
-			else
-				return false;
-		}
-
-		/// <summary>
-		/// Returns <c>true</c> if given string is path to a file
-		/// </summary>
-		/// <param name="path"></param>
-		/// <returns></returns>
-		public static bool IsFile(this string path)
-		{
-			if (File.Exists(path))
-			{
-				FileAttributes attr = File.GetAttributes(path);
-				return !(attr.HasFlag(FileAttributes.Directory));
-			}
-			else
-				return false;
-		}
-
-		/// <summary>
 		/// Converts text with spaces to PascalCaseText
 		/// </summary>
 		/// <param name="text"></param>
@@ -473,49 +574,32 @@ namespace TomLabs.Shadowgem.Text
 		}
 
 		/// <summary>
-		///
+		/// Converts given string to Uppercase and replaces spaces with underscore
 		/// </summary>
 		/// <param name="text"></param>
 		/// <returns></returns>
 		public static string ToUpperUnderscored(this string text)
 		{
-			return text.ReplaceRgx(@"([A-Z])([A-Z][a-z])|([a-z0-9])([A-Z])", "$1$3_$2$4").ToUpper();
+			return text.ReplaceRgx("([A-Z])([A-Z][a-z])|([a-z0-9])([A-Z])", "$1$3_$2$4").ToUpper();
 		}
 
 		/// <summary>
-		///
+		/// Removes all special characters from given string. Keeping a-zA-Z0-9
 		/// </summary>
 		/// <param name="str"></param>
+		/// <param name="charsToKeep">chars that won't be removed</param>
 		/// <returns></returns>
-		public static string RemoveSpecialCharacters(this string str)
+		public static string RemoveSpecialCharacters(this string str, params char[] charsToKeep)
 		{
 			var sb = new StringBuilder();
 			foreach (char c in str)
 			{
-				if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '.' || c == '_')
+				if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || charsToKeep.Any(ch => ch == c))
 				{
 					sb.Append(c);
 				}
 			}
 			return sb.ToString();
-		}
-
-		public static string ToBase64(this string plainText)
-		{
-			var plainTextBytes = Encoding.UTF8.GetBytes(plainText);
-			return System.Convert.ToBase64String(plainTextBytes);
-		}
-
-		public static string FromBase64(this string base64EncodedData)
-		{
-			var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
-			return Encoding.UTF8.GetString(base64EncodedBytes);
-		}
-
-		public static bool ToBool(this string s)
-		{
-			bool.TryParse(s, out var res);
-			return res;
 		}
 
 		#region HTMLHelper

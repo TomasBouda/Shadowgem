@@ -4,6 +4,63 @@
         <name>TomLabs.Shadowgem</name>
     </assembly>
     <members>
+        <member name="T:TomLabs.Shadowgem.Collections.LinkedListExtensions">
+            <summary>
+            <see cref="T:System.Collections.Generic.LinkedList`1"/> related extensions
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinkedListExtensions.NextOrFirst``1(System.Collections.Generic.LinkedListNode{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Returns next or first element from given <see cref="T:System.Collections.Generic.LinkedList`1"/> that satisfies a specified condition
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="current"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinkedListExtensions.NextOrFirst``1(System.Collections.Generic.LinkedListNode{``0})">
+            <summary>
+            Returns next or first element from given <see cref="T:System.Collections.Generic.LinkedList`1"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="current"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinkedListExtensions.PreviousOrLast``1(System.Collections.Generic.LinkedListNode{``0})">
+            <summary>
+            Returns previous or last element from given <see cref="T:System.Collections.Generic.LinkedList`1"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="current"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinkedListExtensions.PreviousOrLast``1(System.Collections.Generic.LinkedListNode{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Returns previous or last element from given <see cref="T:System.Collections.Generic.LinkedList`1"/> that satisfies a specified condition
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="current"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinkedListExtensions.FirstOrDefault``1(System.Collections.Generic.LinkedList{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Returns the first element in a sequence that satisfies a specified condition or default.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinkedListExtensions.LastOrDefault``1(System.Collections.Generic.LinkedList{``0},System.Func{``0,System.Boolean})">
+            <summary>
+             Returns the last element in a sequence that satisfies a specified condition or default.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
         <member name="T:TomLabs.Shadowgem.Collections.LinqExtensions">
             <summary>
             <see cref="N:System.Linq"/> related extension methods
@@ -41,16 +98,6 @@
             <typeparam name="T"></typeparam>
             <param name="list"></param>
             <param name="mapFunction"></param>
-        </member>
-        <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.OrderBy``1(System.Collections.Generic.IEnumerable{``0},System.String)">
-            <summary>
-            Orders Enumerable using given sort expression
-            Example: users.OrderBy("Name desc")
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="list"></param>
-            <param name="sortExpression">Property and sort direction</param>
-            <returns></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.Randomize``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
@@ -405,13 +452,6 @@
             <param name="enumerationValue"></param>
             <returns></returns>
         </member>
-        <member name="M:TomLabs.Shadowgem.Common.EnumExtensions.GetFlags(System.Enum)">
-            <summary>
-            https://stackoverflow.com/questions/5542816/printing-flags-enum-as-separate-flags
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
         <member name="T:TomLabs.Shadowgem.Misc.DataTableExtensions">
             <summary>
             <see cref="T:System.Data.DataTable"/> related extension methods
@@ -470,6 +510,11 @@
             </summary>
             <param name="doc"></param>
             <returns></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Data.JsonExtensions">
+            <summary>
+            Json related extensions
+            </summary>
         </member>
         <member name="M:TomLabs.Shadowgem.Data.JsonExtensions.CloneJson``1(``0)">
             <summary>
@@ -630,6 +675,61 @@
             Supported hash algorithms
             </summary>
         </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.HMAC">
+            <summary>
+            Keyed-hash Message Authentication Code
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.HMACMD5">
+            <summary>
+            Hash-based Message Authentication Code (HMAC) by using the MD5 hash function
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.HMACSHA1">
+            <summary>
+            Hash-based Message Authentication Code (HMAC) using the SHA1 hash function
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.HMACSHA256">
+            <summary>
+            Hash-based Message Authentication Code (HMAC) by using the SHA256 hash function
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.HMACSHA384">
+            <summary>
+            Hash-based Message Authentication Code (HMAC) by using the SHA384 hash function
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.HMACSHA512">
+            <summary>
+            Hash-based Message Authentication Code (HMAC) by using the SHA512 hash function
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.MACTripleDES">
+            <summary>
+            Message Authentication Code (MAC) using TripleDES
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.RIPEMD160">
+            <summary>
+            MD160 hash algorithm
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.SHA256">
+            <summary>
+            Secure Hash Algorithm 256
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.SHA384">
+            <summary>
+            Secure Hash Algorithm 384
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.SHA512">
+            <summary>
+            Secure Hash Algorithm 512
+            </summary>
+        </member>
         <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.MD5">
             <summary>
             Should not be used.
@@ -681,10 +781,47 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.Like(System.String,System.String)">
             <summary>
-            "SQL" Like function that works with wildcards
+            "SQL Like" function
             </summary>
             <param name="toSearch"></param>
             <param name="toFind"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            Searches the input string for the first occurrence of the specified regular expression, using the specified matching options.
+            </summary>
+            <param name="text"></param>
+            <param name="pattern"></param>
+            <param name="regexOptions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            Checks wether the input string matches the first occurrence of the specified regular expression, using the specified matching options.
+            </summary>
+            <param name="text"></param>
+            <param name="pattern"></param>
+            <param name="regexOptions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.SplitRgx(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            Shortcut for <see cref="M:System.Text.RegularExpressions.Regex.Split(System.String)"/>
+            </summary>
+            <param name="s"></param>
+            <param name="pattern"></param>
+            <param name="regexOptions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ReplaceRgx(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            Shortcut for <see cref="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)"/>
+            </summary>
+            <param name="s"></param>
+            <param name="pattern"></param>
+            <param name="replacement"></param>
+            <param name="regexOptions"></param>
             <returns></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.FillIn(System.String,System.Object[])">
@@ -703,11 +840,31 @@
             <param name="defaultValue"></param>
             <returns></returns>
         </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToInt(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Int32)">
+            <summary>
+            Converts given string to <see cref="T:System.Int32"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="s"></param>
+            <param name="style"></param>
+            <param name="provider"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToIntN(System.String,System.Nullable{System.Int32})">
             <summary>
             Converts given string to <see cref="T:System.Nullable"/> <see cref="T:System.Int32"/> or returns <paramref name="defaultValue"/>
             </summary>
             <param name="s"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToIntN(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Nullable{System.Int32})">
+            <summary>
+            Converts given string to <see cref="T:System.Nullable"/> <see cref="T:System.Int32"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="s"></param>
+            <param name="style"></param>
+            <param name="provider"></param>
             <param name="defaultValue"></param>
             <returns></returns>
         </member>
@@ -719,11 +876,49 @@
             <param name="defaultValue"></param>
             <returns></returns>
         </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToDouble(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Double)">
+            <summary>
+            Converts given string to <see cref="T:System.Double"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="s"></param>
+            <param name="style"></param>
+            <param name="provider"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToFloat(System.String,System.Single)">
             <summary>
             Converts given string to <see cref="T:System.Single"/> or returns <paramref name="defaultValue"/>
             </summary>
             <param name="s"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToFloat(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Single)">
+            <summary>
+            Converts given string to <see cref="T:System.Single"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="s"></param>
+            <param name="style"></param>
+            <param name="provider"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToDecimal(System.String,System.Decimal)">
+            <summary>
+            Converts given string to <see cref="T:System.Decimal"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="text"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToDecimal(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Decimal)">
+            <summary>
+            Converts given string to <see cref="T:System.Decimal"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="text"></param>
+            <param name="style"></param>
+            <param name="provider"></param>
             <param name="defaultValue"></param>
             <returns></returns>
         </member>
@@ -733,6 +928,54 @@
             </summary>
             <param name="s"></param>
             <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToDate(System.String,System.Globalization.DateTimeStyles,System.IFormatProvider,System.DateTime)">
+            <summary>
+            Converts given string to <see cref="T:System.DateTime"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="s"></param>
+            <param name="style"></param>
+            <param name="provider"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToUri(System.String)">
+            <summary>
+            Returns given string as <see cref="T:System.Uri"/>
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToBool(System.String,System.Boolean)">
+            <summary>
+            Converts given string to <see cref="T:System.Boolean"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="s"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToBase64(System.String)">
+            <summary>
+            Converts given string to Base64 encoded string
+            </summary>
+            <param name="plainText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.FromBase64(System.String)">
+            <summary>
+            Decodes given Base64 encoded string
+            </summary>
+            <param name="base64EncodedData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToEnum``1(System.String,System.Boolean)">
+            <summary>
+            Converts string into enumerator of type T
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <param name="ignoreCase"></param>
             <returns></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.Parse``1(System.String)">
@@ -761,28 +1004,9 @@
             <param name="last"></param>
             <returns></returns>
         </member>
-        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.EndsWith(System.String,System.String[],System.String,System.Boolean)">
-            <summary>
-            Checks whether string ends with given sequence
-            </summary>
-            <param name="toSearch"></param>
-            <param name="extension"></param>
-            <param name="ignoreString"></param>
-            <param name="ignoreCase"></param>
-            <returns></returns>
-        </member>
-        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToEnum``1(System.String,System.Boolean)">
-            <summary>
-            Converts string into enumerator of type T
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="value"></param>
-            <param name="ignoreCase"></param>
-            <returns></returns>
-        </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsValidUrl(System.String)">
             <summary>
-            Determines whether given string is a valid URL.
+            Determines whether given string is a valid URL using <see cref="T:System.Text.RegularExpressions.Regex"/>
             </summary>
             <returns>
             <c>true</c> if is valid URL otherwise returns <c>false</c>.
@@ -790,7 +1014,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsValidEmailAddress(System.String)">
             <summary>
-            Determines whether given string is a valid email address
+            Determines whether given string is a valid email address  using <see cref="T:System.Text.RegularExpressions.Regex"/>
             </summary>
             <returns>
             <c>true</c> if is valid email address otherwise returns <c>false</c>.
@@ -816,18 +1040,18 @@
             <param name="s"></param>
             <returns>true if the value parameter is null or an empty string (""); otherwise, false.</returns>
         </member>
-        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToUri(System.String)">
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsDirectory(System.String)">
             <summary>
-            Returns given string as <see cref="T:System.Uri"/>
+            Returns <c>true</c> if given string is path to a directory
             </summary>
-            <param name="s"></param>
+            <param name="path"></param>
             <returns></returns>
         </member>
-        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsNumber(System.String)">
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsFile(System.String)">
             <summary>
-            Returns true if given string is an <see cref="T:System.Int32"/>
+            Returns <c>true</c> if given string is path to a file
             </summary>
-            <param name="s"></param>
+            <param name="path"></param>
             <returns></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.CapitalizeSentence(System.String,System.String)">
@@ -835,7 +1059,7 @@
             Capitalizes all words in a given sentence
             </summary>
             <param name="s"></param>
-            <param name="wordSeperator"></param>
+            <param name="wordSeperator"><see cref="T:System.Text.RegularExpressions.Regex"/> pattern to split words</param>
             <returns></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.CapitalizeWord(System.String)">
@@ -845,25 +1069,6 @@
             <param name="s"></param>
             <returns></returns>
         </member>
-        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.SplitRgx(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
-            <summary>
-            Shortcut for <see cref="M:System.Text.RegularExpressions.Regex.Split(System.String)"/>
-            </summary>
-            <param name="s"></param>
-            <param name="pattern"></param>
-            <param name="regexOptions"></param>
-            <returns></returns>
-        </member>
-        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ReplaceRgx(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
-            <summary>
-            Shortcut for <see cref="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)"/>
-            </summary>
-            <param name="s"></param>
-            <param name="pattern"></param>
-            <param name="replacement"></param>
-            <param name="regexOptions"></param>
-            <returns></returns>
-        </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.RemoveWhitespaces(System.String)">
             <summary>
             Removes all whitespace char from given string using <see cref="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.String)"/>
@@ -871,12 +1076,12 @@
             <param name="s"></param>
             <returns></returns>
         </member>
-        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.RemoveCZAccents(System.String)">
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.RemoveDiacritics(System.String)">
             <summary>
-            Replaces Czech accents characters in given string with neutral characters
+            Removes diacritics from given string
             </summary>
-            <param name="s"></param>
-            <returns></returns>
+            <param name="text"></param>
+            <returns>string without diacritics</returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.RemoveRange(System.String,System.String,System.String,System.StringComparison)">
             <summary>
@@ -915,20 +1120,6 @@
             <param name="replaceWith"></param>
             <returns></returns>
         </member>
-        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsDirectory(System.String)">
-            <summary>
-            Returns <c>true</c> if given string is path to a directory
-            </summary>
-            <param name="path"></param>
-            <returns></returns>
-        </member>
-        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsFile(System.String)">
-            <summary>
-            Returns <c>true</c> if given string is path to a file
-            </summary>
-            <param name="path"></param>
-            <returns></returns>
-        </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToPascalCase(System.String)">
             <summary>
             Converts text with spaces to PascalCaseText
@@ -937,18 +1128,19 @@
             <returns></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToUpperUnderscored(System.String)">
-             <summary>
-            
-             </summary>
-             <param name="text"></param>
-             <returns></returns>
+            <summary>
+            Converts given string to Uppercase and replaces spaces with underscore
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
         </member>
-        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.RemoveSpecialCharacters(System.String)">
-             <summary>
-            
-             </summary>
-             <param name="str"></param>
-             <returns></returns>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.RemoveSpecialCharacters(System.String,System.Char[])">
+            <summary>
+            Removes all special characters from given string. Keeping a-zA-Z0-9
+            </summary>
+            <param name="str"></param>
+            <param name="charsToKeep">chars that won't be removed</param>
+            <returns></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.HtmlEncode(System.String)">
             <summary>
@@ -971,6 +1163,16 @@
             <summary>
             Converts a string that has been encoded for transmission in a URL into a
             decoded string.
+            </summary>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Types.Attributes.CopyFromIgnoreAttribute">
+            <summary>
+             Attribute for marking properties to exclude them from copy from - <see cref="M:TomLabs.Shadowgem.Types.ReflectionExtensions.CopyFrom``1(``0,``0)"/>
+            </summary>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Types.Attributes.DeepCloneIgnoreAttribute">
+            <summary>
+            Attribute for marking properties to exclude them from deep clone - <see cref="M:TomLabs.Shadowgem.Types.ReflectionExtensions.DeepClone``1(``0,System.Nullable{System.Reflection.BindingFlags},System.Func{System.Reflection.PropertyInfo,System.Boolean},System.String[])"/>
             </summary>
         </member>
         <member name="T:TomLabs.Shadowgem.Types.PropertyTree">
@@ -1012,6 +1214,19 @@
             <param name="value"></param>
             <param name="childProperties"></param>
         </member>
+        <member name="T:TomLabs.Shadowgem.Types.ReflectionExtensions">
+            <summary>
+            Reflection related extensions
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Types.ReflectionExtensions.CopyFrom``1(``0,``0)">
+            <summary>
+            Copies properties not marked with <see cref="T:TomLabs.Shadowgem.Types.Attributes.CopyFromIgnoreAttribute"/> from one object to another
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="to"></param>
+            <param name="from"></param>
+        </member>
         <member name="M:TomLabs.Shadowgem.Types.ReflectionExtensions.DeepClone``1(``0,System.Nullable{System.Reflection.BindingFlags},System.Func{System.Reflection.PropertyInfo,System.Boolean},System.String[])">
             <summary>
             Creates deep copy of an object
@@ -1041,6 +1256,17 @@
             <param name="type"></param>
             <param name="refObject"></param>
             <param name="ignoredTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="T:KeypadX.Core.Helpers.Utils">
+            <summary>
+            Miscellaneous utilities
+            </summary>
+        </member>
+        <member name="M:KeypadX.Core.Helpers.Utils.CheckInternetConnection">
+            <summary>
+            Returns <c>true</c> if internet connection is available
+            </summary>
             <returns></returns>
         </member>
     </members>

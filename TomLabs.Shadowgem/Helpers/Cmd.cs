@@ -6,7 +6,7 @@ namespace TomLabs.Shadowgem.Helpers
 	/// <summary>
 	/// Windows command line helper class
 	/// </summary>
-	public class Cmd
+	public static class Cmd
 	{
 		/// <summary>
 		/// Executes given command in windows command line

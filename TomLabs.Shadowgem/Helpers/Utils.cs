@@ -2,8 +2,15 @@
 
 namespace KeypadX.Core.Helpers
 {
+	/// <summary>
+	/// Miscellaneous utilities
+	/// </summary>
 	public static class Utils
 	{
+		/// <summary>
+		/// Returns <c>true</c> if internet connection is available
+		/// </summary>
+		/// <returns></returns>
 		public static bool CheckInternetConnection()
 		{
 			try
