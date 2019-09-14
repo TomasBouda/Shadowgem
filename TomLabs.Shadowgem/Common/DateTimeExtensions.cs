@@ -140,7 +140,11 @@ namespace TomLabs.Shadowgem.Common
 		{
 			//Sunday = 0,Monday = 1,...,Saturday = 6
 			int daysbetween = current - firstDayOfWeek;
-			if (daysbetween < 0) daysbetween = 7 + daysbetween;
+			if (daysbetween < 0)
+			{
+				daysbetween = 7 + daysbetween;
+			}
+
 			return daysbetween;
 		}
 

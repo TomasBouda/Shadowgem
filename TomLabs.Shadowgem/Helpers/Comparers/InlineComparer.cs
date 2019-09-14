@@ -24,7 +24,7 @@ namespace TomLabs.Shadowgem.Helpers.Comparers
 		}
 
 		/// <summary>
-		///
+		/// Determines whether the specified object <paramref name="x"/> is equal to the object <paramref name="y"/>
 		/// </summary>
 		/// <param name="x"></param>
 		/// <param name="y"></param>
@@ -35,7 +35,7 @@ namespace TomLabs.Shadowgem.Helpers.Comparers
 		}
 
 		/// <summary>
-		///
+		/// Returns hash code for <paramref name="obj"/>
 		/// </summary>
 		/// <param name="obj"></param>
 		/// <returns></returns>

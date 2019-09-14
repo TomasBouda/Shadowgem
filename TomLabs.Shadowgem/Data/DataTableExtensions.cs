@@ -44,7 +44,9 @@ namespace TomLabs.Shadowgem.Misc
 				{
 					var length = row[i].ToString().Length;
 					if (columnsWidths[i] < length)
+					{
 						columnsWidths[i] = length;
+					}
 				}
 			}
 
@@ -53,7 +55,9 @@ namespace TomLabs.Shadowgem.Misc
 			{
 				var length = dataTable.Columns[i].ColumnName.Length;
 				if (columnsWidths[i] < length)
+				{
 					columnsWidths[i] = length;
+				}
 			}
 
 			// Write Column titles

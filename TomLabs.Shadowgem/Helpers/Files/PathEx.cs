@@ -16,7 +16,9 @@ namespace TomLabs.Shadowgem.Helpers.IO
 		public static string GoUp(string path, int count = 1)
 		{
 			if (count < 1)
+			{
 				return path;
+			}
 
 			return GoUp(Path.GetFullPath(Path.Combine(path, @"..\")), --count);
 		}

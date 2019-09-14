@@ -17,9 +17,14 @@ namespace TomLabs.Shadowgem.Text.Encription
 		public static string Encrypt(this string stringToEncrypt, string key)
 		{
 			if (stringToEncrypt.IsNullOrEmpty())
+			{
 				throw new ArgumentException("An empty string value cannot be encrypted.", nameof(stringToEncrypt));
+			}
+
 			if (key.IsNullOrEmpty())
+			{
 				throw new ArgumentException("Cannot encrypt using an empty key. Please supply an encryption key.", nameof(key));
+			}
 
 			System.Security.Cryptography.CspParameters cspp = new System.Security.Cryptography.CspParameters();
 			cspp.KeyContainerName = key;
@@ -27,7 +32,7 @@ namespace TomLabs.Shadowgem.Text.Encription
 			System.Security.Cryptography.RSACryptoServiceProvider rsa = new System.Security.Cryptography.RSACryptoServiceProvider(cspp);
 			rsa.PersistKeyInCsp = true;
 
-			byte[] bytes = rsa.Encrypt(System.Text.UTF8Encoding.UTF8.GetBytes(stringToEncrypt), true);
+			byte[] bytes = rsa.Encrypt(System.Text.Encoding.UTF8.GetBytes(stringToEncrypt), true);
 
 			return BitConverter.ToString(bytes);
 		}
@@ -42,9 +47,14 @@ namespace TomLabs.Shadowgem.Text.Encription
 		public static string Decrypt(this string stringToDecrypt, string key)
 		{
 			if (stringToDecrypt.IsNullOrEmpty())
+			{
 				throw new ArgumentException("An empty string value cannot be encrypted.", nameof(stringToDecrypt));
+			}
+
 			if (key.IsNullOrEmpty())
+			{
 				throw new ArgumentException("Cannot decrypt using an empty key. Please supply a decryption key.", nameof(key));
+			}
 
 			string result = null;
 			try

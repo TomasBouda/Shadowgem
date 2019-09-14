@@ -23,7 +23,11 @@ namespace TomLabs.Shadowgem.Common
 		/// <returns></returns>
 		public static bool IsIn<T>(this T source, params T[] list)
 		{
-			if (null == source) throw new ArgumentNullException(nameof(source));
+			if (null == source)
+			{
+				throw new ArgumentNullException(nameof(source));
+			}
+
 			return list.Contains(source);
 		}
 
@@ -68,7 +72,10 @@ namespace TomLabs.Shadowgem.Common
 		/// <returns>A string that represents XML, empty otherwise</returns>
 		public static string XmlSerialize<T>(this T obj) where T : class, new()
 		{
-			if (obj == null) throw new ArgumentNullException(nameof(obj));
+			if (obj == null)
+			{
+				throw new ArgumentNullException(nameof(obj));
+			}
 
 			var serializer = new XmlSerializer(typeof(T));
 			using (var writer = new StringWriter())
@@ -84,7 +91,10 @@ namespace TomLabs.Shadowgem.Common
 		/// <returns>A new object of type T if successful, null if failed</returns>
 		public static T XmlDeserialize<T>(this string xml) where T : class, new()
 		{
-			if (xml == null) throw new ArgumentNullException(nameof(xml));
+			if (xml == null)
+			{
+				throw new ArgumentNullException(nameof(xml));
+			}
 
 			var serializer = new XmlSerializer(typeof(T));
 			using (var reader = new StringReader(xml))
@@ -115,22 +125,6 @@ namespace TomLabs.Shadowgem.Common
 		{
 			CultureInfo currentCulture = new CultureInfo(cultureName);
 			return (string.Format(currentCulture, "{0:C}", value));
-		}
-
-		/// <summary>
-		/// Shortcut for <see cref="string.IsNullOrWhiteSpace(string)"/>
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="obj"></param>
-		/// <returns></returns>
-		private static bool IsNullOrEmpty<T>(this T obj)
-		{
-			if (obj == null)
-				return true;
-			else if (string.IsNullOrWhiteSpace(obj.ToString()))
-				return true;
-			else
-				return false;
 		}
 
 		/// <summary>
