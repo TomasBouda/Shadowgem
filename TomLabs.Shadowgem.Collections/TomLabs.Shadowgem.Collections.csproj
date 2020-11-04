@@ -1,27 +1,36 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <Authors>Tomas Bouda</Authors>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.0</Version>
-    <PackageProjectUrl>https://github.com/TomasBouda/Shadowgem</PackageProjectUrl>
-    <PackageIconUrl>https://cdn.rawgit.com/TomasBouda/Shadowgem/0bc7f080/TomLabs.Shadowgem/shadowgem.jpg?raw=true</PackageIconUrl>
-    <RepositoryUrl>https://github.com/TomasBouda/Shadowgem</RepositoryUrl>
-    <PackageTags>extension helper methods utility library</PackageTags>
-    <RepositoryType>git</RepositoryType>
-    <Copyright>Copyright 2018 TomLabs</Copyright>
-    <Title>Shadowgem</Title>
-    <PackageDescription>Library that provides extension and helper methods of all kinds.</PackageDescription>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+	<TargetFramework>netstandard2.1</TargetFramework>
+	<Authors>Tomas Bouda</Authors>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<Version>2.0.0</Version>
+	<PackageProjectUrl>https://github.com/TomasBouda/Shadowgem</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/TomasBouda/Shadowgem</RepositoryUrl>
+	<PackageTags>extension helper methods utility library</PackageTags>
+	<RepositoryType>git</RepositoryType>
+	<Copyright>Copyright 2020 TomLabs</Copyright>
+	<Title>Shadowgem.Collections</Title>
+	<PackageDescription>Provides extension methods for collections. This is partial package of main TomLabs.Shadowgem package.</PackageDescription>
+	<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+	<PackageIcon>icon-collections.png</PackageIcon>
+	  <IncludeSymbols>true</IncludeSymbols>
+	  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard2.0\TomLabs.Shadowgem.Collections.xml</DocumentationFile>
+	<DocumentationFile>bin\Release\netstandard2.0\TomLabs.Shadowgem.Collections.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.0\TomLabs.Shadowgem.Collections.xml</DocumentationFile>
+	<DocumentationFile>bin\Debug\netstandard2.0\TomLabs.Shadowgem.Collections.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\TomLabs.Shadowgem\Collections\LinkedListExtensions.cs" Link="LinkedListExtensions.cs" />
-    <Compile Include="..\TomLabs.Shadowgem\Collections\LinqExtensions.cs" Link="LinqExtensions.cs" />
+	<Compile Include="..\TomLabs.Shadowgem\Collections\LinkedListExtensions.cs" Link="LinkedListExtensions.cs" />
+	<Compile Include="..\TomLabs.Shadowgem\Collections\LinqExtensions.cs" Link="LinqExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+	<None Include="..\images\icon-collections.png">
+	  <Pack>True</Pack>
+	  <PackagePath>
+	  </PackagePath>
+	</None>
   </ItemGroup>
 </Project>

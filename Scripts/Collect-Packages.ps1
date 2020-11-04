@@ -3,6 +3,7 @@ param(
 	[string]$Version
 )
 
-New-Item "$PSScriptRoot\..\Packages" -ItemType Directory
+Remove-Item "$PSScriptRoot\..\Packages" -Recurse -Force
+New-Item "$PSScriptRoot\..\Packages" -ItemType Directory | Out-Null
 
-Get-ChildItem "$PSScriptRoot\..\*.$Version.nupkg" -Recurse | ForEach-Object { Copy-Item $_.FullName -Destination "$PSScriptRoot\..\Packages" -Force }
+Get-ChildItem "$PSScriptRoot\..\*" -Include "*.$Version.nupkg", "*.$Version.snupkg" -Recurse | ForEach-Object { Copy-Item $_.FullName -Destination "$PSScriptRoot\..\Packages" -Force }

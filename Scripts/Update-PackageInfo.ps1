@@ -1,6 +1,6 @@
 # Updates all packages in solution with PackageMetadata.xml
 
-$TEMPLATE_PATH = "$PWD\PackageMetadata.xml"
+$TEMPLATE_PATH = "$PSScriptRoot\..\PackageMetadata.xml"
 $EXCLUDED_CSPROJS = "TomLabs.Shadowgem.Tests.csproj"
 
 $TEMPLATEXML = New-Object XML
@@ -25,7 +25,7 @@ function Update-CsProj($csprojPath){
     $xml.Save($csprojPath)
 }
 
-$csProjs = Get-ChildItem $PWD -Recurse -Include *.csproj -Exclude $EXCLUDED_CSPROJS
+$csProjs = Get-ChildItem "$PSScriptRoot\.." -Recurse -Include *.csproj -Exclude $EXCLUDED_CSPROJS
 
 foreach($csproj in $csProjs){
     Update-CsProj($csproj)

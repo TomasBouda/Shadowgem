@@ -36,6 +36,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9955BA4D-8FF0-4104-AA4C-C7F5BB6E4A5F}"
 	ProjectSection(SolutionItems) = preProject
 		Scripts\Collect-Packages.ps1 = Scripts\Collect-Packages.ps1
+		Scripts\Release.ps1 = Scripts\Release.ps1
 		Scripts\Update-PackageInfo.ps1 = Scripts\Update-PackageInfo.ps1
 		Scripts\Update-Singletons.ps1 = Scripts\Update-Singletons.ps1
 	EndProjectSection

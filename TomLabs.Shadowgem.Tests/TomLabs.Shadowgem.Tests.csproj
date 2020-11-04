@@ -6,7 +6,6 @@
     <Authors>Tomáš Bouda</Authors>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Version>1.0.0</Version>
-    <PackageIconUrl>https://cdn.rawgit.com/TomasBouda/Shadowgem/0bc7f080/TomLabs.Shadowgem/shadowgem.jpg?raw=true</PackageIconUrl>
     <RepositoryUrl>https://github.com/TomasBouda/Shadowgem</RepositoryUrl>
     <PackageTags>extension helper methods utility library</PackageTags>
     <RepositoryType>git</RepositoryType>
