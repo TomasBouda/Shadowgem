@@ -66,11 +66,11 @@ namespace TomLabs.Shadowgem.Text.Encription
 				rsa.PersistKeyInCsp = true;
 
 				string[] decryptArray = stringToDecrypt.Split(new string[] { "-" }, StringSplitOptions.None);
-				byte[] decryptByteArray = Array.ConvertAll<string, byte>(decryptArray, (s => Convert.ToByte(byte.Parse(s, System.Globalization.NumberStyles.HexNumber))));
+				byte[] decryptByteArray = Array.ConvertAll(decryptArray, (s => Convert.ToByte(byte.Parse(s, System.Globalization.NumberStyles.HexNumber))));
 
 				byte[] bytes = rsa.Decrypt(decryptByteArray, true);
 
-				result = System.Text.UTF8Encoding.UTF8.GetString(bytes);
+				result = System.Text.Encoding.UTF8.GetString(bytes);
 			}
 			catch (Exception ex)
 			{

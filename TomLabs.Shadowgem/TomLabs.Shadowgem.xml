@@ -88,7 +88,7 @@
             </summary>
             <param name="data">The data.</param>
             <param name="delimiter">The delimiter.</param>
-            <param name="nullvalue">The null value.</param>
+            <param name="nullValue">The null value.</param>
             <returns></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
@@ -202,7 +202,7 @@
             </summary>
             <typeparam name="T"></typeparam>
             <param name="list"></param>
-            <param name="toRremove"></param>
+            <param name="toRemove"></param>
         </member>
         <member name="T:TomLabs.Shadowgem.Common.CommonExtensions">
             <summary>
@@ -234,7 +234,7 @@
             <param name="things"></param>
             <returns></returns>
         </member>
-        <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.Match(System.String,System.String)">
+        <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.IsMatch(System.String,System.String)">
             <summary>
             Indicates whether the regular expression specified by <paramref name="pattern"/>
                 finds a match in a specified input <see cref="T:System.String"/>.
@@ -503,12 +503,12 @@
             <param name="doc"></param>
             <returns></returns>
         </member>
-        <member name="T:TomLabs.Shadowgem.Data.JsonExtensions">
+        <member name="T:TomLabs.Shadowgem.Data.Json.JsonExtensions">
             <summary>
             Json related extensions
             </summary>
         </member>
-        <member name="M:TomLabs.Shadowgem.Data.JsonExtensions.CloneJson``1(``0)">
+        <member name="M:TomLabs.Shadowgem.Data.Json.JsonExtensions.CloneJson``1(``0)">
             <summary>
             Deep clone using Json serialization
             </summary>
@@ -516,7 +516,7 @@
             <param name="source">Object to clone</param>
             <returns>Deep object clone</returns>
         </member>
-        <member name="M:TomLabs.Shadowgem.Data.JsonExtensions.ToJson``1(``0)">
+        <member name="M:TomLabs.Shadowgem.Data.Json.JsonExtensions.ToJson``1(``0)">
             <summary>
             Serializes the specified object to a JSON string using <see cref="M:Newtonsoft.Json.JsonConvert.SerializeObject(System.Object)"/>
             </summary>
@@ -524,13 +524,151 @@
             <param name="obj"></param>
             <returns></returns>
         </member>
-        <member name="M:TomLabs.Shadowgem.Data.JsonExtensions.FromJson``1(System.String)">
+        <member name="M:TomLabs.Shadowgem.Data.Json.JsonExtensions.FromJson``1(System.String)">
             <summary>
             Deserializes the specified object to a JSON string using <see cref="M:Newtonsoft.Json.JsonConvert.DeserializeObject``1(System.String)"/>
             </summary>
             <typeparam name="T"></typeparam>
             <param name="objStr"></param>
             <returns></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Data.Json.JsonHandler">
+            <summary>
+            Helper for handling json and hjson serialization/deserialization
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.Json.JsonHandler.DeserializeHJson``1(System.String)">
+            <summary>
+            Deserializes given hjson file into object
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="hjsonFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.Json.JsonHandler.DeserializeJson``1(System.String)">
+            <summary>
+            Deserializes given json file into object
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="jsonFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.Json.JsonHandler.SerializeToHJson``1(``0,TomLabs.Shadowgem.Data.Json.JsonSerializationParams)">
+            <summary>
+            Serializes given object into hjson string
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="object"></param>
+            <param name="params"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.Json.JsonHandler.SerializeToJson``1(``0,TomLabs.Shadowgem.Data.Json.JsonSerializationParams)">
+            <summary>
+            Serializes given object into json string
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="object"></param>
+            <param name="params"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Data.Json.JsonFormatting">
+            <summary>
+            Defines formatting for json serialization
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Data.Json.JsonFormatting.None">
+            <summary>
+            No special formatting is applied. This is the default.
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Data.Json.JsonFormatting.Indented">
+            <summary>
+            Causes child objects to be indented according to the <see cref="P:Newtonsoft.Json.JsonTextWriter.Indentation"/> and <see cref="P:Newtonsoft.Json.JsonTextWriter.IndentChar"/> settings.
+            </summary>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Data.Json.JsonNullValueHandling">
+            <summary>
+            Specifies null value handling options for the <see cref="T:Newtonsoft.Json.JsonSerializer"/>.
+            </summary>
+            <example>
+              <code lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs" region="ReducingSerializedJsonSizeNullValueHandlingObject" title="NullValueHandling Class" />
+              <code lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs" region="ReducingSerializedJsonSizeNullValueHandlingExample" title="NullValueHandling Ignore Example" />
+            </example>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Data.Json.JsonNullValueHandling.Include">
+            <summary>
+            Include null values when serializing and deserializing objects.
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Data.Json.JsonNullValueHandling.Ignore">
+            <summary>
+            Ignore null values when serializing and deserializing objects.
+            </summary>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Data.Json.JsonDefaultValueHandling">
+            <summary>
+            Specifies default value handling options for the <see cref="T:Newtonsoft.Json.JsonSerializer"/>.
+            </summary>
+            <example>
+              <code lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs" region="ReducingSerializedJsonSizeDefaultValueHandlingObject" title="DefaultValueHandling Class" />
+              <code lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs" region="ReducingSerializedJsonSizeDefaultValueHandlingExample" title="DefaultValueHandling Ignore Example" />
+            </example>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Data.Json.JsonDefaultValueHandling.Include">
+            <summary>
+            Include members where the member value is the same as the member's default value when serializing objects.
+            Included members are written to JSON. Has no effect when deserializing.
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Data.Json.JsonDefaultValueHandling.Ignore">
+            <summary>
+            Ignore members where the member value is the same as the member's default value when serializing objects
+            so that it is not written to JSON.
+            This option will ignore all default values (e.g. <c>null</c> for objects and nullable types; <c>0</c> for integers,
+            decimals and floating point numbers; and <c>false</c> for booleans). The default value ignored can be changed by
+            placing the <see cref="T:System.ComponentModel.DefaultValueAttribute"/> on the property.
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Data.Json.JsonDefaultValueHandling.Populate">
+            <summary>
+            Members with a default value but no JSON will be set to their default value when deserializing.
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Data.Json.JsonDefaultValueHandling.IgnoreAndPopulate">
+            <summary>
+            Ignore members where the member value is the same as the member's default value when serializing objects
+            and set members to their default value when deserializing.
+            </summary>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Data.Json.JsonSerializationParams">
+            <summary>
+            Defines parameters for json serialization
+            </summary>
+        </member>
+        <member name="P:TomLabs.Shadowgem.Data.Json.JsonSerializationParams.Formatting">
+            <summary>
+            Defines formatting for json serialization
+            </summary>
+        </member>
+        <member name="P:TomLabs.Shadowgem.Data.Json.JsonSerializationParams.IndentChar">
+            <summary>
+            Gets or sets which character to use for indenting when <see cref="P:Newtonsoft.Json.JsonWriter.Formatting"/> is set to <see cref="F:TomLabs.Shadowgem.Data.Json.JsonFormatting.Indented"/>.
+            </summary>
+        </member>
+        <member name="P:TomLabs.Shadowgem.Data.Json.JsonSerializationParams.Indentation">
+            <summary>
+            Gets or sets how many <see cref="P:Newtonsoft.Json.JsonTextWriter.IndentChar"/>s to write for each level in the hierarchy when <see cref="P:Newtonsoft.Json.JsonWriter.Formatting"/> is set to <see cref="F:TomLabs.Shadowgem.Data.Json.JsonFormatting.Indented"/>.
+            </summary>
+        </member>
+        <member name="P:TomLabs.Shadowgem.Data.Json.JsonSerializationParams.NullValueHandling">
+            <summary>
+            Specifies null value handling options for the <see cref="T:Newtonsoft.Json.JsonSerializer"/>.
+            </summary>
+        </member>
+        <member name="P:TomLabs.Shadowgem.Data.Json.JsonSerializationParams.DefaultValueHandling">
+            <summary>
+            Specifies default value handling options for the <see cref="T:Newtonsoft.Json.JsonSerializer"/>.
+            </summary>
         </member>
         <member name="T:TomLabs.Shadowgem.Helpers.Cmd">
             <summary>
@@ -779,7 +917,7 @@
             <param name="toFind"></param>
             <returns></returns>
         </member>
-        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
             <summary>
             Searches the input string for the first occurrence of the specified regular expression, using the specified matching options.
             </summary>
@@ -788,7 +926,7 @@
             <param name="regexOptions"></param>
             <returns></returns>
         </member>
-        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsIsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
             <summary>
             Checks wether the input string matches the first occurrence of the specified regular expression, using the specified matching options.
             </summary>
@@ -983,7 +1121,7 @@
             Returns of given length. If length of given string is greater
             </summary>
             <param name="str"></param>
-            <param name="maxLenght"></param>
+            <param name="maxLength"></param>
             <param name="suffix"></param>
             <returns></returns>
         </member>

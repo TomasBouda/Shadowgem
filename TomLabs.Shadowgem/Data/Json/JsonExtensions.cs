@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace TomLabs.Shadowgem.Data
+namespace TomLabs.Shadowgem.Data.Json
 {
 	/// <summary>
 	/// Json related extensions

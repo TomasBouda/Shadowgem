@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <Authors>Tomáš Bouda</Authors>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Authors>Tomas Bouda</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>2.0.0</Version>
     <PackageProjectUrl>https://github.com/TomasBouda/Shadowgem</PackageProjectUrl>
@@ -22,10 +22,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\TomLabs.Shadowgem\Data\DataTableExtensions.cs" Link="DataTableExtensions.cs" />
-    <Compile Include="..\TomLabs.Shadowgem\Data\JsonExtensions.cs" Link="JsonExtensions.cs" />
     <Compile Include="..\TomLabs.Shadowgem\Data\XmlExtensions.cs" Link="XmlExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Hjson" Version="3.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <Compile Include="..\TomLabs.Shadowgem\Data\Json\JsonExtensions.cs" Link="Json\JsonExtensions.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Data\Json\JsonHandler.cs" Link="Json\JsonHandler.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Data\Json\JsonSerializationParams.cs" Link="Json\JsonSerializationParams.cs" />
   </ItemGroup>
 </Project>

@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PropertyGroup>
-	<TargetFramework>netstandard2.0</TargetFramework>
+	<TargetFramework>netstandard2.1</TargetFramework>
 	<Title>Shadowgem</Title>
-	<Authors>Tomáš Bouda</Authors>
-	<PackageDescription>Library that provides extension and helper methods of all kinds.</PackageDescription>
+	<Authors>Tomas Bouda</Authors>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	<Version>2.0.0</Version>
 	<PackageProjectUrl>https://github.com/TomasBouda/Shadowgem</PackageProjectUrl>

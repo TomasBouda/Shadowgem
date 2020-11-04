@@ -18,6 +18,7 @@
     <DocumentationFile>C:\Data\GIT\Shadowgem\TomLabs.Shadowgem\TomLabs.Shadowgem.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Hjson" Version="3.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   </ItemGroup>
 </Project>

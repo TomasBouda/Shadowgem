@@ -310,12 +310,12 @@ namespace TomLabs.Shadowgem.Text
 		/// Returns of given length. If length of given string is greater
 		/// </summary>
 		/// <param name="str"></param>
-		/// <param name="maxLenght"></param>
+		/// <param name="maxLength"></param>
 		/// <param name="suffix"></param>
 		/// <returns></returns>
-		public static string MaxLength(this string str, int maxLenght, string suffix = "...")
+		public static string MaxLength(this string str, int maxLength, string suffix = "...")
 		{
-			return str.Length <= maxLenght ? str : str.Substring(0, maxLenght) + suffix;
+			return str.Length <= maxLength ? str : str.Substring(0, maxLength) + suffix;
 		}
 
 		/// <summary>

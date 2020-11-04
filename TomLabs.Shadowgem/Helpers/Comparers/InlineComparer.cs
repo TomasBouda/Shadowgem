@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace TomLabs.Shadowgem.Helpers.Comparers
 {
 	/// <summary>
-	/// Allows you to compare inline in linq query
+	/// Allows you to compare inline in Linq query
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	public class InlineComparer<T> : IEqualityComparer<T>

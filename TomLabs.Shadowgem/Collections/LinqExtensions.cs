@@ -39,11 +39,11 @@ namespace TomLabs.Shadowgem.Collections
 		/// </summary>
 		/// <param name="data">The data.</param>
 		/// <param name="delimiter">The delimiter.</param>
-		/// <param name="nullvalue">The null value.</param>
+		/// <param name="nullValue">The null value.</param>
 		/// <returns></returns>
-		public static string ToCSVString(this IOrderedQueryable data, string delimiter, string nullvalue)
+		public static string ToCSVString(this IOrderedQueryable data, string delimiter, string nullValue)
 		{
-			StringBuilder csvdata = new StringBuilder();
+			StringBuilder csvData = new StringBuilder();
 			string replaceFrom = delimiter.Trim();
 			string replaceDelimiter = ";";
 			PropertyInfo[] headers = data.ElementType.GetProperties();
@@ -60,42 +60,43 @@ namespace TomLabs.Shadowgem.Collections
 				case "\t":
 					replaceDelimiter = "    ";
 					break;
-
-				default:
-					break;
 			}
+
 			if (headers.Length > 0)
 			{
 				foreach (var head in headers)
 				{
-					csvdata.Append(head.Name.Replace("_", " ") + delimiter);
+					csvData.Append(head.Name.Replace("_", " ") + delimiter);
 				}
-				csvdata.Append("\n");
+				csvData.Append("\n");
 			}
+
 			foreach (var row in data)
 			{
 				var fields = row.GetType().GetProperties();
-				for (int i = 0; i < fields.Length; i++)
+				foreach (var field in fields)
 				{
 					object value = null;
 					try
 					{
-						value = fields[i].GetValue(row, null);
+						value = field.GetValue(row, null);
 					}
 					catch { }
+
 					if (value != null)
 					{
-						csvdata.Append(value.ToString().Replace("\r", "\f").Replace("\n", " \f").Replace("_", " ").Replace(replaceFrom, replaceDelimiter) + delimiter);
+						csvData.Append(value.ToString().Replace("\r", "\f").Replace("\n", " \f").Replace("_", " ").Replace(replaceFrom, replaceDelimiter) + delimiter);
 					}
 					else
 					{
-						csvdata.Append(nullvalue);
-						csvdata.Append(delimiter);
+						csvData.Append(nullValue);
+						csvData.Append(delimiter);
 					}
 				}
-				csvdata.Append("\n");
+				csvData.Append("\n");
 			}
-			return csvdata.ToString();
+
+			return csvData.ToString();
 		}
 
 		/// <summary>
@@ -299,10 +300,29 @@ namespace TomLabs.Shadowgem.Collections
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list"></param>
-		/// <param name="toRremove"></param>
-		public static void Remove<T>(this ICollection<T> list, IEnumerable<T> toRremove)
+		/// <param name="toRemove"></param>
+		public static void Remove<T>(this ICollection<T> list, IEnumerable<T> toRemove)
 		{
-			toRremove?.ToList().ForEach((r) => { list.Remove(r); });
+			toRemove?.ToList().ForEach((r) => { list.Remove(r); });
+		}
+
+		/// <summary>
+		/// Invokes a transform function on each element of a sequence and returns the minimum <see cref="int" /> value. If sequence is empty or null returns default value of <see cref="int"/>.
+		/// </summary>
+		/// <typeparam name="TSource">The type of the elements of <paramref name="sequence" />.</typeparam>
+		/// <param name="sequence">A sequence of values to determine the minimum value of.</param>
+		/// <param name="selector">A transform function to apply to each element.</param>
+		/// <returns>The minimum value in the sequence.</returns>
+		public static int MinOrDefault<TSource>(this IEnumerable<TSource> sequence, Func<TSource, int> selector)
+		{
+			if (sequence?.Any() ?? false)
+			{
+				return sequence.Min(selector);
+			}
+			else
+			{
+				return default(int);
+			}
 		}
 	}
 }

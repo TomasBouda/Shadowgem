@@ -59,10 +59,11 @@ namespace TomLabs.Shadowgem.Common
 		/// </summary>
 		/// <param name="value"></param>
 		/// <param name="pattern"></param>
+		/// <param name="options"></param>
 		/// <returns><c>true</c> if there is a match</returns>
-		public static bool Match(this string value, string pattern)
+		public static bool IsMatch(this string value, string pattern, RegexOptions options = RegexOptions.None)
 		{
-			Regex regex = new Regex(pattern);
+			Regex regex = new Regex(pattern, options);
 			return regex.IsMatch(value);
 		}
 
@@ -166,10 +167,10 @@ namespace TomLabs.Shadowgem.Common
 		}
 
 		/// <summary>
-		/// <paramref name="object"/> == null
+		/// Returns <c>true</c> if given object equals <c>null</c>
 		/// </summary>
 		/// <param name="object"></param>
-		/// <returns></returns>
+		/// <returns><c>true</c> if object is <c>null</c></returns>
 		public static bool IsNull(this object @object)
 		{
 			return @object == null;
