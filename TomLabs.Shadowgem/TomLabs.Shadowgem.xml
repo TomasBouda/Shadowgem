@@ -204,6 +204,15 @@
             <param name="list"></param>
             <param name="toRemove"></param>
         </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.MinOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32})">
+            <summary>
+            Invokes a transform function on each element of a sequence and returns the minimum <see cref="T:System.Int32" /> value. If sequence is empty or null returns default value of <see cref="T:System.Int32"/>.
+            </summary>
+            <typeparam name="TSource">The type of the elements of <paramref name="sequence" />.</typeparam>
+            <param name="sequence">A sequence of values to determine the minimum value of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The minimum value in the sequence.</returns>
+        </member>
         <member name="T:TomLabs.Shadowgem.Common.CommonExtensions">
             <summary>
             Common Extension methods
@@ -234,13 +243,14 @@
             <param name="things"></param>
             <returns></returns>
         </member>
-        <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.IsMatch(System.String,System.String)">
+        <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
             <summary>
             Indicates whether the regular expression specified by <paramref name="pattern"/>
                 finds a match in a specified input <see cref="T:System.String"/>.
             </summary>
             <param name="value"></param>
             <param name="pattern"></param>
+            <param name="options"></param>
             <returns><c>true</c> if there is a match</returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.XmlSerialize``1(``0)">
@@ -290,10 +300,10 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.IsNull(System.Object)">
             <summary>
-            <paramref name="object"/> == null
+            Returns <c>true</c> if given object equals <c>null</c>
             </summary>
             <param name="object"></param>
-            <returns></returns>
+            <returns><c>true</c> if object is <c>null</c></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.IsDirectory(System.String)">
             <summary>
@@ -443,6 +453,29 @@
             <typeparam name="T"></typeparam>
             <param name="enumerationValue"></param>
             <returns></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Common.TimeSpanExtensions">
+            <summary>
+            <see cref="T:System.TimeSpan"/> related extension methods
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.TimeSpanExtensions.AddTimeUnit(System.Int32,TomLabs.Shadowgem.Common.TimeSpanExtensions.TimeUnit,System.Boolean)">
+            <summary>
+            Adds specified time unit to given string
+            </summary>
+            <param name="value"></param>
+            <param name="unit"></param>
+            <param name="shortUnit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.TimeSpanExtensions.ToReadableString(System.TimeSpan,System.Boolean,System.Boolean)">
+            <summary>
+            Returns string in human readable representation. e.g. 1 day 20 hours 5 minutes
+            </summary>
+            <param name="timeSpan">timespan to convert</param>
+            <param name="showSeconds">Sets whether to show seconds in output</param>
+            <param name="shortUnits">Sets whether to show only short time units. e.g. '1d 20h' instead of '1 day 20 hours'</param>
+            <returns>Human readable timespan string</returns>
         </member>
         <member name="T:TomLabs.Shadowgem.Misc.DataTableExtensions">
             <summary>
@@ -693,7 +726,7 @@
         </member>
         <member name="T:TomLabs.Shadowgem.Helpers.Comparers.InlineComparer`1">
             <summary>
-            Allows you to compare inline in linq query
+            Allows you to compare inline in Linq query
             </summary>
             <typeparam name="T"></typeparam>
         </member>
@@ -917,7 +950,7 @@
             <param name="toFind"></param>
             <returns></returns>
         </member>
-        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
             <summary>
             Searches the input string for the first occurrence of the specified regular expression, using the specified matching options.
             </summary>
@@ -926,7 +959,7 @@
             <param name="regexOptions"></param>
             <returns></returns>
         </member>
-        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsIsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
             <summary>
             Checks wether the input string matches the first occurrence of the specified regular expression, using the specified matching options.
             </summary>
