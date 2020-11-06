@@ -222,6 +222,10 @@
             <summary>
             Determines if an instance is contained in a sequence
             </summary>
+            <example>
+            if(5.IsIn(0,1,2,3,4,5,6,7,8,9)){
+            }
+            </example>
             <typeparam name="T"></typeparam>
             <param name="source"></param>
             <param name="list"></param>
@@ -231,6 +235,15 @@
             <summary>
             Simulates coin toss. Returns randomly <c>true</c> or <c>false</c>
             </summary>
+            <example>
+            var rnd = new Random();
+            if(rnd.CoinToss()){
+            	Console.WriteLine("Heads");
+            }
+            else{
+            	Console.WriteLine("Tails");
+            }
+            </example>
             <param name="rng"></param>
             <returns>Returns randomly <c>true</c> or <c>false</c></returns>
         </member>
@@ -238,29 +251,30 @@
             <summary>
             Returns random element from given params collection
             </summary>
+            <example>
+            var rnd = new Random();
+            Console.WriteLine(rnd.OneOf("one", "two", "three"));
+            </example>
             <typeparam name="T"></typeparam>
             <param name="rnd"></param>
             <param name="things"></param>
             <returns></returns>
         </member>
-        <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
-            <summary>
-            Indicates whether the regular expression specified by <paramref name="pattern"/>
-                finds a match in a specified input <see cref="T:System.String"/>.
-            </summary>
-            <param name="value"></param>
-            <param name="pattern"></param>
-            <param name="options"></param>
-            <returns><c>true</c> if there is a match</returns>
-        </member>
         <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.XmlSerialize``1(``0)">
             <summary>Serializes an object of type T in to an XML string</summary>
+            <example>
+            var obj = new Test { Str ="test", Number = 123};
+            Console.WriteLine(obj.XmlSerialize());
+            </example>
             <typeparam name="T">Any class type</typeparam>
             <param name="obj">Object to serialize</param>
             <returns>A string that represents XML, empty otherwise</returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.XmlDeserialize``1(System.String)">
             <summary>Deserializes an xml string into an object of Type T</summary>
+            <example>
+            var obj = xmlString.XmlDeserialize&lt;Test&gt;();
+            </example>
             <typeparam name="T">Any class type</typeparam>
             <param name="xml">XML as string to deserialize from</param>
             <returns>A new object of type T if successful, null if failed</returns>
@@ -275,8 +289,12 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.ToCurrency(System.Double,System.String)">
             <summary>
-            Returns given <see cref="T:System.Decimal"/> value formated as currency
+            Returns given <see cref="T:System.Decimal"/> value formatted as currency
             </summary>
+            <example>
+            Console.WriteLine(12.5.ToCurrency("cs-CZ")); // Outputs 12,50 Kč
+            Console.WriteLine(12.5.ToCurrency("fr-FR")); // Outputs 12,50 €
+            </example>
             <param name="value"></param>
             <param name="cultureName"></param>
             <returns></returns>
@@ -293,6 +311,10 @@
             <summary>
             Limit a value to a certain range. When the value is smaller/bigger than the range, snap it to the range border.
             </summary>
+            <example>
+            var x = 25.Clamp(0,20); // x equals to 20
+            var y = 15.Clamp(0,20); // x equals to 15
+            </example>
             <typeparam name = "T">The type of the value to limit.</typeparam>
             <param name = "source">The source for this extension method.</param>
             <param name = "start">The start of the interval, included in the interval.</param>
@@ -302,22 +324,14 @@
             <summary>
             Returns <c>true</c> if given object equals <c>null</c>
             </summary>
+            <example>
+            string x = null;
+            if(x.IsNull()){
+            	Console.WriteLine("x is null");
+            }
+            </example>
             <param name="object"></param>
             <returns><c>true</c> if object is <c>null</c></returns>
-        </member>
-        <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.IsDirectory(System.String)">
-            <summary>
-            Returns <c>true</c> if given string is path to a directory
-            </summary>
-            <param name="path"></param>
-            <returns></returns>
-        </member>
-        <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.IsFile(System.String)">
-            <summary>
-            Returns <c>true</c> if given string is path to a file
-            </summary>
-            <param name="path"></param>
-            <returns></returns>
         </member>
         <member name="T:TomLabs.Shadowgem.Common.DateTimeExtensions">
             <summary>
@@ -328,6 +342,10 @@
             <summary>
             Elapsed the time.
             </summary>
+            <example>
+            var yesterday = DateTime.Now.AddDays(-1);
+            yesterday.Elapsed();
+            </example>
             <param name="datetime">The datetime.</param>
             <returns>TimeSpan</returns>
         </member>
@@ -335,8 +353,11 @@
             <summary>
             Weeks the of year.
             </summary>
+            <example>
+            DateTime.Now.WeekOfYear(System.Globalization.CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+            </example>
             <param name="datetime">The datetime.</param>
-            <param name="weekrule">The weekrule.</param>
+            <param name="weekRule">The weekRule.</param>
             <param name="firstDayOfWeek">The first day of week.</param>
             <returns></returns>
         </member>
@@ -353,7 +374,7 @@
             Weeks the of year.
             </summary>
             <param name="datetime">The datetime.</param>
-            <param name="weekrule">The weekrule.</param>
+            <param name="weekRule">The weekRule.</param>
             <returns></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.WeekOfYear(System.DateTime)">
@@ -397,7 +418,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.DaysFromFirstDayOfWeek(System.DayOfWeek,System.DayOfWeek)">
             <summary>
-            Dayses from first day of week.
+            Days from first day of week.
             </summary>
             <param name="current">The current.</param>
             <param name="firstDayOfWeek">The first day of week.</param>
@@ -412,14 +433,14 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.Readable(System.DateTime)">
             <summary>
-            Returns given time as string formated to dd.MM.yyyy HH:mm:ss
+            Returns given time as string formatted to dd.MM.yyyy HH:mm:ss
             </summary>
             <param name="dateTime"></param>
             <returns></returns>
         </member>
         <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.ReadableMs(System.DateTime)">
             <summary>
-            Returns given time as string formated to dd.MM.yyyy HH:mm:ss:ms
+            Returns given time as string formatted to dd.MM.yyyy HH:mm:ss:ms
             </summary>
             <param name="dateTime"></param>
             <returns></returns>
@@ -477,63 +498,23 @@
             <param name="shortUnits">Sets whether to show only short time units. e.g. '1d 20h' instead of '1 day 20 hours'</param>
             <returns>Human readable timespan string</returns>
         </member>
-        <member name="T:TomLabs.Shadowgem.Misc.DataTableExtensions">
+        <member name="T:TomLabs.Shadowgem.Data.DataTableExtensions">
             <summary>
             <see cref="T:System.Data.DataTable"/> related extension methods
             </summary>
         </member>
-        <member name="M:TomLabs.Shadowgem.Misc.DataTableExtensions.ToStringSingle(System.Data.DataTable)">
+        <member name="M:TomLabs.Shadowgem.Data.DataTableExtensions.ToStringSingle(System.Data.DataTable)">
             <summary>
             Converts <see cref="T:System.Data.DataTable"/> to string
             </summary>
             <param name="dataTable"></param>
             <returns></returns>
         </member>
-        <member name="M:TomLabs.Shadowgem.Misc.DataTableExtensions.ToFormatedString(System.Data.DataTable)">
+        <member name="M:TomLabs.Shadowgem.Data.DataTableExtensions.ToFormatedString(System.Data.DataTable)">
             <summary>
             Converts <see cref="T:System.Data.DataTable"/> to formated string
             </summary>
             <param name="dataTable"></param>
-            <returns></returns>
-        </member>
-        <member name="T:TomLabs.Shadowgem.Misc.XmlExtensions">
-            <summary>
-            XML related extensions
-            </summary>
-        </member>
-        <member name="M:TomLabs.Shadowgem.Misc.XmlExtensions.Beautify(System.Xml.Linq.XDocument)">
-            <summary>
-            Formats given XML document
-            </summary>
-            <param name="doc"></param>
-            <returns></returns>
-        </member>
-        <member name="M:TomLabs.Shadowgem.Misc.XmlExtensions.ToXmlDocument(System.Xml.Linq.XDocument)">
-            <summary>
-            Converts <see cref="T:System.Xml.Linq.XDocument"/> to <see cref="T:System.Xml.XmlDocument"/>
-            </summary>
-            <param name="xDocument"></param>
-            <returns></returns>
-        </member>
-        <member name="M:TomLabs.Shadowgem.Misc.XmlExtensions.ToXDocument(System.Xml.XmlDocument)">
-            <summary>
-            Converts <see cref="T:System.Xml.XmlDocument"/> to <see cref="T:System.Xml.Linq.XDocument"/>
-            </summary>
-            <param name="xmlDocument"></param>
-            <returns></returns>
-        </member>
-        <member name="M:TomLabs.Shadowgem.Misc.XmlExtensions.ToXmlDocument(System.Xml.Linq.XElement)">
-            <summary>
-            Converts <see cref="T:System.Xml.Linq.XElement"/> to <see cref="T:System.Xml.XmlDocument"/>
-            </summary>
-            <param name="xElement"></param>
-            <returns></returns>
-        </member>
-        <member name="M:TomLabs.Shadowgem.Misc.XmlExtensions.ToMemoryStream(System.Xml.XmlDocument)">
-            <summary>
-            Converts <see cref="T:System.Xml.XmlDocument"/> to <see cref="T:System.IO.Stream"/>
-            </summary>
-            <param name="doc"></param>
             <returns></returns>
         </member>
         <member name="T:TomLabs.Shadowgem.Data.Json.JsonExtensions">
@@ -703,6 +684,46 @@
             Specifies default value handling options for the <see cref="T:Newtonsoft.Json.JsonSerializer"/>.
             </summary>
         </member>
+        <member name="T:TomLabs.Shadowgem.Data.XmlExtensions">
+            <summary>
+            XML related extensions
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.XmlExtensions.Beautify(System.Xml.Linq.XDocument)">
+            <summary>
+            Formats given XML document
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.XmlExtensions.ToXmlDocument(System.Xml.Linq.XDocument)">
+            <summary>
+            Converts <see cref="T:System.Xml.Linq.XDocument"/> to <see cref="T:System.Xml.XmlDocument"/>
+            </summary>
+            <param name="xDocument"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.XmlExtensions.ToXDocument(System.Xml.XmlDocument)">
+            <summary>
+            Converts <see cref="T:System.Xml.XmlDocument"/> to <see cref="T:System.Xml.Linq.XDocument"/>
+            </summary>
+            <param name="xmlDocument"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.XmlExtensions.ToXmlDocument(System.Xml.Linq.XElement)">
+            <summary>
+            Converts <see cref="T:System.Xml.Linq.XElement"/> to <see cref="T:System.Xml.XmlDocument"/>
+            </summary>
+            <param name="xElement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.XmlExtensions.ToMemoryStream(System.Xml.XmlDocument)">
+            <summary>
+            Converts <see cref="T:System.Xml.XmlDocument"/> to <see cref="T:System.IO.Stream"/>
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
         <member name="T:TomLabs.Shadowgem.Helpers.Cmd">
             <summary>
             Windows command line helper class
@@ -771,29 +792,16 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:TomLabs.Shadowgem.Helpers.IO.FileHelper">
+        <member name="T:TomLabs.Shadowgem.Helpers.Files.FileHelper">
             <summary>
             Provides methods for working with files
             </summary>
         </member>
-        <member name="M:TomLabs.Shadowgem.Helpers.IO.FileHelper.RemoveReadOnlyAttribute(System.String)">
+        <member name="M:TomLabs.Shadowgem.Helpers.Files.FileHelper.RemoveReadOnlyAttribute(System.String)">
             <summary>
             Removes ReadOnly attribute on given file
             </summary>
             <param name="path"></param>
-        </member>
-        <member name="T:TomLabs.Shadowgem.Helpers.IO.PathEx">
-            <summary>
-            Provides extension methods for Path
-            </summary>
-        </member>
-        <member name="M:TomLabs.Shadowgem.Helpers.IO.PathEx.GoUp(System.String,System.Int32)">
-            <summary>
-            Goes up in given <paramref name="path"/>/directory tree by number of specified times(<paramref name="count"/>)
-            </summary>
-            <param name="path"></param>
-            <param name="count"></param>
-            <returns></returns>
         </member>
         <member name="T:TomLabs.Shadowgem.Helpers.ResourceHelper">
             <summary>
@@ -807,6 +815,17 @@
             <typeparam name="T"></typeparam>
             <param name="resourceType"></param>
             <param name="resourceName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Helpers.Utils">
+            <summary>
+            Miscellaneous utilities
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Helpers.Utils.CheckInternetConnection">
+            <summary>
+            Returns <c>true</c> if internet connection is available
+            </summary>
             <returns></returns>
         </member>
         <member name="T:TomLabs.Shadowgem.Text.CharExtensions">
@@ -828,77 +847,77 @@
             <param name="ch"></param>
             <returns></returns>
         </member>
-        <member name="T:TomLabs.Shadowgem.Text.Encription.Hasher">
+        <member name="T:TomLabs.Shadowgem.Text.Encryption.Hasher">
             <summary>
             Provides methods for string hashing
             </summary>
         </member>
-        <member name="T:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType">
+        <member name="T:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType">
             <summary>
             Supported hash algorithms
             </summary>
         </member>
-        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.HMAC">
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.HMAC">
             <summary>
             Keyed-hash Message Authentication Code
             </summary>
         </member>
-        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.HMACMD5">
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.HMACMD5">
             <summary>
             Hash-based Message Authentication Code (HMAC) by using the MD5 hash function
             </summary>
         </member>
-        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.HMACSHA1">
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.HMACSHA1">
             <summary>
             Hash-based Message Authentication Code (HMAC) using the SHA1 hash function
             </summary>
         </member>
-        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.HMACSHA256">
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.HMACSHA256">
             <summary>
             Hash-based Message Authentication Code (HMAC) by using the SHA256 hash function
             </summary>
         </member>
-        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.HMACSHA384">
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.HMACSHA384">
             <summary>
             Hash-based Message Authentication Code (HMAC) by using the SHA384 hash function
             </summary>
         </member>
-        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.HMACSHA512">
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.HMACSHA512">
             <summary>
             Hash-based Message Authentication Code (HMAC) by using the SHA512 hash function
             </summary>
         </member>
-        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.MACTripleDES">
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.MACTripleDES">
             <summary>
             Message Authentication Code (MAC) using TripleDES
             </summary>
         </member>
-        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.RIPEMD160">
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.RIPEMD160">
             <summary>
             MD160 hash algorithm
             </summary>
         </member>
-        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.SHA256">
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.SHA256">
             <summary>
             Secure Hash Algorithm 256
             </summary>
         </member>
-        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.SHA384">
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.SHA384">
             <summary>
             Secure Hash Algorithm 384
             </summary>
         </member>
-        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.SHA512">
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.SHA512">
             <summary>
             Secure Hash Algorithm 512
             </summary>
         </member>
-        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.MD5">
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.MD5">
             <summary>
             Should not be used.
             </summary>
         </member>
-        <member name="F:TomLabs.Shadowgem.Text.Encription.Hasher.EHashType.SHA1">
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.SHA1">
             <summary>
             Should not be used.
             <para>
@@ -906,7 +925,7 @@
             </para>
             </summary>
         </member>
-        <member name="M:TomLabs.Shadowgem.Text.Encription.Hasher.ComputeHash(System.String,TomLabs.Shadowgem.Text.Encription.Hasher.EHashType)">
+        <member name="M:TomLabs.Shadowgem.Text.Encryption.Hasher.ComputeHash(System.String,TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType)">
             <summary>
             Computes the hash of the string using a specified hash algorithm
             </summary>
@@ -914,12 +933,12 @@
             <param name="hashType">The hash algorithm to use</param>
             <returns>The resulting hash or an empty string on error</returns>
         </member>
-        <member name="T:TomLabs.Shadowgem.Text.Encription.StringEncrypt">
+        <member name="T:TomLabs.Shadowgem.Text.Encryption.StringEncrypt">
             <summary>
             Provides methods for string encryption/decryption
             </summary>
         </member>
-        <member name="M:TomLabs.Shadowgem.Text.Encription.StringEncrypt.Encrypt(System.String,System.String)">
+        <member name="M:TomLabs.Shadowgem.Text.Encryption.StringEncrypt.Encrypt(System.String,System.String)">
             <summary>
             Encrypts a string using the supplied key. Encoding is done using RSA encryption.
             </summary>
@@ -928,7 +947,7 @@
             <returns>A string representing a byte array separated by a minus sign.</returns>
             <exception cref="T:System.ArgumentException">Occurs when stringToEncrypt or key is null or empty.</exception>
         </member>
-        <member name="M:TomLabs.Shadowgem.Text.Encription.StringEncrypt.Decrypt(System.String,System.String)">
+        <member name="M:TomLabs.Shadowgem.Text.Encryption.StringEncrypt.Decrypt(System.String,System.String)">
             <summary>
             Decrypts a string using the supplied key. Decoding is done using RSA encryption.
             </summary>
@@ -961,7 +980,7 @@
         </member>
         <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
             <summary>
-            Checks wether the input string matches the first occurrence of the specified regular expression, using the specified matching options.
+            Checks whether the input string matches the first occurrence of the specified regular expression, using the specified matching options.
             </summary>
             <param name="text"></param>
             <param name="pattern"></param>
@@ -1419,17 +1438,6 @@
             <param name="type"></param>
             <param name="refObject"></param>
             <param name="ignoredTypes"></param>
-            <returns></returns>
-        </member>
-        <member name="T:KeypadX.Core.Helpers.Utils">
-            <summary>
-            Miscellaneous utilities
-            </summary>
-        </member>
-        <member name="M:KeypadX.Core.Helpers.Utils.CheckInternetConnection">
-            <summary>
-            Returns <c>true</c> if internet connection is available
-            </summary>
             <returns></returns>
         </member>
     </members>

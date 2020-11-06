@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
 namespace TomLabs.Shadowgem.Common
@@ -17,6 +16,10 @@ namespace TomLabs.Shadowgem.Common
 		/// <summary>
 		/// Determines if an instance is contained in a sequence
 		/// </summary>
+		/// <example>
+		/// if(5.IsIn(0,1,2,3,4,5,6,7,8,9)){
+		/// }
+		/// </example>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="source"></param>
 		/// <param name="list"></param>
@@ -34,6 +37,15 @@ namespace TomLabs.Shadowgem.Common
 		/// <summary>
 		/// Simulates coin toss. Returns randomly <c>true</c> or <c>false</c>
 		/// </summary>
+		/// <example>
+		/// var rnd = new Random();
+		/// if(rnd.CoinToss()){
+		///		Console.WriteLine("Heads");
+		/// }
+		/// else{
+		///		Console.WriteLine("Tails");
+		/// }
+		/// </example>
 		/// <param name="rng"></param>
 		/// <returns>Returns randomly <c>true</c> or <c>false</c></returns>
 		public static bool CoinToss(this Random rng)
@@ -44,6 +56,10 @@ namespace TomLabs.Shadowgem.Common
 		/// <summary>
 		/// Returns random element from given params collection
 		/// </summary>
+		/// <example>
+		/// var rnd = new Random();
+		/// Console.WriteLine(rnd.OneOf("one", "two", "three"));
+		/// </example>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="rnd"></param>
 		/// <param name="things"></param>
@@ -53,21 +69,11 @@ namespace TomLabs.Shadowgem.Common
 			return things[rnd.Next(things.Length)];
 		}
 
-		/// <summary>
-		/// Indicates whether the regular expression specified by <paramref name="pattern"/>
-		///     finds a match in a specified input <see cref="string"/>.
-		/// </summary>
-		/// <param name="value"></param>
-		/// <param name="pattern"></param>
-		/// <param name="options"></param>
-		/// <returns><c>true</c> if there is a match</returns>
-		public static bool IsMatch(this string value, string pattern, RegexOptions options = RegexOptions.None)
-		{
-			Regex regex = new Regex(pattern, options);
-			return regex.IsMatch(value);
-		}
-
 		/// <summary>Serializes an object of type T in to an XML string</summary>
+		/// <example>
+		/// var obj = new Test { Str ="test", Number = 123};
+		/// Console.WriteLine(obj.XmlSerialize());
+		/// </example>
 		/// <typeparam name="T">Any class type</typeparam>
 		/// <param name="obj">Object to serialize</param>
 		/// <returns>A string that represents XML, empty otherwise</returns>
@@ -87,6 +93,9 @@ namespace TomLabs.Shadowgem.Common
 		}
 
 		/// <summary>Deserializes an xml string into an object of Type T</summary>
+		/// <example>
+		/// var obj = xmlString.XmlDeserialize&lt;Test&gt;();
+		/// </example>
 		/// <typeparam name="T">Any class type</typeparam>
 		/// <param name="xml">XML as string to deserialize from</param>
 		/// <returns>A new object of type T if successful, null if failed</returns>
@@ -117,8 +126,12 @@ namespace TomLabs.Shadowgem.Common
 		}
 
 		/// <summary>
-		/// Returns given <see cref="decimal"/> value formated as currency
+		/// Returns given <see cref="decimal"/> value formatted as currency
 		/// </summary>
+		/// <example>
+		///	Console.WriteLine(12.5.ToCurrency("cs-CZ")); // Outputs 12,50 Kč
+		/// Console.WriteLine(12.5.ToCurrency("fr-FR")); // Outputs 12,50 €
+		/// </example>
 		/// <param name="value"></param>
 		/// <param name="cultureName"></param>
 		/// <returns></returns>
@@ -148,6 +161,10 @@ namespace TomLabs.Shadowgem.Common
 		/// <summary>
 		/// Limit a value to a certain range. When the value is smaller/bigger than the range, snap it to the range border.
 		/// </summary>
+		/// <example>
+		///	var x = 25.Clamp(0,20); // x equals to 20
+		/// var y = 15.Clamp(0,20); // x equals to 15
+		/// </example>
 		/// <typeparam name = "T">The type of the value to limit.</typeparam>
 		/// <param name = "source">The source for this extension method.</param>
 		/// <param name = "start">The start of the interval, included in the interval.</param>
@@ -169,47 +186,17 @@ namespace TomLabs.Shadowgem.Common
 		/// <summary>
 		/// Returns <c>true</c> if given object equals <c>null</c>
 		/// </summary>
+		/// <example>
+		///	string x = null;
+		/// if(x.IsNull()){
+		///		Console.WriteLine("x is null");
+		/// }
+		/// </example>
 		/// <param name="object"></param>
 		/// <returns><c>true</c> if object is <c>null</c></returns>
 		public static bool IsNull(this object @object)
 		{
 			return @object == null;
-		}
-
-		/// <summary>
-		/// Returns <c>true</c> if given string is path to a directory
-		/// </summary>
-		/// <param name="path"></param>
-		/// <returns></returns>
-		public static bool IsDirectory(this string path)
-		{
-			if (Directory.Exists(path))
-			{
-				FileAttributes attr = File.GetAttributes(path);
-				return (attr.HasFlag(FileAttributes.Directory));
-			}
-			else
-			{
-				return false;
-			}
-		}
-
-		/// <summary>
-		/// Returns <c>true</c> if given string is path to a file
-		/// </summary>
-		/// <param name="path"></param>
-		/// <returns></returns>
-		public static bool IsFile(this string path)
-		{
-			if (File.Exists(path))
-			{
-				FileAttributes attr = File.GetAttributes(path);
-				return !(attr.HasFlag(FileAttributes.Directory));
-			}
-			else
-			{
-				return false;
-			}
 		}
 	}
 }

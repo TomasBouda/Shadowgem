@@ -1,9 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Authors>Tomas Bouda</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
     <PackageProjectUrl>https://github.com/TomasBouda/Shadowgem</PackageProjectUrl>
     <RepositoryUrl>https://github.com/TomasBouda/Shadowgem</RepositoryUrl>
     <PackageTags>extension helper methods utility library</PackageTags>
@@ -12,8 +12,8 @@
     <Title>Shadowgem.Text</Title>
     <PackageDescription>Provides extension methods for string and char. This is partial package of main TomLabs.Shadowgem package.</PackageDescription>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-	  <IncludeSymbols>true</IncludeSymbols>
-	  <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>bin\Release\netstandard2.0\TomLabs.Shadowgem.Text.xml</DocumentationFile>
@@ -24,7 +24,7 @@
   <ItemGroup>
     <Compile Include="..\TomLabs.Shadowgem\Text\CharExtensions.cs" Link="CharExtensions.cs" />
     <Compile Include="..\TomLabs.Shadowgem\Text\StringExtensions.cs" Link="StringExtensions.cs" />
-    <Compile Include="..\TomLabs.Shadowgem\Text\Encription\Hasher.cs" Link="Encription\Hasher.cs" />
-    <Compile Include="..\TomLabs.Shadowgem\Text\Encription\StringEncrypt.cs" Link="Encription\StringEncrypt.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Text\Encryption\Hasher.cs" Link="Encryption\Hasher.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Text\Encryption\StringEncrypt.cs" Link="Encryption\StringEncrypt.cs" />
   </ItemGroup>
 </Project>

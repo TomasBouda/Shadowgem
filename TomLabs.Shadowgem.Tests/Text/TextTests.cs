@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using TomLabs.Shadowgem.Text;
 
-namespace TomLabs.Shadowgem.Tests
+namespace TomLabs.Shadowgem.Tests.Text
 {
 	[TestFixture]
 	public class StringTests

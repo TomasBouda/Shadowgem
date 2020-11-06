@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace TomLabs.Shadowgem.Text.Encription
+namespace TomLabs.Shadowgem.Text.Encryption
 {
 	/// <summary>
 	/// Provides methods for string hashing
@@ -146,9 +146,9 @@ namespace TomLabs.Shadowgem.Text.Encription
 				byte[] hash = GetHash(input, hashType);
 				var ret = new StringBuilder();
 
-				for (int i = 0; i < hash.Length; i++)
+				foreach (var h in hash)
 				{
-					ret.Append(hash[i].ToString("x2"));
+					ret.Append(h.ToString("x2"));
 				}
 
 				return ret.ToString();

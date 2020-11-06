@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TomLabs.Shadowgem.Text.Encription
+namespace TomLabs.Shadowgem.Text.Encryption
 {
 	/// <summary>
 	/// Provides methods for string encryption/decryption

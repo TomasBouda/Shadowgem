@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Text;
 
-namespace TomLabs.Shadowgem.Misc
+namespace TomLabs.Shadowgem.Data
 {
 	/// <summary>
 	/// <see cref="DataTable"/> related extension methods

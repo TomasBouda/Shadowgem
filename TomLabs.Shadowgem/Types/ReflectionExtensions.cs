@@ -23,7 +23,7 @@ namespace TomLabs.Shadowgem.Types
 			{
 				if (prop.GetSetMethod() != null && prop.GetIndexParameters().Length == 0)   // avoid the TargetParameterCountException
 				{
-					to.GetType().GetProperty(prop.Name).SetValue(to, prop.GetValue(from));
+					to.GetType().GetProperty(prop.Name)?.SetValue(to, prop.GetValue(from));
 				}
 			}
 		}

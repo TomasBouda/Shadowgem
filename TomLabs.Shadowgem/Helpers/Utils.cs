@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace KeypadX.Core.Helpers
+namespace TomLabs.Shadowgem.Helpers
 {
 	/// <summary>
 	/// Miscellaneous utilities

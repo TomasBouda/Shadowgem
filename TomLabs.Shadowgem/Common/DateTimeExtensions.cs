@@ -13,6 +13,10 @@ namespace TomLabs.Shadowgem.Common
 		/// <summary>
 		/// Elapsed the time.
 		/// </summary>
+		/// <example>
+		///	var yesterday = DateTime.Now.AddDays(-1);
+		/// yesterday.Elapsed();
+		/// </example>
 		/// <param name="datetime">The datetime.</param>
 		/// <returns>TimeSpan</returns>
 		public static TimeSpan Elapsed(this DateTime datetime)
@@ -27,14 +31,17 @@ namespace TomLabs.Shadowgem.Common
 		/// <summary>
 		/// Weeks the of year.
 		/// </summary>
+		/// <example>
+		///	DateTime.Now.WeekOfYear(System.Globalization.CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+		/// </example>
 		/// <param name="datetime">The datetime.</param>
-		/// <param name="weekrule">The weekrule.</param>
+		/// <param name="weekRule">The weekRule.</param>
 		/// <param name="firstDayOfWeek">The first day of week.</param>
 		/// <returns></returns>
-		public static int WeekOfYear(this DateTime datetime, CalendarWeekRule weekrule, DayOfWeek firstDayOfWeek)
+		public static int WeekOfYear(this DateTime datetime, CalendarWeekRule weekRule, DayOfWeek firstDayOfWeek)
 		{
-			CultureInfo ciCurr = CultureInfo.CurrentCulture;
-			return ciCurr.Calendar.GetWeekOfYear(datetime, weekrule, firstDayOfWeek);
+			CultureInfo currentCulture = CultureInfo.CurrentCulture;
+			return currentCulture.Calendar.GetWeekOfYear(datetime, weekRule, firstDayOfWeek);
 		}
 
 		/// <summary>
@@ -45,22 +52,22 @@ namespace TomLabs.Shadowgem.Common
 		/// <returns></returns>
 		public static int WeekOfYear(this DateTime datetime, DayOfWeek firstDayOfWeek)
 		{
-			DateTimeFormatInfo dateinf = new DateTimeFormatInfo();
-			CalendarWeekRule weekrule = dateinf.CalendarWeekRule;
-			return WeekOfYear(datetime, weekrule, firstDayOfWeek);
+			DateTimeFormatInfo dateInfo = new DateTimeFormatInfo();
+			CalendarWeekRule weekRule = dateInfo.CalendarWeekRule;
+			return WeekOfYear(datetime, weekRule, firstDayOfWeek);
 		}
 
 		/// <summary>
 		/// Weeks the of year.
 		/// </summary>
 		/// <param name="datetime">The datetime.</param>
-		/// <param name="weekrule">The weekrule.</param>
+		/// <param name="weekRule">The weekRule.</param>
 		/// <returns></returns>
-		public static int WeekOfYear(this DateTime datetime, CalendarWeekRule weekrule)
+		public static int WeekOfYear(this DateTime datetime, CalendarWeekRule weekRule)
 		{
-			DateTimeFormatInfo dateinf = new DateTimeFormatInfo();
-			DayOfWeek firstDayOfWeek = dateinf.FirstDayOfWeek;
-			return WeekOfYear(datetime, weekrule, firstDayOfWeek);
+			DateTimeFormatInfo dateInfo = new DateTimeFormatInfo();
+			DayOfWeek firstDayOfWeek = dateInfo.FirstDayOfWeek;
+			return WeekOfYear(datetime, weekRule, firstDayOfWeek);
 		}
 
 		/// <summary>
@@ -70,10 +77,10 @@ namespace TomLabs.Shadowgem.Common
 		/// <returns></returns>
 		public static int WeekOfYear(this DateTime datetime)
 		{
-			DateTimeFormatInfo dateinf = new DateTimeFormatInfo();
-			CalendarWeekRule weekrule = dateinf.CalendarWeekRule;
-			DayOfWeek firstDayOfWeek = dateinf.FirstDayOfWeek;
-			return WeekOfYear(datetime, weekrule, firstDayOfWeek);
+			DateTimeFormatInfo dateInfo = new DateTimeFormatInfo();
+			CalendarWeekRule weekRule = dateInfo.CalendarWeekRule;
+			DayOfWeek firstDayOfWeek = dateInfo.FirstDayOfWeek;
+			return WeekOfYear(datetime, weekRule, firstDayOfWeek);
 		}
 
 		#endregion Week of year
@@ -90,8 +97,8 @@ namespace TomLabs.Shadowgem.Common
 		public static DateTime GetDateTimeForDayOfWeek(this DateTime datetime, DayOfWeek day, DayOfWeek firstDayOfWeek)
 		{
 			int current = DaysFromFirstDayOfWeek(datetime.DayOfWeek, firstDayOfWeek);
-			int resultday = DaysFromFirstDayOfWeek(day, firstDayOfWeek);
-			return datetime.AddDays(resultday - current);
+			int resultDay = DaysFromFirstDayOfWeek(day, firstDayOfWeek);
+			return datetime.AddDays(resultDay - current);
 		}
 
 		/// <summary>
@@ -102,8 +109,8 @@ namespace TomLabs.Shadowgem.Common
 		/// <returns></returns>
 		public static DateTime GetDateTimeForDayOfWeek(this DateTime datetime, DayOfWeek day)
 		{
-			DateTimeFormatInfo dateinf = new DateTimeFormatInfo();
-			DayOfWeek firstDayOfWeek = dateinf.FirstDayOfWeek;
+			DateTimeFormatInfo dateInfo = new DateTimeFormatInfo();
+			DayOfWeek firstDayOfWeek = dateInfo.FirstDayOfWeek;
 			return GetDateTimeForDayOfWeek(datetime, day, firstDayOfWeek);
 		}
 
@@ -114,8 +121,8 @@ namespace TomLabs.Shadowgem.Common
 		/// <returns></returns>
 		public static DateTime FirstDateTimeOfWeek(this DateTime datetime)
 		{
-			DateTimeFormatInfo dateinf = new DateTimeFormatInfo();
-			DayOfWeek firstDayOfWeek = dateinf.FirstDayOfWeek;
+			DateTimeFormatInfo dateInfo = new DateTimeFormatInfo();
+			DayOfWeek firstDayOfWeek = dateInfo.FirstDayOfWeek;
 			return FirstDateTimeOfWeek(datetime, firstDayOfWeek);
 		}
 
@@ -131,21 +138,21 @@ namespace TomLabs.Shadowgem.Common
 		}
 
 		/// <summary>
-		/// Dayses from first day of week.
+		/// Days from first day of week.
 		/// </summary>
 		/// <param name="current">The current.</param>
 		/// <param name="firstDayOfWeek">The first day of week.</param>
 		/// <returns></returns>
 		private static int DaysFromFirstDayOfWeek(DayOfWeek current, DayOfWeek firstDayOfWeek)
 		{
-			//Sunday = 0,Monday = 1,...,Saturday = 6
-			int daysbetween = current - firstDayOfWeek;
-			if (daysbetween < 0)
+			//Sunday = 0,Monday = 1,..., Saturday = 6
+			int daysBetween = current - firstDayOfWeek;
+			if (daysBetween < 0)
 			{
-				daysbetween = 7 + daysbetween;
+				daysBetween = 7 + daysBetween;
 			}
 
-			return daysbetween;
+			return daysBetween;
 		}
 
 		#endregion Get Datetime for Day of Week
@@ -161,7 +168,7 @@ namespace TomLabs.Shadowgem.Common
 		}
 
 		/// <summary>
-		/// Returns given time as string formated to dd.MM.yyyy HH:mm:ss
+		/// Returns given time as string formatted to dd.MM.yyyy HH:mm:ss
 		/// </summary>
 		/// <param name="dateTime"></param>
 		/// <returns></returns>
@@ -171,7 +178,7 @@ namespace TomLabs.Shadowgem.Common
 		}
 
 		/// <summary>
-		/// Returns given time as string formated to dd.MM.yyyy HH:mm:ss:ms
+		/// Returns given time as string formatted to dd.MM.yyyy HH:mm:ss:ms
 		/// </summary>
 		/// <param name="dateTime"></param>
 		/// <returns></returns>

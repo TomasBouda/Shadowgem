@@ -38,7 +38,7 @@ namespace TomLabs.Shadowgem.Text
 		}
 
 		/// <summary>
-		///	Checks wether the input string matches the first occurrence of the specified regular expression, using the specified matching options.
+		///	Checks whether the input string matches the first occurrence of the specified regular expression, using the specified matching options.
 		/// </summary>
 		/// <param name="text"></param>
 		/// <param name="pattern"></param>
@@ -349,8 +349,8 @@ namespace TomLabs.Shadowgem.Text
 		/// </returns>
 		public static bool IsValidUrl(this string text)
 		{
-			Regex rx = new Regex(@"http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?");
-			return rx.IsMatch(text);
+			Regex rgx = new Regex(@"http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?");
+			return rgx.IsMatch(text);
 		}
 
 		/// <summary>
@@ -361,8 +361,8 @@ namespace TomLabs.Shadowgem.Text
 		/// </returns>
 		public static bool IsValidEmailAddress(this string email)
 		{
-			Regex regex = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
-			return regex.IsMatch(email);
+			Regex rgx = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$");
+			return rgx.IsMatch(email);
 		}
 
 		/// <summary>
