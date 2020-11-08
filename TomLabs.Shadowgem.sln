@@ -1,22 +1,45 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem", "TomLabs.Shadowgem\TomLabs.Shadowgem.csproj", "{ADB616B4-D8BD-4572-9806-CBD2EDE0CA78}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2F647B57-8C60-435A-863A-D4B985352745}"
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
-		.travis.yml = .travis.yml
 		LICENSE = LICENSE
+		PackageMetadata.xml = PackageMetadata.xml
 		README.md = README.md
-		Docs\TomLabs.Shadowgem.GeneratedXmlDoc.md = Docs\TomLabs.Shadowgem.GeneratedXmlDoc.md
-		TomLabs.Shadowgem\TomLabs.Shadowgem.nuspec = TomLabs.Shadowgem\TomLabs.Shadowgem.nuspec
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TomLabs.Shadowgem.Tests", "TomLabs.Shadowgem.Tests\TomLabs.Shadowgem.Tests.csproj", "{A01C9B91-B6B4-4D99-8B44-8C30C37396C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.Tests", "TomLabs.Shadowgem.Tests\TomLabs.Shadowgem.Tests.csproj", "{A01C9B91-B6B4-4D99-8B44-8C30C37396C7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem", "TomLabs.Shadowgem\TomLabs.Shadowgem.csproj", "{BD4D36E4-EC3C-478E-9836-72B82919DBA3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.Collections", "TomLabs.Shadowgem.Collections\TomLabs.Shadowgem.Collections.csproj", "{391BC03E-B867-4529-91A9-17B3F2AC3848}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.Common", "TomLabs.Shadowgem.Common\TomLabs.Shadowgem.Common.csproj", "{CDEEA8A0-C72D-4C72-A641-CBF06B4F0A09}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.Data", "TomLabs.Shadowgem.Data\TomLabs.Shadowgem.Data.csproj", "{9141CB49-DA79-40BE-A66F-360F238ACB20}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.Helpers", "TomLabs.Shadowgem.Helpers\TomLabs.Shadowgem.Helpers.csproj", "{2E90ACFB-1F99-44A3-9DA7-207E9EC71A01}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.Text", "TomLabs.Shadowgem.Text\TomLabs.Shadowgem.Text.csproj", "{C6522B40-05AA-4FB1-9AF0-2FAA19922E02}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomLabs.Shadowgem.Types", "TomLabs.Shadowgem.Types\TomLabs.Shadowgem.Types.csproj", "{F0A530DC-541E-41A0-B258-01312E4E5804}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzurePipelines", "AzurePipelines", "{BF5C3411-879F-4DC8-B00A-23F5FC67FF0C}"
+	ProjectSection(SolutionItems) = preProject
+		AzurePipelines\azure-pipelines-release.yml = AzurePipelines\azure-pipelines-release.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9955BA4D-8FF0-4104-AA4C-C7F5BB6E4A5F}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\Collect-Packages.ps1 = Scripts\Collect-Packages.ps1
+		Scripts\Release.ps1 = Scripts\Release.ps1
+		Scripts\Update-PackageInfo.ps1 = Scripts\Update-PackageInfo.ps1
+		Scripts\Update-Singletons.ps1 = Scripts\Update-Singletons.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,17 +47,45 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ADB616B4-D8BD-4572-9806-CBD2EDE0CA78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ADB616B4-D8BD-4572-9806-CBD2EDE0CA78}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ADB616B4-D8BD-4572-9806-CBD2EDE0CA78}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ADB616B4-D8BD-4572-9806-CBD2EDE0CA78}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A01C9B91-B6B4-4D99-8B44-8C30C37396C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A01C9B91-B6B4-4D99-8B44-8C30C37396C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A01C9B91-B6B4-4D99-8B44-8C30C37396C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A01C9B91-B6B4-4D99-8B44-8C30C37396C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD4D36E4-EC3C-478E-9836-72B82919DBA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD4D36E4-EC3C-478E-9836-72B82919DBA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD4D36E4-EC3C-478E-9836-72B82919DBA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD4D36E4-EC3C-478E-9836-72B82919DBA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{391BC03E-B867-4529-91A9-17B3F2AC3848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{391BC03E-B867-4529-91A9-17B3F2AC3848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{391BC03E-B867-4529-91A9-17B3F2AC3848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{391BC03E-B867-4529-91A9-17B3F2AC3848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDEEA8A0-C72D-4C72-A641-CBF06B4F0A09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDEEA8A0-C72D-4C72-A641-CBF06B4F0A09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDEEA8A0-C72D-4C72-A641-CBF06B4F0A09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDEEA8A0-C72D-4C72-A641-CBF06B4F0A09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9141CB49-DA79-40BE-A66F-360F238ACB20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9141CB49-DA79-40BE-A66F-360F238ACB20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9141CB49-DA79-40BE-A66F-360F238ACB20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9141CB49-DA79-40BE-A66F-360F238ACB20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E90ACFB-1F99-44A3-9DA7-207E9EC71A01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E90ACFB-1F99-44A3-9DA7-207E9EC71A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E90ACFB-1F99-44A3-9DA7-207E9EC71A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E90ACFB-1F99-44A3-9DA7-207E9EC71A01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6522B40-05AA-4FB1-9AF0-2FAA19922E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6522B40-05AA-4FB1-9AF0-2FAA19922E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6522B40-05AA-4FB1-9AF0-2FAA19922E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6522B40-05AA-4FB1-9AF0-2FAA19922E02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0A530DC-541E-41A0-B258-01312E4E5804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0A530DC-541E-41A0-B258-01312E4E5804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0A530DC-541E-41A0-B258-01312E4E5804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0A530DC-541E-41A0-B258-01312E4E5804}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BF5C3411-879F-4DC8-B00A-23F5FC67FF0C} = {2F647B57-8C60-435A-863A-D4B985352745}
+		{9955BA4D-8FF0-4104-AA4C-C7F5BB6E4A5F} = {2F647B57-8C60-435A-863A-D4B985352745}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C906F5A9-8C1A-41EE-9948-E6AB885A7EE4}

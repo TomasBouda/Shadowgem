@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PropertyGroup>
+	<TargetFramework>netstandard2.1</TargetFramework>
+	<Authors>Tomas Bouda</Authors>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<Version>2.0.1</Version>
+	<PackageProjectUrl>https://github.com/TomasBouda/Shadowgem</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/TomasBouda/Shadowgem</RepositoryUrl>
+	<PackageTags>extension helper methods utility library</PackageTags>
+	<RepositoryType>git</RepositoryType>
+	<Copyright>Copyright 2020 TomLabs</Copyright>
+	<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+</PropertyGroup>

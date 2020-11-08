@@ -5,29 +5,23 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>2.0.1</Version>
     <PackageProjectUrl>https://github.com/TomasBouda/Shadowgem</PackageProjectUrl>
+    <PackageIconUrl>https://cdn.rawgit.com/TomasBouda/Shadowgem/0bc7f080/TomLabs.Shadowgem/shadowgem.jpg?raw=true</PackageIconUrl>
     <RepositoryUrl>https://github.com/TomasBouda/Shadowgem</RepositoryUrl>
     <PackageTags>extension helper methods utility library</PackageTags>
     <RepositoryType>git</RepositoryType>
     <Copyright>Copyright 2020 TomLabs</Copyright>
+    <PackageLicenseUrl>https://github.com/TomasBouda/Shadowgem/blob/master/LICENSE</PackageLicenseUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\TomLabs.Shadowgem.Misc.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\TomLabs.Shadowgem.Misc.xml</DocumentationFile>
     <Title>Shadowgem</Title>
     <PackageDescription>Library that provides extension and helper methods of all kinds.</PackageDescription>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PackageIcon>icon.png</PackageIcon>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Data\GIT\Shadowgem\TomLabs.Shadowgem\TomLabs.Shadowgem.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Hjson" Version="3.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\images\icon.png">
-      <Pack>True</Pack>
-      <PackagePath>
-      </PackagePath>
-    </None>
+    <Compile Include="..\TomLabs.Shadowgem\Misc\EnumExtensions.cs" Link="EnumExtensions.cs" />
   </ItemGroup>
 </Project>

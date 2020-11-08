@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Authors>Tomas Bouda</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>2.0.1</Version>
+    <PackageProjectUrl>https://github.com/TomasBouda/Shadowgem</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/TomasBouda/Shadowgem</RepositoryUrl>
+    <PackageTags>extension helper methods utility library</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <Copyright>Copyright 2020 TomLabs</Copyright>
+    <Title>Shadowgem.Types</Title>
+    <PackageDescription>Provides extension methods for types. This is partial package of main TomLabs.Shadowgem package.</PackageDescription>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\TomLabs.Shadowgem.Types.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\TomLabs.Shadowgem.Types.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\TomLabs.Shadowgem\Types\PropertyMap.cs" Link="PropertyMap.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Types\ReflectionExtensions.cs" Link="ReflectionExtensions.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Types\TypeExtensions.cs" Link="TypeExtensions.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Types\Attributes\CopyFromIgnoreAttribute.cs" Link="Attributes\CopyFromIgnoreAttribute.cs" />
+    <Compile Include="..\TomLabs.Shadowgem\Types\Attributes\DeepCloneIgnoreAttribute.cs" Link="Attributes\DeepCloneIgnoreAttribute.cs" />
+  </ItemGroup>
+</Project>

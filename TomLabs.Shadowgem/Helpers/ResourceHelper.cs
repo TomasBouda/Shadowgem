@@ -6,7 +6,7 @@ namespace TomLabs.Shadowgem.Helpers
 	/// <summary>
 	/// Provides methods for resource files
 	/// </summary>
-	public class ResourceHelper
+	public static class ResourceHelper
 	{
 		/// <summary>
 		/// Returns resource value out from given resource type by name

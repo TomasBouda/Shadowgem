@@ -1,19 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <IsPackable>false</IsPackable>
+    <PackageProjectUrl>https://github.com/TomasBouda/Shadowgem</PackageProjectUrl>
+    <Authors>Tomáš Bouda</Authors>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>1.0.0</Version>
+    <RepositoryUrl>https://github.com/TomasBouda/Shadowgem</RepositoryUrl>
+    <PackageTags>extension helper methods utility library</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <Copyright>Copyright 2018 TomLabs</Copyright>
+    <PackageLicenseUrl>https://github.com/TomasBouda/Shadowgem/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="1.1.18" />
     <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\TomLabs.Shadowgem\TomLabs.Shadowgem.csproj" />
   </ItemGroup>
-
 </Project>

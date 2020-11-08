@@ -1,0 +1,1444 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TomLabs.Shadowgem</name>
+    </assembly>
+    <members>
+        <member name="T:TomLabs.Shadowgem.Collections.LinkedListExtensions">
+            <summary>
+            <see cref="T:System.Collections.Generic.LinkedList`1"/> related extensions
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinkedListExtensions.NextOrFirst``1(System.Collections.Generic.LinkedListNode{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Returns next or first element from given <see cref="T:System.Collections.Generic.LinkedList`1"/> that satisfies a specified condition
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="current"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinkedListExtensions.NextOrFirst``1(System.Collections.Generic.LinkedListNode{``0})">
+            <summary>
+            Returns next or first element from given <see cref="T:System.Collections.Generic.LinkedList`1"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="current"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinkedListExtensions.PreviousOrLast``1(System.Collections.Generic.LinkedListNode{``0})">
+            <summary>
+            Returns previous or last element from given <see cref="T:System.Collections.Generic.LinkedList`1"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="current"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinkedListExtensions.PreviousOrLast``1(System.Collections.Generic.LinkedListNode{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Returns previous or last element from given <see cref="T:System.Collections.Generic.LinkedList`1"/> that satisfies a specified condition
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="current"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinkedListExtensions.FirstOrDefault``1(System.Collections.Generic.LinkedList{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Returns the first element in a sequence that satisfies a specified condition or default.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinkedListExtensions.LastOrDefault``1(System.Collections.Generic.LinkedList{``0},System.Func{``0,System.Boolean})">
+            <summary>
+             Returns the last element in a sequence that satisfies a specified condition or default.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Collections.LinqExtensions">
+            <summary>
+            <see cref="N:System.Linq"/> related extension methods
+            <para></para>
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.ToCSVString(System.Linq.IOrderedQueryable)">
+            <summary>
+            Converts the Linq data to a comma separated string including header.
+            </summary>
+            <param name="data">The data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.ToCSVString(System.Linq.IOrderedQueryable,System.String)">
+            <summary>
+            Converts the Linq data to a comma separated string including header.
+            </summary>
+            <param name="data">The data.</param>
+            <param name="delimiter">The delimiter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.ToCSVString(System.Linq.IOrderedQueryable,System.String,System.String)">
+            <summary>
+            Converts the Linq data to a comma separated string including header.
+            </summary>
+            <param name="data">The data.</param>
+            <param name="delimiter">The delimiter.</param>
+            <param name="nullValue">The null value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Shortcut for foreach statement
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="mapFunction"></param>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.Randomize``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns randomly ordered Enumerable
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.ToCollection``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Convert a <see cref="T:System.Collections.Generic.IEnumerable`1"/>to a <see cref="T:System.Collections.ObjectModel.Collection`1"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="enumerable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.OrderBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Boolean)">
+            <summary>
+            <see cref="M:System.Linq.Enumerable.OrderBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})"/> and <see cref="M:System.Linq.Enumerable.OrderByDescending``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})"/> shortcut
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <typeparam name="TKey"></typeparam>
+            <param name="enumerable"></param>
+            <param name="keySelector"></param>
+            <param name="descending"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.OrderBy``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.IComparable},System.Func{``0,System.IComparable},System.Func{``0,System.IComparable}[])">
+            <summary>
+            Order by multiple properties
+            http://www.extensionmethod.net/csharp/ienumerable-t/orderby
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <param name="enumerable"></param>
+            <param name="keySelector1"></param>
+            <param name="keySelector2"></param>
+            <param name="keySelectors"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.OrderBy``1(System.Collections.Generic.IEnumerable{``0},System.Boolean,System.Func{``0,System.IComparable},System.Func{``0,System.IComparable}[])">
+            <summary>
+            OrderBy by multiple properties
+            http://www.extensionmethod.net/csharp/ienumerable-t/orderby
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <param name="enumerable"></param>
+            <param name="descending">True if descending</param>
+            <param name="keySelector"></param>
+            <param name="keySelectors"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.Filter``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Allows you to filter an <see cref="T:System.Collections.Generic.IEnumerable`1"/>
+            http://www.extensionmethod.net/csharp/ienumerable-t/filter
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="filterParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.Concat``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+            Adds an element to an <see cref="T:System.Collections.Generic.IEnumerable`1"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="target"></param>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.JoinItems``1(``0,System.String)">
+            <summary>
+            Concatenates the members of a constructed <see cref="T:System.Collections.Generic.IEnumerable`1"/>
+                collection of type <see cref="T:System.String"/>, using the specified separator between each
+                member.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="collection"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.AddRangeSafe``1(System.Collections.Generic.List{``0},System.Collections.Generic.List{``0})">
+            <summary>
+            Calls <see cref="M:System.Collections.Generic.List`1.AddRange(System.Collections.Generic.IEnumerable{`0})"/> only if source <see cref="T:System.Collections.Generic.List`1"/> is not <c>null</c> and not empty
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="range"></param>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.ToObservable``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Converts <see cref="T:System.Collections.Generic.IEnumerable`1"/> into <see cref="T:System.Collections.ObjectModel.ObservableCollection`1"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.Remove``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Removes <see cref="T:System.Collections.Generic.IEnumerable`1"/> collection from given <see cref="T:System.Collections.Generic.ICollection`1"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="toRemove"></param>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Collections.LinqExtensions.MinOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32})">
+            <summary>
+            Invokes a transform function on each element of a sequence and returns the minimum <see cref="T:System.Int32" /> value. If sequence is empty or null returns default value of <see cref="T:System.Int32"/>.
+            </summary>
+            <typeparam name="TSource">The type of the elements of <paramref name="sequence" />.</typeparam>
+            <param name="sequence">A sequence of values to determine the minimum value of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The minimum value in the sequence.</returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Common.CommonExtensions">
+            <summary>
+            Common Extension methods
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.IsIn``1(``0,``0[])">
+            <summary>
+            Determines if an instance is contained in a sequence
+            </summary>
+            <example>
+            if(5.IsIn(0,1,2,3,4,5,6,7,8,9)){
+            }
+            </example>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.CoinToss(System.Random)">
+            <summary>
+            Simulates coin toss. Returns randomly <c>true</c> or <c>false</c>
+            </summary>
+            <example>
+            var rnd = new Random();
+            if(rnd.CoinToss()){
+            	Console.WriteLine("Heads");
+            }
+            else{
+            	Console.WriteLine("Tails");
+            }
+            </example>
+            <param name="rng"></param>
+            <returns>Returns randomly <c>true</c> or <c>false</c></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.OneOf``1(System.Random,``0[])">
+            <summary>
+            Returns random element from given params collection
+            </summary>
+            <example>
+            var rnd = new Random();
+            Console.WriteLine(rnd.OneOf("one", "two", "three"));
+            </example>
+            <typeparam name="T"></typeparam>
+            <param name="rnd"></param>
+            <param name="things"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.XmlSerialize``1(``0)">
+            <summary>Serializes an object of type T in to an XML string</summary>
+            <example>
+            var obj = new Test { Str ="test", Number = 123};
+            Console.WriteLine(obj.XmlSerialize());
+            </example>
+            <typeparam name="T">Any class type</typeparam>
+            <param name="obj">Object to serialize</param>
+            <returns>A string that represents XML, empty otherwise</returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.XmlDeserialize``1(System.String)">
+            <summary>Deserializes an xml string into an object of Type T</summary>
+            <example>
+            var obj = xmlString.XmlDeserialize&lt;Test&gt;();
+            </example>
+            <typeparam name="T">Any class type</typeparam>
+            <param name="xml">XML as string to deserialize from</param>
+            <returns>A new object of type T if successful, null if failed</returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.GetDefaultValue``1(System.Nullable{``0})">
+            <summary>
+            Returns default value of given object
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.ToCurrency(System.Double,System.String)">
+            <summary>
+            Returns given <see cref="T:System.Decimal"/> value formatted as currency
+            </summary>
+            <example>
+            Console.WriteLine(12.5.ToCurrency("cs-CZ")); // Outputs 12,50 Kč
+            Console.WriteLine(12.5.ToCurrency("fr-FR")); // Outputs 12,50 €
+            </example>
+            <param name="value"></param>
+            <param name="cultureName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.DeepClone``1(``0)">
+            <summary>
+            Makes a copy from the object.
+            Doesn't copy the reference memory, only data.
+            </summary>
+            <typeparam name="T">Type of the return object.</typeparam>
+            <returns>Returns the copied object.</returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.Clamp``1(``0,``0,``0)">
+            <summary>
+            Limit a value to a certain range. When the value is smaller/bigger than the range, snap it to the range border.
+            </summary>
+            <example>
+            var x = 25.Clamp(0,20); // x equals to 20
+            var y = 15.Clamp(0,20); // x equals to 15
+            </example>
+            <typeparam name = "T">The type of the value to limit.</typeparam>
+            <param name = "source">The source for this extension method.</param>
+            <param name = "start">The start of the interval, included in the interval.</param>
+            <param name = "end">The end of the interval, included in the interval.</param>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.CommonExtensions.IsNull(System.Object)">
+            <summary>
+            Returns <c>true</c> if given object equals <c>null</c>
+            </summary>
+            <example>
+            string x = null;
+            if(x.IsNull()){
+            	Console.WriteLine("x is null");
+            }
+            </example>
+            <param name="object"></param>
+            <returns><c>true</c> if object is <c>null</c></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Common.DateTimeExtensions">
+            <summary>
+            <see cref="T:System.DateTime"/> related extension methods
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.Elapsed(System.DateTime)">
+            <summary>
+            Elapsed the time.
+            </summary>
+            <example>
+            var yesterday = DateTime.Now.AddDays(-1);
+            yesterday.Elapsed();
+            </example>
+            <param name="datetime">The datetime.</param>
+            <returns>TimeSpan</returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.WeekOfYear(System.DateTime,System.Globalization.CalendarWeekRule,System.DayOfWeek)">
+            <summary>
+            Weeks the of year.
+            </summary>
+            <example>
+            DateTime.Now.WeekOfYear(System.Globalization.CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+            </example>
+            <param name="datetime">The datetime.</param>
+            <param name="weekRule">The weekRule.</param>
+            <param name="firstDayOfWeek">The first day of week.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.WeekOfYear(System.DateTime,System.DayOfWeek)">
+            <summary>
+            Weeks the of year.
+            </summary>
+            <param name="datetime">The datetime.</param>
+            <param name="firstDayOfWeek">The first day of week.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.WeekOfYear(System.DateTime,System.Globalization.CalendarWeekRule)">
+            <summary>
+            Weeks the of year.
+            </summary>
+            <param name="datetime">The datetime.</param>
+            <param name="weekRule">The weekRule.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.WeekOfYear(System.DateTime)">
+            <summary>
+            Weeks the of year.
+            </summary>
+            <param name="datetime">The datetime.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.GetDateTimeForDayOfWeek(System.DateTime,System.DayOfWeek,System.DayOfWeek)">
+            <summary>
+            Gets the date time for day of week.
+            </summary>
+            <param name="datetime">The datetime.</param>
+            <param name="day">The day.</param>
+            <param name="firstDayOfWeek">The first day of week.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.GetDateTimeForDayOfWeek(System.DateTime,System.DayOfWeek)">
+            <summary>
+            Gets the date time for day of week.
+            </summary>
+            <param name="datetime"></param>
+            <param name="day"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.FirstDateTimeOfWeek(System.DateTime)">
+            <summary>
+            Firsts the date time of week.
+            </summary>
+            <param name="datetime">The datetime.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.FirstDateTimeOfWeek(System.DateTime,System.DayOfWeek)">
+            <summary>
+            Firsts the date time of week.
+            </summary>
+            <param name="datetime">The datetime.</param>
+            <param name="firstDayOfWeek">The first day of week.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.DaysFromFirstDayOfWeek(System.DayOfWeek,System.DayOfWeek)">
+            <summary>
+            Days from first day of week.
+            </summary>
+            <param name="current">The current.</param>
+            <param name="firstDayOfWeek">The first day of week.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.IsWeekend(System.DateTime)">
+            <summary>
+            Figure out if DateTime holds a date value that is a weekend
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.Readable(System.DateTime)">
+            <summary>
+            Returns given time as string formatted to dd.MM.yyyy HH:mm:ss
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.ReadableMs(System.DateTime)">
+            <summary>
+            Returns given time as string formatted to dd.MM.yyyy HH:mm:ss:ms
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.DateTimeExtensions.UnixTimeStampToDateTime(System.Double)">
+            <summary>
+            Returns given unix timestamp as <see cref="T:System.DateTime"/>
+            </summary>
+            <param name="unixTimeStamp"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Common.EnumExtensions">
+            <summary>
+            Enum related extension methods
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.EnumExtensions.GetDescription``2(``0,System.Type)">
+            <summary>
+            Returns <see cref="T:System.ComponentModel.DescriptionAttribute"/> value for enum
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="U"></typeparam>
+            <param name="enumerationValue"></param>
+            <param name="attributeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.EnumExtensions.GetDescription``1(``0)">
+            <summary>
+            Returns <see cref="T:System.ComponentModel.DescriptionAttribute"/> value for enum
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="enumerationValue"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Common.TimeSpanExtensions">
+            <summary>
+            <see cref="T:System.TimeSpan"/> related extension methods
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.TimeSpanExtensions.AddTimeUnit(System.Int32,TomLabs.Shadowgem.Common.TimeSpanExtensions.TimeUnit,System.Boolean)">
+            <summary>
+            Adds specified time unit to given string
+            </summary>
+            <param name="value"></param>
+            <param name="unit"></param>
+            <param name="shortUnit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Common.TimeSpanExtensions.ToReadableString(System.TimeSpan,System.Boolean,System.Boolean)">
+            <summary>
+            Returns string in human readable representation. e.g. 1 day 20 hours 5 minutes
+            </summary>
+            <param name="timeSpan">timespan to convert</param>
+            <param name="showSeconds">Sets whether to show seconds in output</param>
+            <param name="shortUnits">Sets whether to show only short time units. e.g. '1d 20h' instead of '1 day 20 hours'</param>
+            <returns>Human readable timespan string</returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Data.DataTableExtensions">
+            <summary>
+            <see cref="T:System.Data.DataTable"/> related extension methods
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.DataTableExtensions.ToStringSingle(System.Data.DataTable)">
+            <summary>
+            Converts <see cref="T:System.Data.DataTable"/> to string
+            </summary>
+            <param name="dataTable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.DataTableExtensions.ToFormatedString(System.Data.DataTable)">
+            <summary>
+            Converts <see cref="T:System.Data.DataTable"/> to formated string
+            </summary>
+            <param name="dataTable"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Data.Json.JsonExtensions">
+            <summary>
+            Json related extensions
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.Json.JsonExtensions.CloneJson``1(``0)">
+            <summary>
+            Deep clone using Json serialization
+            </summary>
+            <typeparam name="T">Type of object to clone</typeparam>
+            <param name="source">Object to clone</param>
+            <returns>Deep object clone</returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.Json.JsonExtensions.ToJson``1(``0)">
+            <summary>
+            Serializes the specified object to a JSON string using <see cref="M:Newtonsoft.Json.JsonConvert.SerializeObject(System.Object)"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.Json.JsonExtensions.FromJson``1(System.String)">
+            <summary>
+            Deserializes the specified object to a JSON string using <see cref="M:Newtonsoft.Json.JsonConvert.DeserializeObject``1(System.String)"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="objStr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Data.Json.JsonHandler">
+            <summary>
+            Helper for handling json and hjson serialization/deserialization
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.Json.JsonHandler.DeserializeHJson``1(System.String)">
+            <summary>
+            Deserializes given hjson file into object
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="hjsonFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.Json.JsonHandler.DeserializeJson``1(System.String)">
+            <summary>
+            Deserializes given json file into object
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="jsonFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.Json.JsonHandler.SerializeToHJson``1(``0,TomLabs.Shadowgem.Data.Json.JsonSerializationParams)">
+            <summary>
+            Serializes given object into hjson string
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="object"></param>
+            <param name="params"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.Json.JsonHandler.SerializeToJson``1(``0,TomLabs.Shadowgem.Data.Json.JsonSerializationParams)">
+            <summary>
+            Serializes given object into json string
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="object"></param>
+            <param name="params"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Data.Json.JsonFormatting">
+            <summary>
+            Defines formatting for json serialization
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Data.Json.JsonFormatting.None">
+            <summary>
+            No special formatting is applied. This is the default.
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Data.Json.JsonFormatting.Indented">
+            <summary>
+            Causes child objects to be indented according to the <see cref="P:Newtonsoft.Json.JsonTextWriter.Indentation"/> and <see cref="P:Newtonsoft.Json.JsonTextWriter.IndentChar"/> settings.
+            </summary>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Data.Json.JsonNullValueHandling">
+            <summary>
+            Specifies null value handling options for the <see cref="T:Newtonsoft.Json.JsonSerializer"/>.
+            </summary>
+            <example>
+              <code lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs" region="ReducingSerializedJsonSizeNullValueHandlingObject" title="NullValueHandling Class" />
+              <code lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs" region="ReducingSerializedJsonSizeNullValueHandlingExample" title="NullValueHandling Ignore Example" />
+            </example>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Data.Json.JsonNullValueHandling.Include">
+            <summary>
+            Include null values when serializing and deserializing objects.
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Data.Json.JsonNullValueHandling.Ignore">
+            <summary>
+            Ignore null values when serializing and deserializing objects.
+            </summary>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Data.Json.JsonDefaultValueHandling">
+            <summary>
+            Specifies default value handling options for the <see cref="T:Newtonsoft.Json.JsonSerializer"/>.
+            </summary>
+            <example>
+              <code lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs" region="ReducingSerializedJsonSizeDefaultValueHandlingObject" title="DefaultValueHandling Class" />
+              <code lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs" region="ReducingSerializedJsonSizeDefaultValueHandlingExample" title="DefaultValueHandling Ignore Example" />
+            </example>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Data.Json.JsonDefaultValueHandling.Include">
+            <summary>
+            Include members where the member value is the same as the member's default value when serializing objects.
+            Included members are written to JSON. Has no effect when deserializing.
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Data.Json.JsonDefaultValueHandling.Ignore">
+            <summary>
+            Ignore members where the member value is the same as the member's default value when serializing objects
+            so that it is not written to JSON.
+            This option will ignore all default values (e.g. <c>null</c> for objects and nullable types; <c>0</c> for integers,
+            decimals and floating point numbers; and <c>false</c> for booleans). The default value ignored can be changed by
+            placing the <see cref="T:System.ComponentModel.DefaultValueAttribute"/> on the property.
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Data.Json.JsonDefaultValueHandling.Populate">
+            <summary>
+            Members with a default value but no JSON will be set to their default value when deserializing.
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Data.Json.JsonDefaultValueHandling.IgnoreAndPopulate">
+            <summary>
+            Ignore members where the member value is the same as the member's default value when serializing objects
+            and set members to their default value when deserializing.
+            </summary>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Data.Json.JsonSerializationParams">
+            <summary>
+            Defines parameters for json serialization
+            </summary>
+        </member>
+        <member name="P:TomLabs.Shadowgem.Data.Json.JsonSerializationParams.Formatting">
+            <summary>
+            Defines formatting for json serialization
+            </summary>
+        </member>
+        <member name="P:TomLabs.Shadowgem.Data.Json.JsonSerializationParams.IndentChar">
+            <summary>
+            Gets or sets which character to use for indenting when <see cref="P:Newtonsoft.Json.JsonWriter.Formatting"/> is set to <see cref="F:TomLabs.Shadowgem.Data.Json.JsonFormatting.Indented"/>.
+            </summary>
+        </member>
+        <member name="P:TomLabs.Shadowgem.Data.Json.JsonSerializationParams.Indentation">
+            <summary>
+            Gets or sets how many <see cref="P:Newtonsoft.Json.JsonTextWriter.IndentChar"/>s to write for each level in the hierarchy when <see cref="P:Newtonsoft.Json.JsonWriter.Formatting"/> is set to <see cref="F:TomLabs.Shadowgem.Data.Json.JsonFormatting.Indented"/>.
+            </summary>
+        </member>
+        <member name="P:TomLabs.Shadowgem.Data.Json.JsonSerializationParams.NullValueHandling">
+            <summary>
+            Specifies null value handling options for the <see cref="T:Newtonsoft.Json.JsonSerializer"/>.
+            </summary>
+        </member>
+        <member name="P:TomLabs.Shadowgem.Data.Json.JsonSerializationParams.DefaultValueHandling">
+            <summary>
+            Specifies default value handling options for the <see cref="T:Newtonsoft.Json.JsonSerializer"/>.
+            </summary>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Data.XmlExtensions">
+            <summary>
+            XML related extensions
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.XmlExtensions.Beautify(System.Xml.Linq.XDocument)">
+            <summary>
+            Formats given XML document
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.XmlExtensions.ToXmlDocument(System.Xml.Linq.XDocument)">
+            <summary>
+            Converts <see cref="T:System.Xml.Linq.XDocument"/> to <see cref="T:System.Xml.XmlDocument"/>
+            </summary>
+            <param name="xDocument"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.XmlExtensions.ToXDocument(System.Xml.XmlDocument)">
+            <summary>
+            Converts <see cref="T:System.Xml.XmlDocument"/> to <see cref="T:System.Xml.Linq.XDocument"/>
+            </summary>
+            <param name="xmlDocument"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.XmlExtensions.ToXmlDocument(System.Xml.Linq.XElement)">
+            <summary>
+            Converts <see cref="T:System.Xml.Linq.XElement"/> to <see cref="T:System.Xml.XmlDocument"/>
+            </summary>
+            <param name="xElement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Data.XmlExtensions.ToMemoryStream(System.Xml.XmlDocument)">
+            <summary>
+            Converts <see cref="T:System.Xml.XmlDocument"/> to <see cref="T:System.IO.Stream"/>
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Helpers.Cmd">
+            <summary>
+            Windows command line helper class
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Helpers.Cmd.RunCommand(System.String,System.String)">
+            <summary>
+            Executes given command in windows command line
+            </summary>
+            <param name="arguments"></param>
+            <param name="workingDirectory">directory context</param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Helpers.Cmd.MultipleChars(System.Char,System.Int32)">
+            <summary>
+            Returns line of characters
+            </summary>
+            <param name="ch"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Helpers.Comparers.InlineComparer`1">
+            <summary>
+            Allows you to compare inline in Linq query
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Helpers.Comparers.InlineComparer`1.#ctor(System.Func{`0,`0,System.Boolean},System.Func{`0,System.Int32})">
+            <summary>
+            Creates instance of <see cref="T:TomLabs.Shadowgem.Helpers.Comparers.InlineComparer`1"/>
+            </summary>
+            <param name="equals">Pass lambda expression for comparison <code>(t1, t2) => t1.Id == t2.Id</code></param>
+            <param name="hashCode">Pass lambda expression for GetHashCode function. <code>i => i.Id.GetHashCode()</code></param>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Helpers.Comparers.InlineComparer`1.Equals(`0,`0)">
+            <summary>
+            Determines whether the specified object <paramref name="x"/> is equal to the object <paramref name="y"/>
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Helpers.Comparers.InlineComparer`1.GetHashCode(`0)">
+            <summary>
+            Returns hash code for <paramref name="obj"/>
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Helpers.Enums.EnumHelper`1">
+            <summary>
+            Provides helper methods for <see cref="T:System.Enum"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Helpers.Enums.EnumHelper`1.GetEnumDescription(System.String)">
+            <summary>
+            Gets value of enum description attribute
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Helpers.Enums.EnumHelper`1.ToDictionary">
+            <summary>
+            Converts given enum to dictionary
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Helpers.Files.FileHelper">
+            <summary>
+            Provides methods for working with files
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Helpers.Files.FileHelper.RemoveReadOnlyAttribute(System.String)">
+            <summary>
+            Removes ReadOnly attribute on given file
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Helpers.ResourceHelper">
+            <summary>
+            Provides methods for resource files
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Helpers.ResourceHelper.GetResourceLookup``1(System.Type,System.String)">
+            <summary>
+            Returns resource value out from given resource type by name
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="resourceType"></param>
+            <param name="resourceName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Helpers.Utils">
+            <summary>
+            Miscellaneous utilities
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Helpers.Utils.CheckInternetConnection">
+            <summary>
+            Returns <c>true</c> if internet connection is available
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Text.CharExtensions">
+            <summary>
+            <see cref="T:System.Char"/> related extension methods
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.CharExtensions.ToUpper(System.Char)">
+            <summary>
+            Shortcut for <see cref="M:System.Char.ToUpper(System.Char)"/>
+            </summary>
+            <param name="ch"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.CharExtensions.ToLower(System.Char)">
+            <summary>
+            Shortcut for <see cref="M:System.Char.ToLower(System.Char)"/>
+            </summary>
+            <param name="ch"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Text.Encryption.Hasher">
+            <summary>
+            Provides methods for string hashing
+            </summary>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType">
+            <summary>
+            Supported hash algorithms
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.HMAC">
+            <summary>
+            Keyed-hash Message Authentication Code
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.HMACMD5">
+            <summary>
+            Hash-based Message Authentication Code (HMAC) by using the MD5 hash function
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.HMACSHA1">
+            <summary>
+            Hash-based Message Authentication Code (HMAC) using the SHA1 hash function
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.HMACSHA256">
+            <summary>
+            Hash-based Message Authentication Code (HMAC) by using the SHA256 hash function
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.HMACSHA384">
+            <summary>
+            Hash-based Message Authentication Code (HMAC) by using the SHA384 hash function
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.HMACSHA512">
+            <summary>
+            Hash-based Message Authentication Code (HMAC) by using the SHA512 hash function
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.MACTripleDES">
+            <summary>
+            Message Authentication Code (MAC) using TripleDES
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.RIPEMD160">
+            <summary>
+            MD160 hash algorithm
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.SHA256">
+            <summary>
+            Secure Hash Algorithm 256
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.SHA384">
+            <summary>
+            Secure Hash Algorithm 384
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.SHA512">
+            <summary>
+            Secure Hash Algorithm 512
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.MD5">
+            <summary>
+            Should not be used.
+            </summary>
+        </member>
+        <member name="F:TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType.SHA1">
+            <summary>
+            Should not be used.
+            <para>
+            https://www.howtogeek.com/238705/what-is-sha-1-and-why-will-retiring-it-kick-thousands-off-the-internet/
+            </para>
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.Encryption.Hasher.ComputeHash(System.String,TomLabs.Shadowgem.Text.Encryption.Hasher.EHashType)">
+            <summary>
+            Computes the hash of the string using a specified hash algorithm
+            </summary>
+            <param name="input">The string to hash</param>
+            <param name="hashType">The hash algorithm to use</param>
+            <returns>The resulting hash or an empty string on error</returns>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Text.Encryption.StringEncrypt">
+            <summary>
+            Provides methods for string encryption/decryption
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.Encryption.StringEncrypt.Encrypt(System.String,System.String)">
+            <summary>
+            Encrypts a string using the supplied key. Encoding is done using RSA encryption.
+            </summary>
+            <param name="stringToEncrypt">String that must be encrypted.</param>
+            <param name="key">EncryptionKey.</param>
+            <returns>A string representing a byte array separated by a minus sign.</returns>
+            <exception cref="T:System.ArgumentException">Occurs when stringToEncrypt or key is null or empty.</exception>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.Encryption.StringEncrypt.Decrypt(System.String,System.String)">
+            <summary>
+            Decrypts a string using the supplied key. Decoding is done using RSA encryption.
+            </summary>
+            <param name="key">DecryptionKey.</param>
+            <returns>The decrypted string or null if decryption failed.</returns>
+            <param name="stringToDecrypt"></param>
+            <exception cref="T:System.ArgumentException">Occurs when stringToDecrypt or key is null or empty.</exception>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Text.StringExtensions">
+            <summary>
+            Provides extension methods applied to <see cref="T:System.String"/>
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.Like(System.String,System.String)">
+            <summary>
+            "SQL Like" function
+            </summary>
+            <param name="toSearch"></param>
+            <param name="toFind"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            Searches the input string for the first occurrence of the specified regular expression, using the specified matching options.
+            </summary>
+            <param name="text"></param>
+            <param name="pattern"></param>
+            <param name="regexOptions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            Checks whether the input string matches the first occurrence of the specified regular expression, using the specified matching options.
+            </summary>
+            <param name="text"></param>
+            <param name="pattern"></param>
+            <param name="regexOptions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.SplitRgx(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            Shortcut for <see cref="M:System.Text.RegularExpressions.Regex.Split(System.String)"/>
+            </summary>
+            <param name="s"></param>
+            <param name="pattern"></param>
+            <param name="regexOptions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ReplaceRgx(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            Shortcut for <see cref="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)"/>
+            </summary>
+            <param name="s"></param>
+            <param name="pattern"></param>
+            <param name="replacement"></param>
+            <param name="regexOptions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.FillIn(System.String,System.Object[])">
+            <summary>
+            String.Format shortcut
+            </summary>
+            <param name="s"></param>
+            <param name="args">Arguments</param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToInt(System.String,System.Int32)">
+            <summary>
+            Converts given string to <see cref="T:System.Int32"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="s"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToInt(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Int32)">
+            <summary>
+            Converts given string to <see cref="T:System.Int32"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="s"></param>
+            <param name="style"></param>
+            <param name="provider"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToIntN(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Converts given string to <see cref="T:System.Nullable"/> <see cref="T:System.Int32"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="s"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToIntN(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Nullable{System.Int32})">
+            <summary>
+            Converts given string to <see cref="T:System.Nullable"/> <see cref="T:System.Int32"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="s"></param>
+            <param name="style"></param>
+            <param name="provider"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToDouble(System.String,System.Double)">
+            <summary>
+            Converts given string to <see cref="T:System.Double"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="s"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToDouble(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Double)">
+            <summary>
+            Converts given string to <see cref="T:System.Double"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="s"></param>
+            <param name="style"></param>
+            <param name="provider"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToFloat(System.String,System.Single)">
+            <summary>
+            Converts given string to <see cref="T:System.Single"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="s"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToFloat(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Single)">
+            <summary>
+            Converts given string to <see cref="T:System.Single"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="s"></param>
+            <param name="style"></param>
+            <param name="provider"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToDecimal(System.String,System.Decimal)">
+            <summary>
+            Converts given string to <see cref="T:System.Decimal"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="text"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToDecimal(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.Decimal)">
+            <summary>
+            Converts given string to <see cref="T:System.Decimal"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="text"></param>
+            <param name="style"></param>
+            <param name="provider"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToDate(System.String,System.DateTime)">
+            <summary>
+            Converts given string to <see cref="T:System.DateTime"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="s"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToDate(System.String,System.Globalization.DateTimeStyles,System.IFormatProvider,System.DateTime)">
+            <summary>
+            Converts given string to <see cref="T:System.DateTime"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="s"></param>
+            <param name="style"></param>
+            <param name="provider"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToUri(System.String)">
+            <summary>
+            Returns given string as <see cref="T:System.Uri"/>
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToBool(System.String,System.Boolean)">
+            <summary>
+            Converts given string to <see cref="T:System.Boolean"/> or returns <paramref name="defaultValue"/>
+            </summary>
+            <param name="s"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToBase64(System.String)">
+            <summary>
+            Converts given string to Base64 encoded string
+            </summary>
+            <param name="plainText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.FromBase64(System.String)">
+            <summary>
+            Decodes given Base64 encoded string
+            </summary>
+            <param name="base64EncodedData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToEnum``1(System.String,System.Boolean)">
+            <summary>
+            Converts string into enumerator of type T
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <param name="ignoreCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.Parse``1(System.String)">
+            <summary>
+            Parse a string to any other type including nullable types using <see cref="T:System.ComponentModel.TypeConverter"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.MaxLength(System.String,System.Int32,System.String)">
+            <summary>
+            Returns of given length. If length of given string is greater
+            </summary>
+            <param name="str"></param>
+            <param name="maxLength"></param>
+            <param name="suffix"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.BetweenChars(System.String,System.Char,System.Char)">
+            <summary>
+            Returns string located between two given characters
+            </summary>
+            <param name="str"></param>
+            <param name="first"></param>
+            <param name="last"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsValidUrl(System.String)">
+            <summary>
+            Determines whether given string is a valid URL using <see cref="T:System.Text.RegularExpressions.Regex"/>
+            </summary>
+            <returns>
+            <c>true</c> if is valid URL otherwise returns <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsValidEmailAddress(System.String)">
+            <summary>
+            Determines whether given string is a valid email address  using <see cref="T:System.Text.RegularExpressions.Regex"/>
+            </summary>
+            <returns>
+            <c>true</c> if is valid email address otherwise returns <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsFilled(System.String)">
+            <summary>
+            Indicates whether the specified string is NOT null or an System.String.Empty string.
+            <para>
+            Inverse function of <see cref="M:System.String.IsNullOrEmpty(System.String)"/>
+            </para>
+            </summary>
+            <param name="s"></param>
+            <returns>false if the value parameter is null or an empty string (""); otherwise, true.</returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsNullOrEmpty(System.String)">
+            <summary>
+            Indicates whether the specified string is null or an System.String.Empty string.
+            <para>
+            Shortcut for <see cref="M:System.String.IsNullOrEmpty(System.String)"/>
+            </para>
+            </summary>
+            <param name="s"></param>
+            <returns>true if the value parameter is null or an empty string (""); otherwise, false.</returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsDirectory(System.String)">
+            <summary>
+            Returns <c>true</c> if given string is path to a directory
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.IsFile(System.String)">
+            <summary>
+            Returns <c>true</c> if given string is path to a file
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.CapitalizeSentence(System.String,System.String)">
+            <summary>
+            Capitalizes all words in a given sentence
+            </summary>
+            <param name="s"></param>
+            <param name="wordSeperator"><see cref="T:System.Text.RegularExpressions.Regex"/> pattern to split words</param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.CapitalizeWord(System.String)">
+            <summary>
+            Capitalizes first character of given word
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.RemoveWhitespaces(System.String)">
+            <summary>
+            Removes all whitespace char from given string using <see cref="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.String)"/>
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.RemoveDiacritics(System.String)">
+            <summary>
+            Removes diacritics from given string
+            </summary>
+            <param name="text"></param>
+            <returns>string without diacritics</returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.RemoveRange(System.String,System.String,System.String,System.StringComparison)">
+            <summary>
+            Removes string range between two given strings
+            </summary>
+            <param name="s"></param>
+            <param name="startSequence"></param>
+            <param name="endSequence"></param>
+            <param name="comparsion"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ReplaceAll(System.String,System.Collections.Generic.ICollection{System.String},System.String)">
+            <summary>
+            Replaces all occurrences of strings defined by <paramref name="sequencesToReplace"/> with given <paramref name="replaceWith"/>
+            </summary>
+            <param name="s"></param>
+            <param name="sequencesToReplace">Collection of strings to replace</param>
+            <param name="replaceWith">String to replace with</param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ReplaceAll(System.String,System.String,System.String[])">
+            <summary>
+            Replaces all occurrences of strings defined by <paramref name="toReplace"/> with given <paramref name="replaceWith"/>
+            </summary>
+            <param name="s"></param>
+            <param name="replaceWith">String to replace with</param>
+            <param name="toReplace">Collection of strings to replace</param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ReplaceAt(System.String,System.Int32,System.Char)">
+            <summary>
+            Replaces <see cref="T:System.Char"/> at given position with given char
+            </summary>
+            <param name="s"></param>
+            <param name="pos"></param>
+            <param name="replaceWith"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToPascalCase(System.String)">
+            <summary>
+            Converts text with spaces to PascalCaseText
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.ToUpperUnderscored(System.String)">
+            <summary>
+            Converts given string to Uppercase and replaces spaces with underscore
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.RemoveSpecialCharacters(System.String,System.Char[])">
+            <summary>
+            Removes all special characters from given string. Keeping a-zA-Z0-9
+            </summary>
+            <param name="str"></param>
+            <param name="charsToKeep">chars that won't be removed</param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.HtmlEncode(System.String)">
+            <summary>
+            Converts to a HTML-encoded string
+            </summary>
+            <param name="data">The data.</param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.HtmlDecode(System.String)">
+            <summary>
+            Converts the HTML-encoded string into a decoded string
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.UrlEncode(System.String)">
+            <summary>
+            Encode an Url string
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Text.StringExtensions.UrlDecode(System.String)">
+            <summary>
+            Converts a string that has been encoded for transmission in a URL into a
+            decoded string.
+            </summary>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Types.Attributes.CopyFromIgnoreAttribute">
+            <summary>
+             Attribute for marking properties to exclude them from copy from - <see cref="M:TomLabs.Shadowgem.Types.ReflectionExtensions.CopyFrom``1(``0,``0)"/>
+            </summary>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Types.Attributes.DeepCloneIgnoreAttribute">
+            <summary>
+            Attribute for marking properties to exclude them from deep clone - <see cref="M:TomLabs.Shadowgem.Types.ReflectionExtensions.DeepClone``1(``0,System.Nullable{System.Reflection.BindingFlags},System.Func{System.Reflection.PropertyInfo,System.Boolean},System.String[])"/>
+            </summary>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Types.PropertyTree">
+            <summary>
+            Class for storing property tree that is constructed by <see cref="M:TomLabs.Shadowgem.Types.TypeExtensions.CreatePropertyTree(System.Type,System.Object,System.Type[])"/> for given <see cref="P:TomLabs.Shadowgem.Types.PropertyTree.Type"/>
+            </summary>
+        </member>
+        <member name="P:TomLabs.Shadowgem.Types.PropertyTree.Name">
+            <summary>
+            Name of property
+            </summary>
+        </member>
+        <member name="P:TomLabs.Shadowgem.Types.PropertyTree.Type">
+            <summary>
+            Property type
+            </summary>
+        </member>
+        <member name="P:TomLabs.Shadowgem.Types.PropertyTree.IsEnum">
+            <summary>
+            Gets
+            </summary>
+        </member>
+        <member name="P:TomLabs.Shadowgem.Types.PropertyTree.Value">
+            <summary>
+            Property Value
+            </summary>
+        </member>
+        <member name="P:TomLabs.Shadowgem.Types.PropertyTree.ChildProperties">
+            <summary>
+            Child properties if property is not simple type <seealso cref="M:TomLabs.Shadowgem.Types.TypeExtensions.IsSimple(System.Type)"/>
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Types.PropertyTree.#ctor(System.String,System.Type,System.Object,System.Collections.Generic.List{TomLabs.Shadowgem.Types.PropertyTree})">
+            <summary>
+            Constructs <see cref="T:TomLabs.Shadowgem.Types.PropertyTree"/>
+            </summary>
+            <param name="name"></param>
+            <param name="type"></param>
+            <param name="value"></param>
+            <param name="childProperties"></param>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Types.ReflectionExtensions">
+            <summary>
+            Reflection related extensions
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Types.ReflectionExtensions.CopyFrom``1(``0,``0)">
+            <summary>
+            Copies properties not marked with <see cref="T:TomLabs.Shadowgem.Types.Attributes.CopyFromIgnoreAttribute"/> from one object to another
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="to"></param>
+            <param name="from"></param>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Types.ReflectionExtensions.DeepClone``1(``0,System.Nullable{System.Reflection.BindingFlags},System.Func{System.Reflection.PropertyInfo,System.Boolean},System.String[])">
+            <summary>
+            Creates deep copy of an object
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="from"></param>
+            <param name="flags"></param>
+            <param name="customPredicate">Custom condition to filter cloned properties</param>
+            <param name="excludedPropertyNames"></param>
+        </member>
+        <member name="T:TomLabs.Shadowgem.Types.TypeExtensions">
+            <summary>
+            <see cref="T:System.Type"/> related extension methods
+            </summary>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Types.TypeExtensions.IsSimple(System.Type)">
+            <summary>
+            Returns <c>true</c> if given <see cref="T:System.Type"/> is primitive or Enum or <see cref="T:System.String"/> or <see cref="T:System.Decimal"/> or <see cref="T:System.DateTime"/>
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TomLabs.Shadowgem.Types.TypeExtensions.CreatePropertyTree(System.Type,System.Object,System.Type[])">
+            <summary>
+            Creates property tree from given <see cref="T:System.Type"/>
+            </summary>
+            <param name="type"></param>
+            <param name="refObject"></param>
+            <param name="ignoredTypes"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

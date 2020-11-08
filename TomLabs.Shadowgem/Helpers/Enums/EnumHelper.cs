@@ -37,7 +37,9 @@ namespace TomLabs.Shadowgem.Helpers.Enums
 		public static Dictionary<int, string> ToDictionary()
 		{
 			if (!typeof(T).IsEnum)
+			{
 				throw new ArgumentException("Type T must be an enum.");
+			}
 
 			return Enum.GetValues(typeof(T))
 			   .Cast<T>()

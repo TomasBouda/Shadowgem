@@ -1,0 +1,1 @@
+﻿dotnet msbuild -property:Configuration=Release "$PSScriptRoot\..\TomLabs.Shadowgem.sln"

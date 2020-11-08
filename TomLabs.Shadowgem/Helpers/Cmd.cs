@@ -6,7 +6,7 @@ namespace TomLabs.Shadowgem.Helpers
 	/// <summary>
 	/// Windows command line helper class
 	/// </summary>
-	public class Cmd
+	public static class Cmd
 	{
 		/// <summary>
 		/// Executes given command in windows command line
@@ -16,17 +16,17 @@ namespace TomLabs.Shadowgem.Helpers
 		/// <returns></returns>
 		public static string RunCommand(string arguments, string workingDirectory)
 		{
-			Process cmd = new Process();
-			var startInfo = new ProcessStartInfo("cmd", $"/c {arguments}")
+			var cmd = new Process
 			{
-				WorkingDirectory = workingDirectory,
-				RedirectStandardOutput = true,
-				CreateNoWindow = true,
-				UseShellExecute = false,
-				WindowStyle = ProcessWindowStyle.Hidden
+				StartInfo = new ProcessStartInfo("cmd", $"/c {arguments}")
+				{
+					WorkingDirectory = workingDirectory,
+					RedirectStandardOutput = true,
+					CreateNoWindow = true,
+					UseShellExecute = false,
+					WindowStyle = ProcessWindowStyle.Hidden
+				}
 			};
-
-			cmd.StartInfo = startInfo;
 			cmd.Start();
 			cmd.WaitForExit();
 
