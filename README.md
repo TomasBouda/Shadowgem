@@ -1,4 +1,4 @@
-[![icon](https://github.com/TomasBouda/Shadowgem/blob/master/images/icon-64.png)](https://github.com/TomasBouda/Shadowgem)
+[![icon](https://github.com/TomasBouda/Shadowgem/blob/master/images/icon-64.png?raw=true)](https://github.com/TomasBouda/Shadowgem)
 
 # Shadowgem [![NuGet](https://img.shields.io/nuget/v/TomLabs.Shadowgem.svg)](https://www.nuget.org/packages/TomLabs.Shadowgem/) [![NuGet Downloads](https://img.shields.io/nuget/dt/TomLabs.Shadowgem.svg)](https://www.nuget.org/packages/TomLabs.Shadowgem/) [![Discord](https://img.shields.io/discord/382982965585510402?color=orange&label=discord)](https://discord.gg/jqWADRg) [![Support](https://img.shields.io/badge/%24-Support-blueviolet)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GRARVRTVNEUHS)
 

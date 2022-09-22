@@ -1,0 +1,62 @@
+# Build and create Nuget package
+
+trigger:
+  branches:
+    include:
+    - releases/*
+
+# Disable PullRequest Validation
+pr: none
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  buildPlatform: 'AnyCPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: PowerShell@2
+  displayName: Set BuildId to FileVersion
+  inputs:
+    filePath: 'Scripts/Set-AllProjectVersions.ps1'
+    arguments: '-Revision $(Build.BuildID) -SetAssemblyVersion $false'
+
+- task: PowerShell@2
+  displayName: GetCsprojVersion
+  inputs:
+    targetType: 'inline'
+    script: |
+      $ai = (Get-Content "**/Properties/AssemblyInfo.cs" | Out-String)
+      if($ai -match '(\d+)\.(\d+)\.(\d+)'){
+        $version = [Version]$Matches[0]
+        Write-Output "##vso[task.setvariable variable=major_version]$($version.Major)"
+        Write-Output "##vso[task.setvariable variable=minor_version]$($version.Minor)"
+        Write-Output "##vso[task.setvariable variable=bugfix_version]$($version.Build)"
+      }
+
+- task: DotNetCoreCLI@2
+  displayName: Restore
+  inputs:
+    command: 'restore'
+    projects: |
+      *.sln
+    feedsToUse: 'select'
+
+- task: MSBuild@1
+  displayName: MSBuild
+  inputs:
+    solution: '*.sln'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+    restoreNugetPackages: true
+
+- task: ArchiveFiles@2
+  displayName: Zip Release files
+  inputs:
+    rootFolderOrFile: 'Lineup.FileMoveAgent.CLI.NetFW/bin/$(buildConfiguration)'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/FileMoveAgent.$(major_version).$(minor_version).$(bugfix_version).$(Build.BuildID).zip'
+    replaceExistingArchive: true
+    verbose: true
