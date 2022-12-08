@@ -28,7 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Hjson" Version="3.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <Compile Include="..\TomLabs.Shadowgem\Data\Json\JsonExtensions.cs" Link="Json\JsonExtensions.cs" />
     <Compile Include="..\TomLabs.Shadowgem\Data\Json\JsonHandler.cs" Link="Json\JsonHandler.cs" />
     <Compile Include="..\TomLabs.Shadowgem\Data\Json\JsonSerializationParams.cs" Link="Json\JsonSerializationParams.cs" />
